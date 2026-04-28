@@ -1,0 +1,21 @@
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Obsidian local workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# Site dependencies and build output
+node_modules/
+dist/
+.astro/
+.next/
+out/
+
+# Local environment files
+.env
+.env.*
+!.env.example
