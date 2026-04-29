@@ -14,6 +14,8 @@ dist/
 .astro/
 .next/
 out/
+06 Сайт/public/files/documents/*
+!06 Сайт/public/files/documents/.gitkeep
 
 # Local environment files
 .env

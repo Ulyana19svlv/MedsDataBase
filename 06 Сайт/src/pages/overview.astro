@@ -1,0 +1,44 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import EventCard from "../components/EventCard.astro";
+import { dashboard } from "../lib/ui";
+
+const bySpecialty = [...new Set(dashboard.events.map((event) => event.specialty))]
+  .sort((a, b) => a.localeCompare(b, "ru"))
+  .map((specialty) => ({ specialty, events: dashboard.events.filter((event) => event.specialty === specialty) }));
+const byType = [...new Map(dashboard.events.map((event) => [event.eventTypeId, event.eventTypeLabel])).entries()]
+  .map(([id, label]) => ({ id, label, events: dashboard.events.filter((event) => event.eventTypeId === id) }));
+---
+
+<AppLayout title="Обзор · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Срезы</p>
+    <h1>Обзор</h1>
+    <p>Направления и типы записей разделены, чтобы анализы, приёмы и исследования не смешивались в одну кучу.</p>
+  </section>
+  <section>
+    <div class="section-title"><h2>По направлениям</h2></div>
+    <div class="overview-grid">
+      {bySpecialty.map((group) => (
+        <article class="card">
+          <h3>{group.specialty}</h3>
+          <p>{group.events.length} записей</p>
+          {group.events[0] && <EventCard event={group.events[0]} compact />}
+        </article>
+      ))}
+    </div>
+  </section>
+  <section>
+    <div class="section-title"><h2>По типам записей</h2></div>
+    <div class="overview-grid">
+      {byType.map((group) => (
+        <article class="card">
+          <h3>{group.label}</h3>
+          <p>{group.events.length} записей</p>
+          {group.events[0] && <EventCard event={group.events[0]} compact />}
+        </article>
+      ))}
+    </div>
+  </section>
+</AppLayout>
+

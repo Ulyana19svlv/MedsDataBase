@@ -1,0 +1,85 @@
+---
+import "../styles/global.css";
+import { dashboard, pageHref } from "../lib/ui";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Семейная медицинская база" } = Astro.props;
+const navItems = [
+  { href: pageHref("/"), label: "Главная" },
+  { href: pageHref("/events"), label: "Все события" },
+  { href: pageHref("/tasks"), label: "Задачи" },
+  { href: pageHref("/documents"), label: "Документы" },
+  { href: pageHref("/overview"), label: "Обзор" },
+];
+const people = dashboard.people;
+const currentPath = Astro.url.pathname;
+
+function isActiveNav(href: string) {
+  const normalizePath = (path: string) => (path.length > 1 ? path.replace(/\/$/, "") : path);
+  const path = normalizePath(new URL(href, Astro.url).pathname);
+  const activePath = normalizePath(currentPath);
+  return activePath === path || (path.endsWith("/documents") && activePath.startsWith(`${path}/`));
+}
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Основная навигация">
+        <a class="brand" href={pageHref("/")}>
+          <span class="brand-mark">M</span>
+          <span>
+            <strong>Медбаза</strong>
+            <small>только просмотр</small>
+          </span>
+        </a>
+        <nav class="side-nav">
+          {navItems.map((item) => (
+            <a class:list={["nav-link", isActiveNav(item.href) && "active"]} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <div class="side-section">
+          <span class="side-label">Люди</span>
+          {people.map((person) => (
+            <a class="person-pill" href={person.href}>{person.name}</a>
+          ))}
+        </div>
+      </aside>
+      <div class="main-area">
+        <header class="topbar">
+          <form action={pageHref("/search")} method="get" class="search-form">
+            <label class="sr-only" for="global-search">Поиск</label>
+            <input id="global-search" type="search" name="q" placeholder="Поиск по базе" />
+          </form>
+          <div class="topbar-meta">
+            <span>Обновлено {new Date(dashboard.generatedAt).toLocaleDateString("ru-RU")}</span>
+            <a href={pageHref("/owner-guide")}>Служебное</a>
+          </div>
+        </header>
+        <main class="content">
+          <slot />
+        </main>
+      </div>
+    </div>
+    <nav class="bottom-nav" aria-label="Быстрая навигация">
+      <a href={pageHref("/")}>Главная</a>
+      <a href={pageHref("/events")}>События</a>
+      <a href={pageHref("/tasks")}>Задачи</a>
+      <a href={pageHref("/documents")}>Документы</a>
+      <a href={pageHref("/search")}>Поиск</a>
+    </nav>
+  </body>
+</html>

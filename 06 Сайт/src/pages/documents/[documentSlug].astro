@@ -1,0 +1,43 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import { dashboard, formatDate } from "../../lib/ui";
+
+export function getStaticPaths() {
+  return dashboard.documents.map((document) => ({ params: { documentSlug: document.slug }, props: { document } }));
+}
+
+const { document } = Astro.props;
+const isImage = ["jpg", "jpeg", "png"].includes(document.extension);
+---
+
+<AppLayout title={`${document.fileName} · Медицинская база`}>
+  <section class="page-header">
+    <p class="eyebrow">{document.linkStatusLabel}</p>
+    <h1>{document.fileName}</h1>
+    <p>{[document.person, document.date ? formatDate(document.date) : "", document.specialty].filter(Boolean).join(" · ")}</p>
+  </section>
+  <section class="document-detail">
+    <aside class="card">
+      <h2>Контекст</h2>
+      <dl class="details-list">
+        <div><dt>Человек</dt><dd>{document.person || "Не определён"}</dd></div>
+        <div><dt>Дата</dt><dd>{document.date ? formatDate(document.date) : "Не определена"}</dd></div>
+        <div><dt>Направление</dt><dd>{document.specialty || "Не определено"}</dd></div>
+        <div><dt>Тип файла</dt><dd>{document.extension.toUpperCase()}</dd></div>
+      </dl>
+      <div class="action-stack">
+        {document.eventHref && <a class="button" href={document.eventHref}>К медицинской записи</a>}
+        <a class="button secondary" href={document.publicUrl} target="_blank" rel="noreferrer">Открыть оригинал</a>
+        <a class="button secondary" href={document.publicUrl} download>Скачать</a>
+      </div>
+    </aside>
+    <article class="document-preview card">
+      {isImage ? (
+        <img src={document.publicUrl} alt={document.fileName} />
+      ) : (
+        <iframe src={document.publicUrl} title={document.fileName}></iframe>
+      )}
+    </article>
+  </section>
+</AppLayout>
+

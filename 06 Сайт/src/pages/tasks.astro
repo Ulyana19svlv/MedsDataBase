@@ -1,0 +1,15 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import TaskBoard from "../components/TaskBoard.astro";
+import { dashboard } from "../lib/ui";
+---
+
+<AppLayout title="Задачи · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Контроль</p>
+    <h1>Задачи</h1>
+    <p>Контрольные анализы, повторные осмотры и другие действия, вынесенные из медицинских записей.</p>
+  </section>
+  <TaskBoard tasks={dashboard.tasks} />
+</AppLayout>
+

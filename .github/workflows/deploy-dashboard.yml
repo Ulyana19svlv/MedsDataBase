@@ -1,0 +1,70 @@
+name: Deploy dashboard
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+  schedule:
+    - cron: "15 3 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: "06 Сайт/package-lock.json"
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: "06 Сайт"
+
+      - name: Generate dashboard data
+        run: npm run validate:data
+        working-directory: "06 Сайт"
+
+      - name: Check Astro project
+        run: npm run check
+        working-directory: "06 Сайт"
+
+      - name: Validate document assets
+        run: npm run validate:assets
+        working-directory: "06 Сайт"
+
+      - name: Build static site
+        run: npm run build
+        working-directory: "06 Сайт"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "06 Сайт/dist"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

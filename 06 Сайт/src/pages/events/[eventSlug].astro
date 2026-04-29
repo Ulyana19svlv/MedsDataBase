@@ -1,0 +1,56 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import DocumentList from "../../components/DocumentList.astro";
+import EventCard from "../../components/EventCard.astro";
+import { dashboard, formatDate } from "../../lib/ui";
+
+export function getStaticPaths() {
+  return dashboard.events.map((event) => ({ params: { eventSlug: event.slug }, props: { event } }));
+}
+
+const { event } = Astro.props;
+const related = dashboard.events
+  .filter((item) => item.person === event.person && item.slug !== event.slug)
+  .slice(0, 4);
+---
+
+<AppLayout title={`${event.title} · Медицинская база`}>
+  <section class="page-header">
+    <p class="eyebrow">{event.person} · {event.specialty}</p>
+    <h1>{event.title}</h1>
+    <p>{formatDate(event.date)} · {[event.doctor, event.clinic].filter(Boolean).join(" · ")}</p>
+  </section>
+  <section class="detail-grid">
+    <article class="card prose">
+      <h2>Краткий итог</h2>
+      {event.summary?.length ? <ul>{event.summary.map((item) => <li>{item}</li>)}</ul> : <p class="empty">Итог не указан.</p>}
+      <h2>Что важно отследить</h2>
+      {event.track?.length ? <ul>{event.track.map((item) => <li>{item}</li>)}</ul> : <p class="empty">Нет отдельных пунктов.</p>}
+      <h2>Что делать дальше</h2>
+      {event.nextActions?.length ? <ul>{event.nextActions.map((item) => <li>{item}</li>)}</ul> : <p class="empty">Дальнейшие действия не указаны.</p>}
+    </article>
+    <aside class="stack">
+      <article class="card">
+        <h2>Данные события</h2>
+        <dl class="details-list">
+          <div><dt>Тип</dt><dd>{event.eventTypeLabel}</dd></div>
+          <div><dt>Направление</dt><dd>{event.specialty}</dd></div>
+          <div><dt>Врач</dt><dd>{event.doctor || "Не указан"}</dd></div>
+          <div><dt>Клиника</dt><dd>{event.clinic || "Не указана"}</dd></div>
+          <div><dt>Контроль</dt><dd>{event.followUpDate ? formatDate(event.followUpDate) : "Не указан"}</dd></div>
+        </dl>
+      </article>
+      <article class="card">
+        <h2>Документы</h2>
+        <DocumentList documents={event.sourceFiles || []} />
+      </article>
+    </aside>
+  </section>
+  {related.length > 0 && (
+    <section>
+      <div class="section-title"><h2>Другие события человека</h2></div>
+      <div class="event-list">{related.map((item) => <EventCard event={item} compact />)}</div>
+    </section>
+  )}
+</AppLayout>
+

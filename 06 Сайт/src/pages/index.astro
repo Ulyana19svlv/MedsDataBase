@@ -1,0 +1,59 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import PersonCard from "../components/PersonCard.astro";
+import EventCard from "../components/EventCard.astro";
+import TaskBoard from "../components/TaskBoard.astro";
+import StatStrip from "../components/StatStrip.astro";
+import { dashboard, pageHref } from "../lib/ui";
+
+const recentEvents = dashboard.events.slice(0, 6);
+const visibleTasks = [...dashboard.tasks]
+  .sort((a, b) => (a.dueDate || "9999-99-99").localeCompare(b.dueDate || "9999-99-99"))
+  .slice(0, 8);
+const unlinkedCount = dashboard.documents.filter((document) => !document.isLinkedToEvent).length;
+---
+
+<AppLayout title="Медицинская база семьи">
+  <section class="hero-panel">
+    <div>
+      <p class="eyebrow">Семейный медицинский дашборд</p>
+      <h1>Медицинская база семьи</h1>
+      <p>Профили, визиты, исследования, документы и контрольные задачи в одном спокойном интерфейсе.</p>
+    </div>
+    <StatStrip stats={dashboard.stats} />
+  </section>
+
+  {unlinkedCount > 0 && (
+    <a class="notice" href={pageHref("/documents/unlinked")}>
+      Есть документы без описания события: {unlinkedCount}
+    </a>
+  )}
+
+  <section class="section-grid two">
+    <div>
+      <div class="section-title">
+        <h2>Ближайшие задачи</h2>
+        <a href={pageHref("/tasks")}>Все задачи</a>
+      </div>
+      <TaskBoard tasks={visibleTasks} />
+    </div>
+    <div>
+      <div class="section-title">
+        <h2>Члены семьи</h2>
+      </div>
+      <div class="card-grid">
+        {dashboard.people.map((person) => <PersonCard person={person} />)}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Последние события</h2>
+      <a href={pageHref("/events")}>Открыть журнал</a>
+    </div>
+    <div class="event-list">
+      {recentEvents.map((event) => <EventCard event={event} compact />)}
+    </div>
+  </section>
+</AppLayout>

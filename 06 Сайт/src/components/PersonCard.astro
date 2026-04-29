@@ -1,0 +1,32 @@
+---
+import { ageText, formatDateShort } from "../lib/ui";
+
+const { person } = Astro.props;
+---
+
+<article class="card person-card">
+  <div class="card-header">
+    <div>
+      <h3><a href={person.href}>{person.name}</a></h3>
+      <p>{ageText(person.birthDate) || person.importantStatus || "Профиль"}</p>
+    </div>
+    <span class="count-badge">{person.eventCount}</span>
+  </div>
+  <dl class="mini-stats">
+    <div><dt>События</dt><dd>{person.eventCount}</dd></div>
+    <div><dt>Документы</dt><dd>{person.documentCount}</dd></div>
+  </dl>
+  {person.latestEvent && (
+    <a class="soft-row" href={person.latestEvent.href}>
+      <span>Последнее событие</span>
+      <strong>{formatDateShort(person.latestEvent.date)} · {person.latestEvent.specialty}</strong>
+    </a>
+  )}
+  {person.nextTasks?.[0] && (
+    <a class="soft-row accent" href={person.nextTasks[0].sourceHref || person.nextTasks[0].href}>
+      <span>Ближайшая задача</span>
+      <strong>{person.nextTasks[0].actionText}</strong>
+    </a>
+  )}
+</article>
+

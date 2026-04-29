@@ -1,0 +1,68 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import { dashboard } from "../lib/ui";
+---
+
+<AppLayout title="Поиск · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Поиск</p>
+    <h1>Поиск по базе</h1>
+    <p>Ищет по событиям, документам, задачам и профилям.</p>
+  </section>
+  <section class="card search-page">
+    <label class="sr-only" for="page-search">Поиск</label>
+    <input id="page-search" type="search" placeholder="Например: холестерин, УЗИ, витамин D" autofocus />
+    <div id="search-results" class="search-results"></div>
+  </section>
+  <script is:inline define:vars={{ items: dashboard.searchItems }}>
+    (() => {
+    const input = document.getElementById("page-search");
+    const results = document.getElementById("search-results");
+    const params = new URLSearchParams(window.location.search);
+    input.value = params.get("q") || "";
+
+    function render() {
+      const q = input.value.trim().toLowerCase();
+      const found = q
+        ? items.filter((item) => `${item.title} ${item.subtitle} ${item.text}`.toLowerCase().includes(q)).slice(0, 50)
+        : [];
+      results.innerHTML = "";
+      if (!q) {
+        results.innerHTML = '<p class="empty">Введите запрос.</p>';
+        return;
+      }
+      if (!found.length) {
+        results.innerHTML = '<p class="empty">Ничего не найдено.</p>';
+        return;
+      }
+      const labels = { person: "Человек", event: "Событие", document: "Документ", task: "Задача" };
+      const grouped = found.reduce((acc, item) => {
+        const label = labels[item.type] || item.type;
+        (acc[label] ||= []).push(item);
+        return acc;
+      }, {});
+      for (const [group, groupItems] of Object.entries(grouped)) {
+        const title = document.createElement("h2");
+        title.className = "search-group-title";
+        title.textContent = group;
+        results.append(title);
+        for (const item of groupItems) {
+        const row = document.createElement("a");
+        row.className = "search-result";
+        row.href = item.href;
+          const type = document.createElement("span");
+          type.textContent = labels[item.type] || item.type;
+          const strong = document.createElement("strong");
+          strong.textContent = item.title || "";
+          const small = document.createElement("small");
+          small.textContent = item.subtitle || "";
+          row.append(type, strong, small);
+        results.append(row);
+        }
+      }
+    }
+    input.addEventListener("input", render);
+    render();
+    })();
+  </script>
+</AppLayout>

@@ -1,0 +1,40 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import { dashboard } from "../lib/ui";
+
+type DataIssue = {
+  severity: string;
+  message: string;
+};
+
+const issues = dashboard.issues as DataIssue[];
+---
+
+<AppLayout title="Служебное · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Служебное</p>
+    <h1>Обновление базы</h1>
+    <p>Техническая зона для владельца базы.</p>
+  </section>
+  <section class="detail-grid">
+    <article class="card prose">
+      <h2>Рабочий процесс</h2>
+      <ol>
+        <li>Редактировать заметки и документы локально в Obsidian-хранилище.</li>
+        <li>Обновить индексы и данные сайта.</li>
+        <li>Сделать commit и push в GitHub.</li>
+        <li>GitHub Actions пересоберёт статический сайт.</li>
+      </ol>
+    </article>
+    <article class="card">
+      <h2>Проблемы данных</h2>
+      {issues.length ? (
+        <ul class="issue-list">
+          {issues.map((issue) => <li><strong>{issue.severity}</strong> {issue.message}</li>)}
+        </ul>
+      ) : (
+        <p class="empty">Существенных проблем данных нет.</p>
+      )}
+    </article>
+  </section>
+</AppLayout>

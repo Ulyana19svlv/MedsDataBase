@@ -1,0 +1,67 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import EventCard from "../../components/EventCard.astro";
+import DocumentList from "../../components/DocumentList.astro";
+import TaskBoard from "../../components/TaskBoard.astro";
+import { ageText, dashboard, formatDate } from "../../lib/ui";
+
+export function getStaticPaths() {
+  return dashboard.people.map((person) => ({ params: { personSlug: person.slug }, props: { person } }));
+}
+
+const { person } = Astro.props;
+const events = dashboard.events.filter((event) => event.personSlug === person.slug);
+const documents = dashboard.documents.filter((document) => document.person === person.name);
+const tasks = dashboard.tasks.filter((task) => task.personSlug === person.slug);
+---
+
+<AppLayout title={`${person.name} · Медицинская база`}>
+  <section class="page-header">
+    <p class="eyebrow">Профиль</p>
+    <h1>{person.name}</h1>
+    <p>{ageText(person.birthDate) || person.importantStatus || "Основная медицинская информация"}</p>
+  </section>
+
+  <section class="profile-grid">
+    <article class="card">
+      <h2>Основное</h2>
+      <dl class="details-list">
+        <div><dt>Дата рождения</dt><dd>{person.birthDate ? formatDate(person.birthDate) : person.birthDateText || "Не указана"}</dd></div>
+        <div><dt>Группа крови</dt><dd>{person.bloodType || "Не указана"}</dd></div>
+        <div><dt>Резус-фактор</dt><dd>{person.rhFactor || "Не указан"}</dd></div>
+        {person.importantStatus && <div><dt>Статус</dt><dd>{person.importantStatus}</dd></div>}
+      </dl>
+    </article>
+    <article class="card">
+      <h2>Сводка</h2>
+      <dl class="mini-stats">
+        <div><dt>События</dt><dd>{person.eventCount}</dd></div>
+        <div><dt>Документы</dt><dd>{person.documentCount}</dd></div>
+        <div><dt>Задачи</dt><dd>{tasks.length}</dd></div>
+      </dl>
+      {person.specialtySummary?.length > 0 && (
+        <div class="chip-row spacious">
+          {person.specialtySummary.map((item) => <span class="chip">{item.label}: {item.count}</span>)}
+        </div>
+      )}
+    </article>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Задачи</h2></div>
+    <TaskBoard tasks={tasks} />
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Таймлайн</h2></div>
+    <div class="event-list">
+      {events.map((event) => <EventCard event={event} />)}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Документы</h2></div>
+    <DocumentList documents={documents} />
+  </section>
+</AppLayout>
+

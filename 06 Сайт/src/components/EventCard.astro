@@ -1,0 +1,23 @@
+---
+import { excerpt, formatDateShort } from "../lib/ui";
+
+const { event, compact = false } = Astro.props;
+---
+
+<article class:list={["card", "event-card", compact && "compact"]}>
+  <div class="event-date">{formatDateShort(event.date)}</div>
+  <div class="event-main">
+    <div class="chip-row">
+      <span class="chip">{event.person}</span>
+      <span class="chip muted">{event.eventTypeLabel || event.eventType}</span>
+      <span class="chip muted">{event.specialty}</span>
+    </div>
+    <h3><a href={event.href}>{event.title}</a></h3>
+    {(event.doctor || event.clinic) && <p class="muted-text">{[event.doctor, event.clinic].filter(Boolean).join(" · ")}</p>}
+    {!compact && event.summary?.length > 0 && <p>{excerpt(event.summary, 180)}</p>}
+  </div>
+  <div class="event-side">
+    {event.sourceFiles?.length > 0 ? <span class="doc-badge">{event.sourceFiles.length} док.</span> : <span class="doc-badge muted">без файла</span>}
+  </div>
+</article>
+

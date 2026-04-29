@@ -1,0 +1,44 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import EventCard from "../../components/EventCard.astro";
+import { dashboard } from "../../lib/ui";
+
+const people = [...new Set(dashboard.events.map((event) => event.person))].sort((a, b) => a.localeCompare(b, "ru"));
+const types = [...new Map(dashboard.events.map((event) => [event.eventTypeId, event.eventTypeLabel])).entries()];
+const specialties = [...new Set(dashboard.events.map((event) => event.specialty))].sort((a, b) => a.localeCompare(b, "ru"));
+---
+
+<AppLayout title="Все события · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Журнал</p>
+    <h1>Все события</h1>
+    <p>Общий хронологический журнал приёмов, анализов, исследований и консультаций.</p>
+  </section>
+  <section class="filter-panel" data-filter-panel>
+    <label>Человек<select data-filter="person"><option value="">Все</option>{people.map((person) => <option value={person}>{person}</option>)}</select></label>
+    <label>Тип<select data-filter="type"><option value="">Все</option>{types.map(([id, label]) => <option value={id}>{label}</option>)}</select></label>
+    <label>Направление<select data-filter="specialty"><option value="">Все</option>{specialties.map((item) => <option value={item}>{item}</option>)}</select></label>
+  </section>
+  <div class="event-list filterable-list">
+    {dashboard.events.map((event) => (
+      <div data-person={event.person} data-type={event.eventTypeId} data-specialty={event.specialty}>
+        <EventCard event={event} />
+      </div>
+    ))}
+  </div>
+  <script is:inline>
+    (() => {
+    const panel = document.querySelector("[data-filter-panel]");
+    const items = [...document.querySelectorAll(".filterable-list > div")];
+    panel?.addEventListener("change", () => {
+      const values = Object.fromEntries([...panel.querySelectorAll("[data-filter]")].map((el) => [el.dataset.filter, el.value]));
+      for (const item of items) {
+        const show = (!values.person || item.dataset.person === values.person)
+          && (!values.type || item.dataset.type === values.type)
+          && (!values.specialty || item.dataset.specialty === values.specialty);
+        item.hidden = !show;
+      }
+    });
+    })();
+  </script>
+</AppLayout>

@@ -1,0 +1,37 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import DocumentList from "../../components/DocumentList.astro";
+import { dashboard } from "../../lib/ui";
+
+const linked = dashboard.documents.filter((document) => document.isLinkedToEvent);
+const unlinked = dashboard.documents.filter((document) => !document.isLinkedToEvent);
+---
+
+<AppLayout title="Документы · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Файлы</p>
+    <h1>Документы</h1>
+    <p data-documents-default-copy>PDF и изображения, найденные в хранилище. Часть файлов уже привязана к медицинским записям.</p>
+    <p data-documents-filtered-copy hidden>Показаны документы, для которых пока нет отдельного описания события.</p>
+    <a class="button secondary inline-button" href={dashboard.basePath + "/documents"} data-documents-clear hidden>Показать все документы</a>
+  </section>
+  <section>
+    <div class="section-title"><h2>Нет описания события</h2><span>{unlinked.length}</span></div>
+    <DocumentList documents={unlinked} />
+  </section>
+  <section data-documents-linked-section>
+    <div class="section-title"><h2>Привязаны к записям</h2><span>{linked.length}</span></div>
+    <DocumentList documents={linked} />
+  </section>
+  <script is:inline>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("status") !== "document_only") return;
+
+      document.querySelector("[data-documents-linked-section]")?.setAttribute("hidden", "");
+      document.querySelector("[data-documents-default-copy]")?.setAttribute("hidden", "");
+      document.querySelector("[data-documents-filtered-copy]")?.removeAttribute("hidden");
+      document.querySelector("[data-documents-clear]")?.removeAttribute("hidden");
+    })();
+  </script>
+</AppLayout>

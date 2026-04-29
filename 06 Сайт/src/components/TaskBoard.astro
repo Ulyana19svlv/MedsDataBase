@@ -1,0 +1,97 @@
+---
+import { formatDateShort, groupTasks } from "../lib/ui";
+
+const { tasks } = Astro.props;
+const taskItems = tasks || [];
+const groups = groupTasks(taskItems);
+---
+
+<section class="task-board" data-task-board>
+  {groups.map((group) => (
+    <div class:list={["task-column", group.id]} data-task-column={group.id} hidden={group.tasks.length === 0}>
+      <h3>{group.title}</h3>
+      <div class="task-list" data-task-list>
+        {group.tasks.map((task) => (
+          <a class="task-card" href={task.sourceHref || task.href} data-task-card data-due-date={task.dueDate || ""}>
+            <span class="task-status">{task.state.label}</span>
+            <span class="task-date">{formatDateShort(task.dueDate)}</span>
+            <strong>{task.actionText}</strong>
+            <span>{task.person} · {task.specialty}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+  {taskItems.length === 0 && <p class="empty">Задач пока нет.</p>}
+  <script is:inline>
+    (() => {
+    const dayMs = 24 * 60 * 60 * 1000;
+    const stateLabels = {
+      overdue: "Просрочено",
+      week: "На этой неделе",
+      month: "В этом месяце",
+      later: "Позже",
+      unknown: "Без даты",
+    };
+
+    function dateOnly(value) {
+      if (!value) return null;
+      const parts = value.split("-").map(Number);
+      if (parts.length !== 3 || parts.some(Number.isNaN)) return null;
+      const date = new Date(parts[0], parts[1] - 1, parts[2]);
+      if (
+        date.getFullYear() !== parts[0] ||
+        date.getMonth() !== parts[1] - 1 ||
+        date.getDate() !== parts[2]
+      ) {
+        return null;
+      }
+      return date;
+    }
+
+    function taskState(dueDate) {
+      const due = dateOnly(dueDate);
+      if (!due) return { bucket: "unknown", label: stateLabels.unknown };
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const diffDays = Math.round((due.getTime() - today.getTime()) / dayMs);
+      if (diffDays < 0) return { bucket: "overdue", label: stateLabels.overdue };
+      if (diffDays <= 7) return { bucket: "week", label: stateLabels.week };
+      if (diffDays <= 31) return { bucket: "month", label: stateLabels.month };
+      return { bucket: "later", label: stateLabels.later };
+    }
+
+    function refreshTaskBoard(board) {
+      const columns = new Map(
+        Array.from(board.querySelectorAll("[data-task-column]")).map((column) => [
+          column.getAttribute("data-task-column"),
+          column,
+        ]),
+      );
+      const cards = Array.from(board.querySelectorAll("[data-task-card]"));
+
+      for (const card of cards) {
+        const state = taskState(card.getAttribute("data-due-date"));
+        const status = card.querySelector(".task-status");
+        const targetList = columns.get(state.bucket)?.querySelector("[data-task-list]");
+        if (status) status.textContent = state.label;
+        targetList?.append(card);
+      }
+
+      for (const column of columns.values()) {
+        const list = column.querySelector("[data-task-list]");
+        const sortedCards = Array.from(list?.querySelectorAll("[data-task-card]") || []).sort((a, b) => {
+          const aDate = a.getAttribute("data-due-date") || "9999-12-31";
+          const bDate = b.getAttribute("data-due-date") || "9999-12-31";
+          return aDate.localeCompare(bDate);
+        });
+        sortedCards.forEach((card) => list?.append(card));
+        column.toggleAttribute("hidden", sortedCards.length === 0);
+      }
+    }
+
+    document.querySelectorAll("[data-task-board]").forEach(refreshTaskBoard);
+    })();
+  </script>
+</section>

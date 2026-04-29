@@ -1,0 +1,32 @@
+---
+import { formatDateShort } from "../lib/ui";
+
+interface DocumentItem {
+  href: string;
+  fileName: string;
+  person?: string;
+  date?: string;
+  specialty?: string;
+  isLinkedToEvent: boolean;
+  linkStatusLabel: string;
+  publicUrl: string;
+}
+
+const { documents } = Astro.props as { documents: DocumentItem[] };
+---
+
+<div class="document-list">
+  {documents.map((document) => (
+    <article class="document-row">
+      <div>
+        <h3><a href={document.href}>{document.fileName}</a></h3>
+        <p>{[document.person, formatDateShort(document.date), document.specialty].filter(Boolean).join(" · ")}</p>
+      </div>
+      <div class="document-actions">
+        <span class:list={["status-pill", document.isLinkedToEvent ? "linked" : "unlinked"]}>{document.linkStatusLabel}</span>
+        <a class="button secondary" href={document.publicUrl} target="_blank" rel="noreferrer">Открыть</a>
+      </div>
+    </article>
+  ))}
+  {documents.length === 0 && <p class="empty">Документов нет.</p>}
+</div>

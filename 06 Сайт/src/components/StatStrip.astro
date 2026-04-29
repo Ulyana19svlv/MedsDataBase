@@ -1,0 +1,19 @@
+---
+const { stats } = Astro.props;
+const items = [
+  ["Люди", stats.people],
+  ["События", stats.events],
+  ["Документы", stats.documents],
+  ["Задачи", stats.tasks],
+];
+---
+
+<dl class="stat-strip">
+  {items.map(([label, value]) => (
+    <div>
+      <dt>{label}</dt>
+      <dd>{value}</dd>
+    </div>
+  ))}
+</dl>
+

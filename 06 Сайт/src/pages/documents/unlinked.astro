@@ -1,0 +1,20 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import DocumentList from "../../components/DocumentList.astro";
+import { dashboard, pageHref } from "../../lib/ui";
+
+const unlinked = dashboard.documents.filter((document) => !document.isLinkedToEvent);
+---
+
+<AppLayout title="Документы без описания · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Файлы</p>
+    <h1>Документы без описания события</h1>
+    <p>Показаны документы, для которых пока нет отдельной медицинской записи. Это помогает быстро найти файлы, которые нужно описать в Obsidian.</p>
+    <a class="button secondary inline-button" href={pageHref("/documents")}>Показать все документы</a>
+  </section>
+  <section>
+    <div class="section-title"><h2>Нет описания события</h2><span>{unlinked.length}</span></div>
+    <DocumentList documents={unlinked} />
+  </section>
+</AppLayout>
