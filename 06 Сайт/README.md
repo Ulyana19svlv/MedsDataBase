@@ -7,6 +7,7 @@
 ```powershell
 npm ci
 npm run check
+npm run validate:ops
 npm run validate:data
 npm run validate:assets
 npm run build
@@ -18,9 +19,10 @@ npm run preview
 ## Обновление данных
 
 1. Отредактировать Obsidian-хранилище локально.
-2. Проверить изменения командой `npm run validate:data` из папки `06 Сайт`.
-3. Собрать сайт командой `npm run build`.
-4. Закоммитить и запушить изменения в `main`.
+2. Проверить операционный слой командой `npm run validate:ops` из папки `06 Сайт`.
+3. Проверить данные дашборда командой `npm run validate:data`.
+4. Собрать сайт командой `npm run build`.
+5. Закоммитить и запушить изменения в `main`.
 
 После push GitHub Actions пересобирает сайт и публикует `06 Сайт/dist` в GitHub Pages. Workflow также запускается раз в сутки, чтобы статусы задач по датам не зависали без нового коммита.
 
@@ -29,6 +31,7 @@ npm run preview
 ```powershell
 npm run dev
 npm run check
+npm run validate:ops
 npm run build
 npm run preview
 npm run validate:data

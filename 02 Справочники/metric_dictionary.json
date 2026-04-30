@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "metrics": [
+    { "id": "total_cholesterol", "label": "Общий холестерин", "category": "lipids", "default_unit": "mmol/L", "aliases": ["общий холестерин", "холестерин общий", "cholesterol total", "total cholesterol"] },
+    { "id": "ldl_cholesterol", "label": "ЛПНП", "category": "lipids", "default_unit": "mmol/L", "aliases": ["лпнп", "холестерин лпнп", "ldl", "ldl-c"] },
+    { "id": "hdl_cholesterol", "label": "ЛПВП", "category": "lipids", "default_unit": "mmol/L", "aliases": ["лпвп", "холестерин лпвп", "hdl", "hdl-c"] },
+    { "id": "triglycerides", "label": "Триглицериды", "category": "lipids", "default_unit": "mmol/L", "aliases": ["триглицериды", "tg", "triglycerides"] },
+    { "id": "glucose", "label": "Глюкоза", "category": "carbohydrate_metabolism", "default_unit": "mmol/L", "aliases": ["глюкоза", "glucose"] },
+    { "id": "hba1c", "label": "HbA1c", "category": "carbohydrate_metabolism", "default_unit": "%", "aliases": ["гликированный гемоглобин", "hba1c", "hb a1c"] },
+    { "id": "tsh", "label": "ТТГ", "category": "thyroid", "default_unit": "mIU/L", "aliases": ["ттг", "tsh"] },
+    { "id": "free_t4", "label": "Свободный Т4", "category": "thyroid", "default_unit": "pmol/L", "aliases": ["свободный т4", "т4 свободный", "free t4", "ft4"] },
+    { "id": "free_t3", "label": "Свободный Т3", "category": "thyroid", "default_unit": "pmol/L", "aliases": ["свободный т3", "т3 свободный", "free t3", "ft3"] },
+    { "id": "hemoglobin", "label": "Гемоглобин", "category": "cbc", "default_unit": "g/L", "aliases": ["гемоглобин", "hb", "hgb"] },
+    { "id": "ferritin", "label": "Ферритин", "category": "iron", "default_unit": "ng/mL", "aliases": ["ферритин", "ferritin"] },
+    { "id": "vitamin_d", "label": "25(OH)D / витамин D", "category": "vitamins", "default_unit": "ng/mL", "aliases": ["витамин d", "25-oh d", "25(oh)d", "25 hydroxyvitamin d"] },
+    { "id": "alt", "label": "АЛТ", "category": "liver", "default_unit": "U/L", "aliases": ["алт", "alanine aminotransferase", "alt"] },
+    { "id": "ast", "label": "АСТ", "category": "liver", "default_unit": "U/L", "aliases": ["аст", "aspartate aminotransferase", "ast"] },
+    { "id": "creatinine", "label": "Креатинин", "category": "kidney", "default_unit": "umol/L", "aliases": ["креатинин", "creatinine"] },
+    { "id": "crp", "label": "C-реактивный белок", "category": "inflammation", "default_unit": "mg/L", "aliases": ["с-реактивный белок", "с реактивный белок", "crp", "c-reactive protein"] }
+  ]
+}

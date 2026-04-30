@@ -40,6 +40,10 @@ jobs:
         run: npm run validate:data
         working-directory: "06 Сайт"
 
+      - name: Validate operational layer
+        run: npm run validate:ops
+        working-directory: "06 Сайт"
+
       - name: Check Astro project
         run: npm run check
         working-directory: "06 Сайт"
