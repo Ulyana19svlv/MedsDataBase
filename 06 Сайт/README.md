@@ -26,12 +26,24 @@ npm run preview
 
 После push GitHub Actions пересобирает сайт и публикует `06 Сайт/dist` в GitHub Pages. Workflow также запускается раз в сутки, чтобы статусы задач по датам не зависали без нового коммита.
 
+## Входящий агент
+
+1. Положить новый PDF, фото или текст в `04 Входящие/00 Новые файлы`.
+2. Запустить `npm run agent:intake` из папки `06 Сайт`.
+3. Проверить черновик в `04 Входящие/10 Черновики AI`.
+4. Если черновик корректный, поставить во frontmatter `status: approved`.
+5. Запустить `npm run agent:promote`, чтобы создать событие в `01 Члены семьи`.
+
+Для проверки без записи файлов доступны `npm run agent:intake -- --dry-run` и `npm run agent:promote -- --dry-run`.
+
 ## Полезные команды
 
 ```powershell
 npm run dev
 npm run check
 npm run validate:ops
+npm run agent:intake
+npm run agent:promote
 npm run build
 npm run preview
 npm run validate:data

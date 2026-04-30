@@ -8,6 +8,7 @@
     "approved": "04 Входящие/30 Одобрено",
     "processed": "04 Входящие/90 Обработано",
     "errors": "04 Входящие/99 Ошибки",
+    "intake_state": "04 Входящие/intake-state.json",
     "metrics": "07 Показатели/metrics.json",
     "tasks": "08 Задачи/tasks.json",
     "watchlist": "09 Наблюдение/watchlist.json"

@@ -25,6 +25,7 @@ const requiredJsonFiles = [
   "02 Справочники/document_types.json",
   "02 Справочники/metric_dictionary.json",
   "02 Справочники/agent_contract.json",
+  "04 Входящие/intake-state.json",
   "07 Показатели/metrics.json",
   "08 Задачи/tasks.json",
   "09 Наблюдение/watchlist.json",
@@ -94,6 +95,7 @@ const specialtiesJson = await readJson("02 Справочники/specialties.js
 const documentTypesJson = await readJson("02 Справочники/document_types.json");
 const metricsDictionaryJson = await readJson("02 Справочники/metric_dictionary.json");
 const agentContractJson = await readJson("02 Справочники/agent_contract.json");
+const intakeStateJson = await readJson("04 Входящие/intake-state.json");
 const metricsJson = await readJson("07 Показатели/metrics.json");
 const tasksJson = await readJson("08 Задачи/tasks.json");
 const watchlistJson = await readJson("09 Наблюдение/watchlist.json");
@@ -102,6 +104,7 @@ const people = requireArray("people.json", peopleJson, "people");
 const specialties = requireArray("specialties.json", specialtiesJson, "specialties");
 const documentTypes = requireArray("document_types.json", documentTypesJson, "document_types");
 const metricDictionary = requireArray("metric_dictionary.json", metricsDictionaryJson, "metrics");
+const intakeStateFiles = requireArray("intake-state.json", intakeStateJson, "files");
 const metricRecords = requireArray("metrics.json", metricsJson, "records");
 const taskRecords = requireArray("tasks.json", tasksJson, "records");
 const watchlistRecords = requireArray("watchlist.json", watchlistJson, "records");
@@ -113,6 +116,30 @@ const metricIds = checkUniqueIds("metric_dictionary", metricDictionary);
 checkUniqueIds("metrics.records", metricRecords);
 checkUniqueIds("tasks.records", taskRecords);
 checkUniqueIds("watchlist.records", watchlistRecords);
+
+const intakeFingerprints = new Set();
+for (const record of intakeStateFiles) {
+  if (!record.fingerprint) errors.push("intake-state.files: record without fingerprint");
+  if (record.fingerprint && intakeFingerprints.has(record.fingerprint)) {
+    errors.push(`intake-state.files: duplicate fingerprint "${record.fingerprint}"`);
+  }
+  if (record.fingerprint) intakeFingerprints.add(record.fingerprint);
+  if (record.source_file && !(await exists(record.source_file)) && !record.source_file_processed) {
+    warnings.push(`intake-state.files: source file does not exist anymore: ${record.source_file}`);
+  }
+  if (record.draft_file && !(await exists(record.draft_file)) && !record.draft_file_processed) {
+    warnings.push(`intake-state.files: draft file does not exist anymore: ${record.draft_file}`);
+  }
+  if (record.draft_file_processed && !(await exists(record.draft_file_processed))) {
+    warnings.push(`intake-state.files: processed draft file does not exist: ${record.draft_file_processed}`);
+  }
+  if (record.source_file_processed && !(await exists(record.source_file_processed))) {
+    warnings.push(`intake-state.files: processed source file does not exist: ${record.source_file_processed}`);
+  }
+  if (record.event_file && !(await exists(record.event_file))) {
+    warnings.push(`intake-state.files: event file does not exist: ${record.event_file}`);
+  }
+}
 
 for (const person of people) {
   if (!person.name) errors.push(`people: "${person.id}" is missing name`);

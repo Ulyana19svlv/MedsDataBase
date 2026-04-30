@@ -8,6 +8,8 @@
     "validate:data": "node scripts/generate-data.mjs --validate",
     "validate:ops": "node scripts/validate-operational-layer.mjs",
     "validate:assets": "node scripts/validate-assets.mjs",
+    "agent:intake": "node scripts/intake-agent.mjs scan",
+    "agent:promote": "node scripts/intake-agent.mjs promote",
     "dev:data": "node scripts/generate-data.mjs --dev-assets",
     "dev": "astro dev --host 127.0.0.1",
     "check": "astro check",
