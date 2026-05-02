@@ -10,9 +10,15 @@ const command = args.find((arg) => !arg.startsWith("--")) || "scan";
 const flags = new Set(args.filter((arg) => arg.startsWith("--")));
 const dryRun = flags.has("--dry-run");
 const includeAll = flags.has("--all");
+const noAi = flags.has("--no-ai");
+const moveErrors = flags.has("--move-errors");
+
+loadEnvFile(path.join(repoRoot, ".env"));
+loadEnvFile(path.join(repoRoot, "06 Сайт", ".env"));
 
 const inboxDir = path.join(repoRoot, "04 Входящие");
 const statePath = path.join(inboxDir, "intake-state.json");
+const openaiModel = process.env.OPENAI_MODEL || "gpt-4o-mini";
 
 const paths = {
   inboxNew: path.join(inboxDir, "00 Новые файлы"),
@@ -24,7 +30,9 @@ const paths = {
 };
 
 const textExtensions = new Set([".txt", ".md", ".csv", ".json"]);
-const knownAssetExtensions = new Set([".pdf", ".jpg", ".jpeg", ".png"]);
+const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp"]);
+const pdfExtensions = new Set([".pdf"]);
+const allowedExtensions = new Set([...textExtensions, ...imageExtensions, ...pdfExtensions]);
 
 function usage() {
   console.log(`Medical intake agent
@@ -32,17 +40,36 @@ function usage() {
 Usage:
   npm run agent:intake
   npm run agent:intake -- --dry-run
+  npm run agent:intake -- --no-ai
+  npm run agent:intake -- --move-errors
   npm run agent:promote
   npm run agent:promote -- --dry-run
 
 Commands:
-  scan      Create AI-review drafts for files in "04 Входящие/00 Новые файлы".
-  promote   Convert approved drafts into medical_event notes and copy source files.
+  scan      Read files in "04 Входящие/00 Новые файлы", rename them, and create AI-review drafts.
+  promote   Convert approved drafts into medical_event notes and copy renamed source files.
+
+Environment:
+  OPENAI_API_KEY is required for PDF/image content extraction.
+  OPENAI_MODEL is optional; default: ${openaiModel}.
 
 Safety:
-  scan never writes to "01 Члены семьи".
+  scan renames files only inside "04 Входящие/00 Новые файлы" and creates drafts.
+  Failed files stay in place unless --move-errors is passed.
   promote only processes drafts with status: approved.
 `);
+}
+
+function loadEnvFile(filePath) {
+  if (!fs.existsSync(filePath)) return;
+  const lines = fs.readFileSync(filePath, "utf8").split(/\r?\n/);
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (!match || process.env[match[1]]) continue;
+    process.env[match[1]] = match[2].replace(/^["']|["']$/g, "");
+  }
 }
 
 async function readJson(relativePath) {
@@ -98,12 +125,8 @@ async function walkFiles(dir, output = []) {
 }
 
 async function fileFingerprint(filePath) {
-  const stat = await fsp.stat(filePath);
-  const hash = crypto.createHash("sha256");
-  hash.update(repoRelative(filePath));
-  hash.update(String(stat.size));
-  hash.update(String(stat.mtimeMs));
-  return hash.digest("hex").slice(0, 16);
+  const bytes = await fsp.readFile(filePath);
+  return crypto.createHash("sha256").update(bytes).digest("hex").slice(0, 16);
 }
 
 function normalizeText(value) {
@@ -151,9 +174,39 @@ function bestByAliases(text, records, fallbackId) {
   return { record: fallback, score: 0 };
 }
 
+function byId(records, id) {
+  return records.find((record) => record.id === id) || null;
+}
+
+function sanitizeFilenamePart(value, fallback = "Документ") {
+  const clean = stripMarkdown(value || fallback)
+    .normalize("NFC")
+    .replace(/[<>:"/\\|?*\u0000-\u001F]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/[. ]+$/g, "")
+    .trim();
+  return clean || fallback;
+}
+
+function uniqueDisplayTitle(parts) {
+  return parts.map((part) => sanitizeFilenamePart(part, "")).filter(Boolean).join(" — ");
+}
+
+async function uniquePath(targetPath) {
+  if (!fs.existsSync(targetPath)) return targetPath;
+  const dir = path.dirname(targetPath);
+  const ext = path.extname(targetPath);
+  const base = path.basename(targetPath, ext);
+  for (let index = 2; index < 100; index += 1) {
+    const candidate = path.join(dir, `${base} (${index})${ext}`);
+    if (!fs.existsSync(candidate)) return candidate;
+  }
+  throw new Error(`Cannot create unique path for ${targetPath}`);
+}
+
 function detectClinic(text) {
   const patterns = [
-    /(?:клиника|медицинский центр|мц|лаборатория)\s*[:\-]?\s*([^\n\r.;]+)/iu,
+    /(?:клиника|медицинский центр|мц|лаборатория|центр)\s*[:\-]?\s*([^\n\r.;]+)/iu,
     /(?:организация|учреждение)\s*[:\-]?\s*([^\n\r.;]+)/iu,
   ];
   for (const pattern of patterns) {
@@ -165,8 +218,8 @@ function detectClinic(text) {
 
 function detectDoctor(text) {
   const patterns = [
-    /(?:врач|доктор|специалист)\s*[:\-]?\s*([А-ЯЁ][А-ЯЁа-яё\-]+(?:\s+[А-ЯЁ][А-ЯЁа-яё\-]+){1,2})/u,
-    /([А-ЯЁ][А-ЯЁа-яё\-]+\s+[А-ЯЁ][А-ЯЁа-яё\-]+\s+[А-ЯЁ][А-ЯЁа-яё\-]+)\s*(?:врач|доктор|специалист)/u,
+    /(?:врач|доктор|специалист)\s*[:\-]?\s*([А-ЯЁ][А-ЯЁа-яё-]+(?:\s+[А-ЯЁ][А-ЯЁа-яё-]+){1,2})/u,
+    /([А-ЯЁ][А-ЯЁа-яё-]+\s+[А-ЯЁ][А-ЯЁа-яё-]+\s+[А-ЯЁ][А-ЯЁа-яё-]+)\s*(?:врач|доктор|специалист)/u,
   ];
   for (const pattern of patterns) {
     const match = text.match(pattern);
@@ -186,7 +239,7 @@ function summarizeText(text, fallback) {
     .filter((line) => line.length >= 12 && !/^[-_=]+$/.test(line));
 
   if (!lines.length) return [`Текст документа не извлечен автоматически. Проверьте исходный файл: ${fallback}.`];
-  return lines.slice(0, 5);
+  return lines.slice(0, 6);
 }
 
 function detectMetricCandidates(text, metricDictionary) {
@@ -206,6 +259,8 @@ function detectMetricCandidates(text, metricDictionary) {
       label: metric.label,
       value: match?.[1]?.replace(/\s+/g, "")?.replace(",", ".") || "",
       unit: match?.[2] || metric.default_unit || "",
+      reference: "",
+      comment: "",
     });
   }
 
@@ -223,27 +278,27 @@ function detectTaskCandidates(text) {
     .slice(0, 8);
 }
 
-async function extractText(filePath) {
+async function readTextFallback(filePath) {
   const ext = path.extname(filePath).toLowerCase();
-  if (textExtensions.has(ext)) {
+  if (!textExtensions.has(ext)) {
     return {
-      text: await fsp.readFile(filePath, "utf8"),
-      extraction: "text",
-      extractionWarning: "",
+      text: path.basename(filePath),
+      extraction: "metadata_only",
+      extractionWarning:
+        ext === ".pdf"
+          ? "PDF не был прочитан по содержимому, потому что не задан OPENAI_API_KEY."
+          : "Изображение не было прочитано по содержимому, потому что не задан OPENAI_API_KEY.",
     };
   }
 
   return {
-    text: path.basename(filePath),
-    extraction: knownAssetExtensions.has(ext) ? "metadata_only" : "unsupported",
-    extractionWarning:
-      ext === ".pdf"
-        ? "PDF пока разобран только по имени файла. Для содержимого нужен следующий слой: OCR/LLM или PDF text extraction."
-        : "Файл пока разобран только по имени файла. Для фото нужен OCR/LLM-слой.",
+    text: await fsp.readFile(filePath, "utf8"),
+    extraction: "text",
+    extractionWarning: "",
   };
 }
 
-function buildAnalysis(filePath, extractedText, references) {
+function localAnalysis(filePath, extractedText, references) {
   const fileName = path.basename(filePath);
   const textForDetection = `${fileName}\n${extractedText.text}`;
   const person = bestByAliases(textForDetection, references.people, null);
@@ -252,8 +307,6 @@ function buildAnalysis(filePath, extractedText, references) {
   const eventDate = detectDate(textForDetection, fileName);
   const doctor = detectDoctor(extractedText.text);
   const clinic = detectClinic(extractedText.text);
-  const metrics = detectMetricCandidates(extractedText.text, references.metrics);
-  const tasks = detectTaskCandidates(extractedText.text);
 
   let confidencePoints = 0;
   if (person.score > 0) confidencePoints += 2;
@@ -262,24 +315,289 @@ function buildAnalysis(filePath, extractedText, references) {
   if (documentType.score > 0) confidencePoints += 1;
   if (extractedText.extraction === "text") confidencePoints += 1;
 
-  const confidence = confidencePoints >= 6 ? "high" : confidencePoints >= 3 ? "medium" : "low";
+  return normalizeAnalysis(
+    {
+      person_id: person.record?.id || "",
+      person_name: person.record?.name || "",
+      event_date: eventDate || "",
+      document_type_id: documentType.record?.id || "unknown",
+      document_title: "",
+      specialty_id: specialty.record?.id || "other",
+      specialty_label: specialty.record?.label || "",
+      doctor,
+      clinic,
+      summary: summarizeText(extractedText.text, fileName),
+      metrics: detectMetricCandidates(extractedText.text, references.metrics),
+      tasks: detectTaskCandidates(extractedText.text),
+      confidence: confidencePoints >= 6 ? "high" : confidencePoints >= 3 ? "medium" : "low",
+      needs_human_review: true,
+      uncertainties: [extractedText.extractionWarning].filter(Boolean),
+      recommended_file_title: "",
+    },
+    references,
+    filePath,
+    extractedText.extraction,
+    extractedText.extractionWarning,
+  );
+}
+
+function extractionSchema() {
+  return {
+    type: "object",
+    additionalProperties: false,
+    required: [
+      "person_id",
+      "person_name",
+      "event_date",
+      "document_type_id",
+      "document_title",
+      "specialty_id",
+      "specialty_label",
+      "doctor",
+      "clinic",
+      "summary",
+      "metrics",
+      "tasks",
+      "confidence",
+      "needs_human_review",
+      "uncertainties",
+      "recommended_file_title",
+    ],
+    properties: {
+      person_id: { type: "string" },
+      person_name: { type: "string" },
+      event_date: { type: "string", description: "YYYY-MM-DD or empty string if unknown" },
+      document_type_id: { type: "string" },
+      document_title: { type: "string", description: "Short human title in Russian, e.g. Кардиолог, Анализ крови, УЗИ щитовидной железы" },
+      specialty_id: { type: "string" },
+      specialty_label: { type: "string" },
+      doctor: { type: "string" },
+      clinic: { type: "string" },
+      summary: { type: "array", items: { type: "string" } },
+      metrics: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          required: ["metric_id", "label", "value", "unit", "reference", "comment"],
+          properties: {
+            metric_id: { type: "string" },
+            label: { type: "string" },
+            value: { type: "string" },
+            unit: { type: "string" },
+            reference: { type: "string" },
+            comment: { type: "string" },
+          },
+        },
+      },
+      tasks: { type: "array", items: { type: "string" } },
+      confidence: { type: "string", enum: ["high", "medium", "low"] },
+      needs_human_review: { type: "boolean" },
+      uncertainties: { type: "array", items: { type: "string" } },
+      recommended_file_title: { type: "string" },
+    },
+  };
+}
+
+function responseOutputText(response) {
+  if (response.output_text) return response.output_text;
+  for (const item of response.output || []) {
+    for (const content of item.content || []) {
+      if (content.type === "output_text" && content.text) return content.text;
+    }
+  }
+  return "";
+}
+
+function dataUrlForImage(filePath, base64) {
+  const ext = path.extname(filePath).toLowerCase();
+  const mime =
+    ext === ".png" ? "image/png" : ext === ".webp" ? "image/webp" : ext === ".jpg" || ext === ".jpeg" ? "image/jpeg" : "application/octet-stream";
+  return `data:${mime};base64,${base64}`;
+}
+
+async function aiExtract(filePath, references) {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error("OPENAI_API_KEY is required to read PDF/image contents. Add it to .env or environment variables.");
+  }
+
+  const stat = await fsp.stat(filePath);
+  if (stat.size > 50 * 1024 * 1024) {
+    throw new Error(`${repoRelative(filePath)} is larger than 50 MB and cannot be sent as one OpenAI file input.`);
+  }
+
+  const ext = path.extname(filePath).toLowerCase();
+  const base64 = (await fsp.readFile(filePath)).toString("base64");
+  const fileName = path.basename(filePath);
+  const referencePayload = {
+    people: references.people.map(({ id, name, aliases }) => ({ id, name, aliases })),
+    specialties: references.specialties.map(({ id, label, aliases }) => ({ id, label, aliases })),
+    document_types: references.documentTypes.map(({ id, label, aliases }) => ({ id, label, aliases })),
+    metric_dictionary: references.metrics.map(({ id, label, aliases, default_unit }) => ({ id, label, aliases, default_unit })),
+  };
+
+  const content = [];
+  if (pdfExtensions.has(ext)) {
+    content.push({ type: "input_file", filename: fileName, file_data: `data:application/pdf;base64,${base64}` });
+  } else if (imageExtensions.has(ext)) {
+    content.push({ type: "input_image", image_url: dataUrlForImage(filePath, base64), detail: "high" });
+  } else if (textExtensions.has(ext)) {
+    content.push({ type: "input_text", text: await fsp.readFile(filePath, "utf8") });
+  } else {
+    throw new Error(`Unsupported file type for AI extraction: ${ext}`);
+  }
+
+  content.push({
+    type: "input_text",
+    text: [
+      `Имя файла: ${fileName}`,
+      "Извлеки из медицинского документа только факты, которые реально видны в документе.",
+      "Не ставь диагнозы от себя и не интерпретируй сверх документа.",
+      "Если поле не найдено уверенно, верни пустую строку и добавь причину в uncertainties.",
+      "Для person_id, specialty_id, document_type_id используй только id из справочников. Если не уверен, person_id пустой, specialty_id=other, document_type_id=unknown.",
+      "recommended_file_title должен быть коротким названием для имени файла без даты и имени человека: например Кардиолог, Анализ крови, ЭКГ, УЗИ щитовидной железы, Выписка.",
+      `Справочники: ${JSON.stringify(referencePayload)}`,
+    ].join("\n"),
+  });
+
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: openaiModel,
+      input: [{ role: "user", content }],
+      text: {
+        format: {
+          type: "json_schema",
+          name: "medical_document_extraction",
+          strict: true,
+          schema: extractionSchema(),
+        },
+      },
+    }),
+  });
+
+  const json = await response.json();
+  if (!response.ok) {
+    throw new Error(`OpenAI extraction failed for ${repoRelative(filePath)}: ${json.error?.message || response.statusText}`);
+  }
+
+  const outputText = responseOutputText(json);
+  if (!outputText) throw new Error(`OpenAI extraction returned no text for ${repoRelative(filePath)}`);
+
+  return normalizeAnalysis(JSON.parse(outputText), references, filePath, "openai", "");
+}
+
+function normalizeAnalysis(raw, references, filePath, extraction, extractionWarning) {
+  const fileName = path.basename(filePath);
+  const fallbackText = `${fileName}\n${[...(raw.summary || []), raw.document_title, raw.doctor, raw.clinic].join("\n")}`;
+  const personByModel = byId(references.people, raw.person_id);
+  const specialtyByModel = byId(references.specialties, raw.specialty_id);
+  const documentTypeByModel = byId(references.documentTypes, raw.document_type_id);
+  const personFallback = bestByAliases(fallbackText, references.people, null);
+  const specialtyFallback = bestByAliases(fallbackText, references.specialties, "other");
+  const documentTypeFallback = bestByAliases(fallbackText, references.documentTypes, "unknown");
+  const person = personByModel || personFallback.record || null;
+  const specialty = specialtyByModel || specialtyFallback.record || byId(references.specialties, "other");
+  const documentType = documentTypeByModel || documentTypeFallback.record || byId(references.documentTypes, "unknown");
+  const eventDate = isoDateFromText(raw.event_date) || detectDate(fallbackText, fileName);
+  const summary = Array.isArray(raw.summary) && raw.summary.length ? raw.summary.map(stripMarkdown).filter(Boolean).slice(0, 8) : summarizeText(fallbackText, fileName);
+  const uncertainties = Array.isArray(raw.uncertainties) ? raw.uncertainties.filter(Boolean) : [];
+  if (extractionWarning) uncertainties.push(extractionWarning);
+  if (!person) uncertainties.push("Не удалось уверенно определить члена семьи.");
+  if (!eventDate) uncertainties.push("Не удалось уверенно определить дату документа.");
 
   return {
     source_file: repoRelative(filePath),
+    original_file_name: fileName,
     file_name: fileName,
-    extraction: extractedText.extraction,
-    extraction_warning: extractedText.extractionWarning,
-    person: person.record || null,
-    specialty: specialty.record || null,
-    document_type: documentType.record || null,
-    event_date: eventDate,
-    doctor,
-    clinic,
-    summary: summarizeText(extractedText.text, fileName),
-    metrics,
-    tasks,
-    confidence,
-    needs_human_review: true,
+    extraction,
+    extraction_warning: extractionWarning,
+    model: extraction === "openai" ? openaiModel : "",
+    person,
+    specialty,
+    document_type: documentType,
+    event_date: eventDate || "",
+    doctor: stripMarkdown(raw.doctor || ""),
+    clinic: stripMarkdown(raw.clinic || ""),
+    document_title: stripMarkdown(raw.document_title || raw.recommended_file_title || ""),
+    recommended_file_title: stripMarkdown(raw.recommended_file_title || raw.document_title || ""),
+    summary,
+    metrics: normalizeMetricCandidates(raw.metrics || [], references.metrics),
+    tasks: Array.isArray(raw.tasks) ? raw.tasks.map(stripMarkdown).filter(Boolean).slice(0, 12) : [],
+    confidence: ["high", "medium", "low"].includes(raw.confidence) ? raw.confidence : "low",
+    needs_human_review: raw.needs_human_review !== false || !person || !eventDate,
+    uncertainties: [...new Set(uncertainties)],
+  };
+}
+
+function normalizeMetricCandidates(metrics, dictionary) {
+  return metrics
+    .map((metric) => {
+      const known = byId(dictionary, metric.metric_id) || bestByAliases(`${metric.label} ${metric.metric_id}`, dictionary, null).record;
+      return {
+        metric_id: known?.id || "",
+        label: known?.label || stripMarkdown(metric.label || ""),
+        value: String(metric.value || ""),
+        unit: String(metric.unit || known?.default_unit || ""),
+        reference: String(metric.reference || ""),
+        comment: String(metric.comment || ""),
+      };
+    })
+    .filter((metric) => metric.label || metric.metric_id || metric.value)
+    .slice(0, 20);
+}
+
+async function extractDocument(filePath, references) {
+  const ext = path.extname(filePath).toLowerCase();
+  if (!allowedExtensions.has(ext)) {
+    const extracted = { text: path.basename(filePath), extraction: "unsupported", extractionWarning: `Неподдерживаемый тип файла: ${ext}` };
+    return localAnalysis(filePath, extracted, references);
+  }
+
+  if (!noAi && process.env.OPENAI_API_KEY) {
+    return aiExtract(filePath, references);
+  }
+
+  if (!noAi && !process.env.OPENAI_API_KEY && (pdfExtensions.has(ext) || imageExtensions.has(ext))) {
+    throw new Error(`OPENAI_API_KEY is required to read ${ext} contents: ${repoRelative(filePath)}`);
+  }
+
+  const extracted = await readTextFallback(filePath);
+  return localAnalysis(filePath, extracted, references);
+}
+
+function canonicalFileName(analysis, ext) {
+  const date = analysis.event_date || frontmatterDate();
+  const person = analysis.person?.name || "Неизвестно";
+  const title =
+    analysis.recommended_file_title ||
+    analysis.document_title ||
+    (analysis.document_type?.id === "lab_result" ? "Анализ" : "") ||
+    analysis.specialty?.label ||
+    analysis.document_type?.label ||
+    "Документ";
+  const base = uniqueDisplayTitle([`${date} ${person}`, title]).slice(0, 150);
+  return `${base}${ext.toLowerCase()}`;
+}
+
+async function renameIncomingFile(filePath, analysis) {
+  const ext = path.extname(filePath).toLowerCase();
+  const desiredName = canonicalFileName(analysis, ext);
+  if (path.basename(filePath) === desiredName) {
+    return { path: filePath, renamed: false, originalPath: repoRelative(filePath), newPath: repoRelative(filePath) };
+  }
+
+  const targetPath = await uniquePath(path.join(path.dirname(filePath), desiredName));
+  if (!dryRun) await fsp.rename(filePath, targetPath);
+  return {
+    path: dryRun ? targetPath : targetPath,
+    renamed: true,
+    originalPath: repoRelative(filePath),
+    newPath: repoRelative(targetPath),
   };
 }
 
@@ -297,18 +615,13 @@ function draftMarkdown(analysis, fingerprint) {
   const titleDate = analysis.event_date || "дата не определена";
   const sourceFiles = [analysis.source_file];
   const metricsTable = analysis.metrics.length
-    ? analysis.metrics
-        .map((metric) => `| ${metric.label} | ${metric.value || ""} | ${metric.unit || ""} | | |`)
-        .join("\n")
+    ? analysis.metrics.map((metric) => `| ${metric.label} | ${metric.value || ""} | ${metric.unit || ""} | ${metric.reference || ""} | ${metric.comment || ""} |`).join("\n")
     : "| | | | | |";
   const taskLines = analysis.tasks.length ? analysis.tasks.map((task) => `- ${task}`).join("\n") : "- ";
   const summaryLines = analysis.summary.map((line) => `- ${line}`).join("\n");
-  const questions = [];
-
-  if (!analysis.person) questions.push("Не удалось уверенно определить члена семьи.");
-  if (!analysis.event_date) questions.push("Не удалось уверенно определить дату события.");
-  if (analysis.extraction_warning) questions.push(analysis.extraction_warning);
-  if (!questions.length) questions.push("Проверить, что распознавание не исказило исходный документ.");
+  const questions = analysis.uncertainties.length
+    ? analysis.uncertainties
+    : ["Проверить, что распознавание не исказило исходный документ."];
 
   const data = {
     id,
@@ -316,10 +629,15 @@ function draftMarkdown(analysis, fingerprint) {
     status: "needs_review",
     created_at: createdAt,
     source_files: sourceFiles,
+    original_file_name: yamlScalar(analysis.original_file_name),
+    canonical_file_name: yamlScalar(path.basename(analysis.source_file)),
+    extraction_method: analysis.extraction,
+    extraction_model: yamlScalar(analysis.model),
     candidate_person_id: yamlScalar(analysis.person?.id),
     candidate_person: yamlScalar(analysis.person?.name),
     candidate_event_date: yamlScalar(analysis.event_date),
     candidate_document_type_id: yamlScalar(analysis.document_type?.id),
+    candidate_document_title: yamlScalar(analysis.document_title || analysis.recommended_file_title),
     candidate_specialty_id: yamlScalar(analysis.specialty?.id),
     candidate_doctor: yamlScalar(analysis.doctor),
     candidate_clinic: yamlScalar(analysis.clinic),
@@ -336,10 +654,12 @@ ${sourceFiles.map((source) => `- ${source}`).join("\n")}
 - Человек: ${analysis.person?.name || ""}
 - Дата события: ${analysis.event_date || ""}
 - Тип документа: ${analysis.document_type?.label || ""}
+- Название документа: ${analysis.document_title || analysis.recommended_file_title || ""}
 - Направление: ${analysis.specialty?.label || ""}
 - Врач: ${analysis.doctor || ""}
 - Клиника: ${analysis.clinic || ""}
 - Уверенность: ${analysis.confidence}
+- Метод чтения: ${analysis.extraction}${analysis.model ? ` (${analysis.model})` : ""}
 
 ## Краткая сводка
 ${summaryLines}
@@ -358,6 +678,7 @@ ${questions.map((question) => `- ${question}`).join("\n")}
 ## Проверка человеком
 - [ ] Человек определен верно
 - [ ] Дата определена верно
+- [ ] Название файла корректное
 - [ ] Направление определено верно
 - [ ] Сводка не искажает документ
 - [ ] Можно создавать медицинское событие
@@ -370,6 +691,12 @@ ${questions.map((question) => `- ${question}`).join("\n")}
   return matter.stringify(body, data);
 }
 
+async function moveToError(filePath, error) {
+  const target = await uniquePath(path.join(paths.errors, path.basename(filePath)));
+  if (!dryRun && fs.existsSync(filePath)) await fsp.rename(filePath, target);
+  return { source: repoRelative(filePath), target: repoRelative(target), error: error.message };
+}
+
 async function scanInbox() {
   await ensureFolders();
   const references = await loadReferences();
@@ -378,6 +705,7 @@ async function scanInbox() {
   const files = await walkFiles(paths.inboxNew);
   const created = [];
   const skipped = [];
+  const failed = [];
 
   for (const filePath of files) {
     const fingerprint = await fileFingerprint(filePath);
@@ -386,34 +714,60 @@ async function scanInbox() {
       continue;
     }
 
-    const extracted = await extractText(filePath);
-    const analysis = buildAnalysis(filePath, extracted, references);
-    const slug = draftSlug(analysis, fingerprint);
-    const draftPath = path.join(paths.drafts, `${slug}.md`);
-    const draftRelative = repoRelative(draftPath);
-    const draftContent = draftMarkdown(analysis, fingerprint);
+    try {
+      const originalPath = repoRelative(filePath);
+      let analysis = await extractDocument(filePath, references);
+      const rename = await renameIncomingFile(filePath, analysis);
+      analysis = { ...analysis, source_file: rename.newPath, file_name: path.basename(rename.newPath), original_file_name: path.basename(originalPath) };
+      const slug = draftSlug(analysis, fingerprint);
+      const draftPath = path.join(paths.drafts, `${slug}.md`);
+      const draftRelative = repoRelative(draftPath);
+      const draftContent = draftMarkdown(analysis, fingerprint);
 
-    if (!dryRun) {
-      await fsp.writeFile(draftPath, draftContent, "utf8");
-      state.files.push({
-        fingerprint,
-        source_file: repoRelative(filePath),
-        draft_file: draftRelative,
-        status: "draft_created",
-        created_at: new Date().toISOString(),
+      if (!dryRun) {
+        await fsp.writeFile(draftPath, draftContent, "utf8");
+        state.files.push({
+          fingerprint,
+          original_source_file: originalPath,
+          source_file: rename.newPath,
+          draft_file: draftRelative,
+          renamed: rename.renamed,
+          extraction_method: analysis.extraction,
+          extraction_model: analysis.model || "",
+          confidence: analysis.confidence,
+          status: "draft_created",
+          created_at: new Date().toISOString(),
+        });
+      }
+
+      created.push({
+        source: originalPath,
+        renamedTo: rename.newPath,
+        draft: draftRelative,
+        confidence: analysis.confidence,
+        extraction: analysis.extraction,
       });
+    } catch (error) {
+      const failedItem = moveErrors
+        ? await moveToError(filePath, error)
+        : { source: repoRelative(filePath), target: "", error: error.message };
+      failed.push(failedItem);
     }
-
-    created.push({ source: repoRelative(filePath), draft: draftRelative, confidence: analysis.confidence });
   }
 
   await saveState(state);
 
-  console.log(`Intake scan complete: ${created.length} draft(s), ${skipped.length} skipped.`);
+  console.log(`Intake scan complete: ${created.length} draft(s), ${skipped.length} skipped, ${failed.length} failed.`);
   for (const item of created) {
-    console.log(`+ ${item.source} -> ${item.draft} (${item.confidence})`);
+    const renameText = item.source === item.renamedTo ? item.source : `${item.source} -> ${item.renamedTo}`;
+    console.log(`+ ${renameText} -> ${item.draft} (${item.confidence}, ${item.extraction})`);
+  }
+  for (const item of failed) {
+    const targetText = item.target ? ` -> ${item.target}` : "";
+    console.error(`Error: ${item.source}${targetText}: ${item.error}`);
   }
   if (dryRun) console.log("Dry run: no files were written.");
+  if (failed.length) process.exitCode = 1;
 }
 
 async function findApprovedDrafts() {
@@ -463,18 +817,6 @@ async function findOrCreateSpecialtyFolder(person, specialtyLabel) {
   return path.join(personDir, folderName);
 }
 
-async function uniquePath(targetPath) {
-  if (!fs.existsSync(targetPath)) return targetPath;
-  const dir = path.dirname(targetPath);
-  const ext = path.extname(targetPath);
-  const base = path.basename(targetPath, ext);
-  for (let index = 2; index < 100; index += 1) {
-    const candidate = path.join(dir, `${base} (${index})${ext}`);
-    if (!fs.existsSync(candidate)) return candidate;
-  }
-  throw new Error(`Cannot create unique path for ${targetPath}`);
-}
-
 function eventTypeFromDocumentType(documentTypeId) {
   if (documentTypeId === "lab_result") return "Анализ";
   if (["imaging_result", "functional_test"].includes(documentTypeId)) return "Обследование";
@@ -512,8 +854,9 @@ function buildEventMarkdown({ draft, person, specialtyLabel, documentTypeId, cop
   const data = draft.parsed.data;
   const eventDate = data.candidate_event_date;
   const eventType = eventTypeFromDocumentType(documentTypeId);
-  const title = `${person.name} — ${specialtyLabel || "медицинское событие"}`;
-  const id = slugify(`${eventDate}-${person.id}-${specialtyLabel || documentTypeId}-${hashText(draft.filePath, 6)}`);
+  const documentTitle = data.candidate_document_title || specialtyLabel || "медицинское событие";
+  const title = `${person.name} — ${documentTitle}`;
+  const id = slugify(`${eventDate}-${person.id}-${documentTitle}-${hashText(draft.filePath, 6)}`);
   const summary = extractBullets(extractSection(draft.parsed.content, "Краткая сводка"));
   const tasks = extractBullets(extractSection(draft.parsed.content, "Возможные задачи контроля"));
 
@@ -580,8 +923,8 @@ async function promoteDrafts() {
     const specialtyDir = await findOrCreateSpecialtyFolder(person, specialtyLabel);
     const yearDir = path.join(specialtyDir, `${path.basename(specialtyDir)} ${eventDate.slice(0, 4)}`);
     const clinicDir = path.join(yearDir, data.candidate_clinic || "Без клиники");
-    const eventFileName = `${eventDate} ${person.name} — ${specialtyLabel}.md`;
-    const eventPath = await uniquePath(path.join(clinicDir, eventFileName));
+    const eventFileName = `${eventDate} ${person.name} — ${data.candidate_document_title || specialtyLabel}.md`;
+    const eventPath = await uniquePath(path.join(clinicDir, sanitizeFilenamePart(eventFileName, "medical-event.md")));
     const sourceRefs = data.source_files || [];
     const copiedFiles = [];
 
