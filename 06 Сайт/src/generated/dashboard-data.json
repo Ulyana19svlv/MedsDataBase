@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T05:50:19.188Z",
+  "generatedAt": "2026-05-04T05:58:01.376Z",
   "basePath": "/MedsDataBase",
   "people": [
     {
@@ -195,8 +195,8 @@
       "profileTasks": [
         "-"
       ],
-      "eventCount": 12,
-      "documentCount": 39,
+      "eventCount": 15,
+      "documentCount": 43,
       "nextTasks": [
         {
           "id": "task-2026-04-13-masha-ginekolog-2026-05-15",
@@ -235,16 +235,16 @@
         {
           "label": "Лаборатория",
           "id": "laboratoriya",
-          "count": 10
-        },
-        {
-          "label": "Гинекология",
-          "id": "ginekologiya",
-          "count": 1
+          "count": 11
         },
         {
           "label": "Офтальмология",
           "id": "oftalmologiya",
+          "count": 3
+        },
+        {
+          "label": "Гинекология",
+          "id": "ginekologiya",
           "count": 1
         }
       ],
@@ -2059,6 +2059,162 @@
       "followUpAction": "Повторный приём не требуется."
     },
     {
+      "id": "2025-10-20-masha-oftalmolog",
+      "slug": "2025-10-20-masha-oftalmolog",
+      "routePath": "/events/2025-10-20-masha-oftalmolog",
+      "href": "/MedsDataBase/events/2025-10-20-masha-oftalmolog",
+      "title": "Маша — офтальмолог — 20.10.2025",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-10-20",
+      "year": "2025",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "specialtyLabel": "Офтальмология",
+      "doctor": "Лашина Р.А.",
+      "clinic": "Офтальмологический центр ДГП №23",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2025-10-20 Маша — Офтальмолог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "998225824304853b",
+          "slug": "2025-10-20-masha-oftalmolog-99822582",
+          "fileName": "2025-10-20 Маша — Офтальмолог.pdf",
+          "originalPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Офтальмологический центр ДГП №23/2025-10-20 Маша — Офтальмолог.pdf",
+          "routePath": "/documents/2025-10-20-masha-oftalmolog-99822582",
+          "href": "/MedsDataBase/documents/2025-10-20-masha-oftalmolog-99822582",
+          "outputFileName": "9982258243-2025-10-20-masha-oftalmolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/9982258243-2025-10-20-masha-oftalmolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2025-10-20-masha-oftalmolog",
+          "eventSlug": "2025-10-20-masha-oftalmolog",
+          "specialty": "Офтальмология",
+          "specialtyId": "oftalmologiya",
+          "date": "2025-10-20",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 69533,
+          "eventHref": "/MedsDataBase/events/2025-10-20-masha-oftalmolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "oftalmologiya"
+      ],
+      "summary": [
+        "Пациент: Мишина М.А., возраст 28 лет.",
+        "Жалоб активно не предъявляет.",
+        "Беременность: срок 17 недель.",
+        "Осмотр на широкий зрачок не проводился; со слов, была консультация лазерного витреоретинального хирурга.",
+        "Острота зрения: OD 0,50 с коррекцией sph -0,75 = 1,00; OS 0,30 с коррекцией sph -1,00 = 1,00.",
+        "Внутриглазное давление: OD 12 мм рт. ст., OS 9 мм рт. ст.",
+        "Диагноз: OU миопия слабой степени."
+      ],
+      "track": [
+        "Контрольный осмотр на сроке 30–32 недели.",
+        "Осмотр глазного дна на широкий зрачок."
+      ],
+      "nextActions": [
+        "Подбор очков или мягких контактных линз.",
+        "Контрольный осмотр на сроке 30–32 недели."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Офтальмологический центр ДГП №23/2025-10-20 Маша — Офтальмолог.md",
+      "folderPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Офтальмологический центр ДГП №23",
+      "searchableText": "Маша — офтальмолог — 20.10.2025 Маша Приём Офтальмология Лашина Р.А. Офтальмологический центр ДГП №23 - Пациент: Мишина М.А., возраст 28 лет. - Жалоб активно не предъявляет. - Беременность: срок 17 недель. - Осмотр на широкий зрачок не проводился; со слов, была консультация лазерного витреоретинального хирурга. - Острота зрения: OD 0,50 с коррекцией sph -0,75 = 1,00; OS 0,30 с коррекцией sph -1,00 = 1,00. - Внутриглазное давление: OD 12 мм рт. ст., OS 9 мм рт. ст. - Диагноз: OU миопия слабой степени. - Контрольный осмотр на сроке 30–32 недели. - Осмотр глазного дна на широкий зрачок. - Подбор очков или мягких контактных линз. - Контрольный осмотр на сроке 30–32 недели.",
+      "dataWarnings": [],
+      "followUpAction": "Контрольный осмотр на сроке 30–32 недели."
+    },
+    {
+      "id": "2025-10-14-masha-oftalmolog",
+      "slug": "2025-10-14-masha-oftalmolog",
+      "routePath": "/events/2025-10-14-masha-oftalmolog",
+      "href": "/MedsDataBase/events/2025-10-14-masha-oftalmolog",
+      "title": "Маша — офтальмолог — 14.10.2025",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-10-14",
+      "year": "2025",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "specialtyLabel": "Офтальмология",
+      "doctor": "Богданов Денис Григорьевич",
+      "clinic": "Будь Здоров",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2025-10-14 Маша — Офтальмолог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "7b7b9b37ba08d36a",
+          "slug": "2025-10-14-masha-oftalmolog-7b7b9b37",
+          "fileName": "2025-10-14 Маша — Офтальмолог.pdf",
+          "originalPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Будь Здоров/2025-10-14 Маша — Офтальмолог.pdf",
+          "routePath": "/documents/2025-10-14-masha-oftalmolog-7b7b9b37",
+          "href": "/MedsDataBase/documents/2025-10-14-masha-oftalmolog-7b7b9b37",
+          "outputFileName": "7b7b9b37ba-2025-10-14-masha-oftalmolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/7b7b9b37ba-2025-10-14-masha-oftalmolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2025-10-14-masha-oftalmolog",
+          "eventSlug": "2025-10-14-masha-oftalmolog",
+          "specialty": "Офтальмология",
+          "specialtyId": "oftalmologiya",
+          "date": "2025-10-14",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 182566,
+          "eventHref": "/MedsDataBase/events/2025-10-14-masha-oftalmolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "oftalmologiya"
+      ],
+      "summary": [
+        "Пациент: Мишина Мария Александровна, дата рождения 01.12.1996.",
+        "Беременность: 16 недель.",
+        "Жалоб активно не предъявляет.",
+        "Ранее получала лечение в БЗ с диагнозом OU миопия слабой степени, прогрессирование, ПИНА.",
+        "Острота зрения без коррекции: OD 0,3; OS 0,3.",
+        "Острота зрения с коррекцией: OD 1,0; OS 1,0.",
+        "Заключительный диагноз: OU миопия слабой степени, анизометропия, ПИНА.",
+        "На момент осмотра острой патологии глаз не выявлено."
+      ],
+      "track": [
+        "Динамику миопии и необходимость очков для дали.",
+        "Сопоставить с повторным осмотром от 20.10.2025."
+      ],
+      "nextActions": [
+        "План обследования: не требуется.",
+        "Очки для дали по желанию.",
+        "Увлажняющие капли/гель по назначению из протокола."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Будь Здоров/2025-10-14 Маша — Офтальмолог.md",
+      "folderPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Будь Здоров",
+      "searchableText": "Маша — офтальмолог — 14.10.2025 Маша Приём Офтальмология Богданов Денис Григорьевич Будь Здоров - Пациент: Мишина Мария Александровна, дата рождения 01.12.1996. - Беременность: 16 недель. - Жалоб активно не предъявляет. - Ранее получала лечение в БЗ с диагнозом OU миопия слабой степени, прогрессирование, ПИНА. - Острота зрения без коррекции: OD 0,3; OS 0,3. - Острота зрения с коррекцией: OD 1,0; OS 1,0. - Заключительный диагноз: OU миопия слабой степени, анизометропия, ПИНА. - На момент осмотра острой патологии глаз не выявлено. - Динамику миопии и необходимость очков для дали. - Сопоставить с повторным осмотром от 20.10.2025. - План обследования: не требуется. - Очки для дали по желанию. - Увлажняющие капли/гель по назначению из протокола.",
+      "dataWarnings": [],
+      "followUpAction": "Сопоставить с повторным осмотром от 20.10.2025."
+    },
+    {
       "id": "2025-08-25-masha-laboratornye-analizy",
       "slug": "2025-08-25-masha-laboratornye-analizy",
       "routePath": "/events/2025-08-25-masha-laboratornye-analizy",
@@ -2659,7 +2815,8 @@
       "importance": "normal",
       "sourceFileNames": [
         "2024-05-21 Маша — Фемофлор скрининг.pdf",
-        "2024-05-21 Маша — Жидкостная цитология.pdf"
+        "2024-05-21 Маша — Жидкостная цитология.pdf",
+        "2024-05-21 Маша — Жидкостная цитология скан.pdf"
       ],
       "sourceFiles": [
         {
@@ -2706,6 +2863,29 @@
           "linkStatusLabel": "Привязан к записи",
           "isInboxItem": false,
           "size": 593906,
+          "eventHref": "/MedsDataBase/events/2024-05-21-masha-tsitologiya-femoflor"
+        },
+        {
+          "id": "6752b8a4fc7d1c6b",
+          "slug": "2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+          "fileName": "2024-05-21 Маша — Жидкостная цитология скан.pdf",
+          "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2024/ДНКОМ Хорошая практика/2024-05-21 Маша — Жидкостная цитология скан.pdf",
+          "routePath": "/documents/2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+          "href": "/MedsDataBase/documents/2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+          "outputFileName": "6752b8a4fc-2024-05-21-masha-zhidkostnaya-tsitologiya-skan.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/6752b8a4fc-2024-05-21-masha-zhidkostnaya-tsitologiya-skan.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2024-05-21-masha-tsitologiya-femoflor",
+          "eventSlug": "2024-05-21-masha-tsitologiya-femoflor",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2024-05-21",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 38424,
           "eventHref": "/MedsDataBase/events/2024-05-21-masha-tsitologiya-femoflor"
         }
       ],
@@ -3122,6 +3302,87 @@
       "searchableText": "Маша — цервикальный скрининг — 08.08.2022 Маша Анализ Лаборатория Кузнецова М.Н. ВераМед Премиум - Пациент: Мишина Мария Александровна, дата рождения 01.12.1996. - Дата регистрации: 08.08.2022; дата готовности результата: 19.08.2022. - Коэкспрессия онкобелков p16/Ki67: обнаружена. - В документе указана рекомендация по результатам: консультация онкогинеколога. - Был ли выполнен рекомендованный осмотр онкогинеколога. - Есть ли последующие цитология/ВПЧ/кольпоскопия по этому эпизоду. - Хранить результат вместе с последующими гинекологическими обследованиями.",
       "dataWarnings": [],
       "followUpAction": "Хранить результат вместе с последующими гинекологическими обследованиями."
+    },
+    {
+      "id": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "slug": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "routePath": "/events/2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "href": "/MedsDataBase/events/2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "title": "Маша — цервикальный скрининг CMD — 04.07.2022",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2022-07-04",
+      "year": "2022",
+      "eventType": "Анализ",
+      "eventTypeId": "lab",
+      "eventTypeLabel": "Анализ",
+      "sourceEventType": "Анализ",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "specialtyLabel": "Лаборатория",
+      "doctor": "Кузнецова М.Н.",
+      "clinic": "CMD",
+      "status": "done",
+      "importance": "high",
+      "sourceFileNames": [
+        "2022-07-04 Маша — Цервикальный скрининг CMD.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "125921c90e6a0dae",
+          "slug": "2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+          "fileName": "2022-07-04 Маша — Цервикальный скрининг CMD.pdf",
+          "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2022/CMD/2022-07-04 Маша — Цервикальный скрининг CMD.pdf",
+          "routePath": "/documents/2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+          "href": "/MedsDataBase/documents/2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+          "outputFileName": "125921c90e-2022-07-04-masha-tservikalnyy-skrining-cmd.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/125921c90e-2022-07-04-masha-tservikalnyy-skrining-cmd.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+          "eventSlug": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2022-07-04",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 76992,
+          "eventHref": "/MedsDataBase/events/2022-07-04-masha-tservikalnyy-skrining-cmd"
+        }
+      ],
+      "tags": [
+        "lab",
+        "gynecology"
+      ],
+      "summary": [
+        "Пациент: Мишина М.А., полных лет 25.",
+        "Заказ № DCGR35601 от 04.07.2022.",
+        "Материал: соскоб/отделяемое из цервикального канала.",
+        "Дата забора биоматериала: 04.07.2022.",
+        "ДНК ВПЧ высокого риска обнаружена.",
+        "Обнаружены генотипы ВПЧ: 33, 45.",
+        "Расширенное генотипирование ВПЧ: больше/равно 3,0 для A9 и A7; ВПЧ 45 указан отдельно.",
+        "ПАП-тест: образец адекватный, клетки зоны трансформации присутствуют.",
+        "Признаки воспаления: слабо выраженные.",
+        "Микроорганизмы: Candida spp.",
+        "Цитологическое заключение по TBS 2014: патология с плоским эпителием, L-SIL (HPV).",
+        "Рекомендована расширенная кольпоскопия."
+      ],
+      "track": [
+        "Выполнена ли расширенная кольпоскопия.",
+        "Сопоставить с последующими цервикальными скринингами и цитологией."
+      ],
+      "nextActions": [
+        "Хранить вместе с гинекологическими обследованиями и результатами 2022–2024 годов."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2022/CMD/2022-07-04 Маша — Цервикальный скрининг CMD.md",
+      "folderPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2022/CMD",
+      "searchableText": "Маша — цервикальный скрининг CMD — 04.07.2022 Маша Анализ Лаборатория Кузнецова М.Н. CMD - Пациент: Мишина М.А., полных лет 25. - Заказ № DCGR35601 от 04.07.2022. - Материал: соскоб/отделяемое из цервикального канала. - Дата забора биоматериала: 04.07.2022. - ДНК ВПЧ высокого риска обнаружена. - Обнаружены генотипы ВПЧ: 33, 45. - Расширенное генотипирование ВПЧ: больше/равно 3,0 для A9 и A7; ВПЧ 45 указан отдельно. - ПАП-тест: образец адекватный, клетки зоны трансформации присутствуют. - Признаки воспаления: слабо выраженные. - Микроорганизмы: Candida spp. - Цитологическое заключение по TBS 2014: патология с плоским эпителием, L-SIL (HPV). - Рекомендована расширенная кольпоскопия. - Выполнена ли расширенная кольпоскопия. - Сопоставить с последующими цервикальными скринингами и цитологией. - Хранить вместе с гинекологическими обследованиями и результатами 2022–2024 годов.",
+      "dataWarnings": [],
+      "followUpAction": "Сопоставить с последующими цервикальными скринингами и цитологией."
     }
   ],
   "documents": [
@@ -3849,6 +4110,52 @@
       "size": 24338
     },
     {
+      "id": "998225824304853b",
+      "slug": "2025-10-20-masha-oftalmolog-99822582",
+      "fileName": "2025-10-20 Маша — Офтальмолог.pdf",
+      "originalPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Офтальмологический центр ДГП №23/2025-10-20 Маша — Офтальмолог.pdf",
+      "routePath": "/documents/2025-10-20-masha-oftalmolog-99822582",
+      "href": "/MedsDataBase/documents/2025-10-20-masha-oftalmolog-99822582",
+      "outputFileName": "9982258243-2025-10-20-masha-oftalmolog.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/9982258243-2025-10-20-masha-oftalmolog.pdf",
+      "extension": "pdf",
+      "person": "Маша",
+      "eventId": "2025-10-20-masha-oftalmolog",
+      "eventSlug": "2025-10-20-masha-oftalmolog",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "date": "2025-10-20",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "isInboxItem": false,
+      "size": 69533,
+      "eventHref": "/MedsDataBase/events/2025-10-20-masha-oftalmolog"
+    },
+    {
+      "id": "7b7b9b37ba08d36a",
+      "slug": "2025-10-14-masha-oftalmolog-7b7b9b37",
+      "fileName": "2025-10-14 Маша — Офтальмолог.pdf",
+      "originalPath": "01 Члены семьи/Маша/05 Офтальмолог/05 Офтальмолог 2025/Будь Здоров/2025-10-14 Маша — Офтальмолог.pdf",
+      "routePath": "/documents/2025-10-14-masha-oftalmolog-7b7b9b37",
+      "href": "/MedsDataBase/documents/2025-10-14-masha-oftalmolog-7b7b9b37",
+      "outputFileName": "7b7b9b37ba-2025-10-14-masha-oftalmolog.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/7b7b9b37ba-2025-10-14-masha-oftalmolog.pdf",
+      "extension": "pdf",
+      "person": "Маша",
+      "eventId": "2025-10-14-masha-oftalmolog",
+      "eventSlug": "2025-10-14-masha-oftalmolog",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "date": "2025-10-14",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "isInboxItem": false,
+      "size": 182566,
+      "eventHref": "/MedsDataBase/events/2025-10-14-masha-oftalmolog"
+    },
+    {
       "id": "ffaadefed8c388d6",
       "slug": "2025-08-27-masha-ugrozhayuschiy-abort-ffaadefe",
       "fileName": "2025-08-27 Маша Угрожающий аборт.pdf",
@@ -4165,6 +4472,29 @@
       "eventHref": "/MedsDataBase/events/2024-07-04-masha-gistologiya-nevusa"
     },
     {
+      "id": "6752b8a4fc7d1c6b",
+      "slug": "2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+      "fileName": "2024-05-21 Маша — Жидкостная цитология скан.pdf",
+      "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2024/ДНКОМ Хорошая практика/2024-05-21 Маша — Жидкостная цитология скан.pdf",
+      "routePath": "/documents/2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+      "href": "/MedsDataBase/documents/2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+      "outputFileName": "6752b8a4fc-2024-05-21-masha-zhidkostnaya-tsitologiya-skan.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/6752b8a4fc-2024-05-21-masha-zhidkostnaya-tsitologiya-skan.pdf",
+      "extension": "pdf",
+      "person": "Маша",
+      "eventId": "2024-05-21-masha-tsitologiya-femoflor",
+      "eventSlug": "2024-05-21-masha-tsitologiya-femoflor",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "date": "2024-05-21",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "isInboxItem": false,
+      "size": 38424,
+      "eventHref": "/MedsDataBase/events/2024-05-21-masha-tsitologiya-femoflor"
+    },
+    {
       "id": "40d863ee381f709b",
       "slug": "2024-05-21-masha-zhidkostnaya-tsitologiya-40d863ee",
       "fileName": "2024-05-21 Маша — Жидкостная цитология.pdf",
@@ -4439,6 +4769,29 @@
       "isInboxItem": false,
       "size": 291899,
       "eventHref": "/MedsDataBase/events/2022-08-08-masha-tservikalnyy-skrining"
+    },
+    {
+      "id": "125921c90e6a0dae",
+      "slug": "2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+      "fileName": "2022-07-04 Маша — Цервикальный скрининг CMD.pdf",
+      "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2022/CMD/2022-07-04 Маша — Цервикальный скрининг CMD.pdf",
+      "routePath": "/documents/2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+      "href": "/MedsDataBase/documents/2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+      "outputFileName": "125921c90e-2022-07-04-masha-tservikalnyy-skrining-cmd.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/125921c90e-2022-07-04-masha-tservikalnyy-skrining-cmd.pdf",
+      "extension": "pdf",
+      "person": "Маша",
+      "eventId": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "eventSlug": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "date": "2022-07-04",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "isInboxItem": false,
+      "size": 76992,
+      "eventHref": "/MedsDataBase/events/2022-07-04-masha-tservikalnyy-skrining-cmd"
     }
   ],
   "tasks": [
@@ -5000,6 +5353,38 @@
     },
     {
       "type": "event",
+      "id": "2025-10-20-masha-oftalmolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-10-20",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "Маша — офтальмолог — 20.10.2025",
+      "routePath": "/events/2025-10-20-masha-oftalmolog",
+      "href": "/MedsDataBase/events/2025-10-20-masha-oftalmolog",
+      "subtitle": "2025-10-20 · Маша · Офтальмология",
+      "text": "Маша — офтальмолог — 20.10.2025 Маша Приём Офтальмология Лашина Р.А. Офтальмологический центр ДГП №23 - Пациент: Мишина М.А., возраст 28 лет. - Жалоб активно не предъявляет. - Беременность: срок 17 недель. - Осмотр на широкий зрачок не проводился; со слов, была консультация лазерного витреоретинального хирурга. - Острота зрения: OD 0,50 с коррекцией sph -0,75 = 1,00; OS 0,30 с коррекцией sph -1,00 = 1,00. - Внутриглазное давление: OD 12 мм рт. ст., OS 9 мм рт. ст. - Диагноз: OU миопия слабой степени. - Контрольный осмотр на сроке 30–32 недели. - Осмотр глазного дна на широкий зрачок. - Подбор очков или мягких контактных линз. - Контрольный осмотр на сроке 30–32 недели."
+    },
+    {
+      "type": "event",
+      "id": "2025-10-14-masha-oftalmolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-10-14",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "Маша — офтальмолог — 14.10.2025",
+      "routePath": "/events/2025-10-14-masha-oftalmolog",
+      "href": "/MedsDataBase/events/2025-10-14-masha-oftalmolog",
+      "subtitle": "2025-10-14 · Маша · Офтальмология",
+      "text": "Маша — офтальмолог — 14.10.2025 Маша Приём Офтальмология Богданов Денис Григорьевич Будь Здоров - Пациент: Мишина Мария Александровна, дата рождения 01.12.1996. - Беременность: 16 недель. - Жалоб активно не предъявляет. - Ранее получала лечение в БЗ с диагнозом OU миопия слабой степени, прогрессирование, ПИНА. - Острота зрения без коррекции: OD 0,3; OS 0,3. - Острота зрения с коррекцией: OD 1,0; OS 1,0. - Заключительный диагноз: OU миопия слабой степени, анизометропия, ПИНА. - На момент осмотра острой патологии глаз не выявлено. - Динамику миопии и необходимость очков для дали. - Сопоставить с повторным осмотром от 20.10.2025. - План обследования: не требуется. - Очки для дали по желанию. - Увлажняющие капли/гель по назначению из протокола."
+    },
+    {
+      "type": "event",
       "id": "2025-08-25-masha-laboratornye-analizy",
       "person": "Маша",
       "personSlug": "masha",
@@ -5157,6 +5542,22 @@
       "href": "/MedsDataBase/events/2022-08-08-masha-tservikalnyy-skrining",
       "subtitle": "2022-08-08 · Маша · Лаборатория",
       "text": "Маша — цервикальный скрининг — 08.08.2022 Маша Анализ Лаборатория Кузнецова М.Н. ВераМед Премиум - Пациент: Мишина Мария Александровна, дата рождения 01.12.1996. - Дата регистрации: 08.08.2022; дата готовности результата: 19.08.2022. - Коэкспрессия онкобелков p16/Ki67: обнаружена. - В документе указана рекомендация по результатам: консультация онкогинеколога. - Был ли выполнен рекомендованный осмотр онкогинеколога. - Есть ли последующие цитология/ВПЧ/кольпоскопия по этому эпизоду. - Хранить результат вместе с последующими гинекологическими обследованиями."
+    },
+    {
+      "type": "event",
+      "id": "2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2022-07-04",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "eventType": "Анализ",
+      "eventTypeId": "lab",
+      "title": "Маша — цервикальный скрининг CMD — 04.07.2022",
+      "routePath": "/events/2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "href": "/MedsDataBase/events/2022-07-04-masha-tservikalnyy-skrining-cmd",
+      "subtitle": "2022-07-04 · Маша · Лаборатория",
+      "text": "Маша — цервикальный скрининг CMD — 04.07.2022 Маша Анализ Лаборатория Кузнецова М.Н. CMD - Пациент: Мишина М.А., полных лет 25. - Заказ № DCGR35601 от 04.07.2022. - Материал: соскоб/отделяемое из цервикального канала. - Дата забора биоматериала: 04.07.2022. - ДНК ВПЧ высокого риска обнаружена. - Обнаружены генотипы ВПЧ: 33, 45. - Расширенное генотипирование ВПЧ: больше/равно 3,0 для A9 и A7; ВПЧ 45 указан отдельно. - ПАП-тест: образец адекватный, клетки зоны трансформации присутствуют. - Признаки воспаления: слабо выраженные. - Микроорганизмы: Candida spp. - Цитологическое заключение по TBS 2014: патология с плоским эпителием, L-SIL (HPV). - Рекомендована расширенная кольпоскопия. - Выполнена ли расширенная кольпоскопия. - Сопоставить с последующими цервикальными скринингами и цитологией. - Хранить вместе с гинекологическими обследованиями и результатами 2022–2024 годов."
     },
     {
       "type": "document",
@@ -5721,6 +6122,40 @@
     },
     {
       "type": "document",
+      "id": "998225824304853b",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-10-20",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "extension": "pdf",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "title": "2025-10-20 Маша — Офтальмолог.pdf",
+      "routePath": "/documents/2025-10-20-masha-oftalmolog-99822582",
+      "href": "/MedsDataBase/documents/2025-10-20-masha-oftalmolog-99822582",
+      "subtitle": "Маша · 2025-10-20 · Офтальмология",
+      "text": "2025-10-20 Маша — Офтальмолог.pdf Маша Офтальмология"
+    },
+    {
+      "type": "document",
+      "id": "7b7b9b37ba08d36a",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-10-14",
+      "specialty": "Офтальмология",
+      "specialtyId": "oftalmologiya",
+      "extension": "pdf",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "title": "2025-10-14 Маша — Офтальмолог.pdf",
+      "routePath": "/documents/2025-10-14-masha-oftalmolog-7b7b9b37",
+      "href": "/MedsDataBase/documents/2025-10-14-masha-oftalmolog-7b7b9b37",
+      "subtitle": "Маша · 2025-10-14 · Офтальмология",
+      "text": "2025-10-14 Маша — Офтальмолог.pdf Маша Офтальмология"
+    },
+    {
+      "type": "document",
       "id": "ffaadefed8c388d6",
       "person": "Маша",
       "personSlug": "masha",
@@ -5959,6 +6394,23 @@
     },
     {
       "type": "document",
+      "id": "6752b8a4fc7d1c6b",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2024-05-21",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "extension": "pdf",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "title": "2024-05-21 Маша — Жидкостная цитология скан.pdf",
+      "routePath": "/documents/2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+      "href": "/MedsDataBase/documents/2024-05-21-masha-zhidkostnaya-tsitologiya-skan-6752b8a4",
+      "subtitle": "Маша · 2024-05-21 · Лаборатория",
+      "text": "2024-05-21 Маша — Жидкостная цитология скан.pdf Маша Лаборатория"
+    },
+    {
+      "type": "document",
       "id": "40d863ee381f709b",
       "person": "Маша",
       "personSlug": "masha",
@@ -6162,6 +6614,23 @@
       "text": "2022-08-08 Маша — Цервикальный скрининг.pdf Маша Лаборатория"
     },
     {
+      "type": "document",
+      "id": "125921c90e6a0dae",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2022-07-04",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "extension": "pdf",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "title": "2022-07-04 Маша — Цервикальный скрининг CMD.pdf",
+      "routePath": "/documents/2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+      "href": "/MedsDataBase/documents/2022-07-04-masha-tservikalnyy-skrining-cmd-125921c9",
+      "subtitle": "Маша · 2022-07-04 · Лаборатория",
+      "text": "2022-07-04 Маша — Цервикальный скрининг CMD.pdf Маша Лаборатория"
+    },
+    {
       "type": "task",
       "id": "task-2026-03-19-artem-terapevt-2026-09-19",
       "person": "Артём",
@@ -6284,9 +6753,9 @@
   ],
   "stats": {
     "people": 3,
-    "events": 33,
-    "documents": 59,
-    "linkedDocuments": 45,
+    "events": 36,
+    "documents": 63,
+    "linkedDocuments": 49,
     "unlinkedDocuments": 14,
     "tasks": 8,
     "warnings": 0,
