@@ -3,7 +3,7 @@ import AppLayout from "../../layouts/AppLayout.astro";
 import EventCard from "../../components/EventCard.astro";
 import DocumentList from "../../components/DocumentList.astro";
 import TaskBoard from "../../components/TaskBoard.astro";
-import { ageText, dashboard, formatDate } from "../../lib/ui";
+import { ageText, dashboard, formatDate, formatDateShort, pageHref } from "../../lib/ui";
 
 export function getStaticPaths() {
   return dashboard.people.map((person) => ({ params: { personSlug: person.slug }, props: { person } }));
@@ -13,6 +13,7 @@ const { person } = Astro.props;
 const events = dashboard.events.filter((event) => event.personSlug === person.slug);
 const documents = dashboard.documents.filter((document) => document.person === person.name);
 const tasks = dashboard.tasks.filter((task) => task.personSlug === person.slug);
+const keyMetrics = person.keyMetrics || [];
 ---
 
 <AppLayout title={`${person.name} · Медицинская база`}>
@@ -47,6 +48,32 @@ const tasks = dashboard.tasks.filter((task) => task.personSlug === person.slug);
     </article>
   </section>
 
+  {keyMetrics.length > 0 && (
+    <section>
+      <div class="section-title">
+        <h2>Ключевые показатели</h2>
+        <a class="text-link" href={pageHref("/metrics")}>Все показатели</a>
+      </div>
+      <div class="metric-grid compact">
+        {keyMetrics.map((group) => (
+          <article class="card metric-card small">
+            <div class="metric-card-header">
+              <div>
+                <span class="chip muted">{formatDateShort(group.latest?.date)}</span>
+                <h3><a href={group.href}>{group.metricLabel}</a></h3>
+              </div>
+              <span class="count-badge">{group.count}</span>
+            </div>
+            <div class="metric-latest">
+              <strong>{group.latest?.displayValue || "Нет значения"}</strong>
+              {group.trendLabel && <span class:list={["delta-pill", group.trendTone]}>{group.trendLabel}</span>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
   <section>
     <div class="section-title"><h2>Задачи</h2></div>
     <TaskBoard tasks={tasks} />
@@ -64,4 +91,3 @@ const tasks = dashboard.tasks.filter((task) => task.personSlug === person.slug);
     <DocumentList documents={documents} />
   </section>
 </AppLayout>
-

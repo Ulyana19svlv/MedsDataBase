@@ -344,9 +344,17 @@ select {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.metric-grid.compact {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .metric-card {
   display: grid;
   gap: 0.85rem;
+}
+
+.metric-card.small {
+  gap: 0.65rem;
 }
 
 .metric-card-header {
@@ -357,6 +365,18 @@ select {
 
 .metric-card-header h3 {
   margin: 0.4rem 0 0;
+}
+
+.metric-card-header h3 a,
+.text-link {
+  color: var(--accent-dark);
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.metric-card-header h3 a:hover,
+.text-link:hover {
+  text-decoration: underline;
 }
 
 .metric-latest {
@@ -397,6 +417,11 @@ select {
 .delta-pill.down {
   color: var(--accent-dark);
   background: #eaf7f4;
+}
+
+.delta-pill.flat {
+  color: var(--muted);
+  background: #f3f4f6;
 }
 
 .sparkline {
@@ -441,6 +466,10 @@ select {
   border-radius: 8px;
   background: var(--surface);
   box-shadow: var(--shadow);
+}
+
+.metric-table-wrap.compact {
+  box-shadow: none;
 }
 
 .metric-table {
@@ -697,6 +726,25 @@ select {
 .prose ul,
 .prose ol {
   padding-left: 1.2rem;
+}
+
+.clean-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.note-box {
+  margin-top: 1rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.note-box p {
+  margin: 0.35rem 0 0;
 }
 
 .document-preview {

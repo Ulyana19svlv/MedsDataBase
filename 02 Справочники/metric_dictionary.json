@@ -1,41 +1,463 @@
 {
   "schema_version": 1,
   "metrics": [
-    { "id": "total_cholesterol", "label": "Общий холестерин", "category": "lipids", "default_unit": "mmol/L", "value_type": "numeric", "aliases": ["общий холестерин", "холестерин общий", "cholesterol total", "total cholesterol"] },
-    { "id": "ldl_cholesterol", "label": "ЛПНП", "category": "lipids", "default_unit": "mmol/L", "value_type": "numeric", "aliases": ["лпнп", "холестерин лпнп", "ldl", "ldl-c"] },
-    { "id": "hdl_cholesterol", "label": "ЛПВП", "category": "lipids", "default_unit": "mmol/L", "value_type": "numeric", "aliases": ["лпвп", "холестерин лпвп", "hdl", "hdl-c"] },
-    { "id": "triglycerides", "label": "Триглицериды", "category": "lipids", "default_unit": "mmol/L", "value_type": "numeric", "aliases": ["триглицериды", "tg", "triglycerides"] },
-    { "id": "glucose", "label": "Глюкоза", "category": "carbohydrate_metabolism", "default_unit": "mmol/L", "value_type": "numeric", "aliases": ["глюкоза", "glucose"] },
-    { "id": "hba1c", "label": "HbA1c", "category": "carbohydrate_metabolism", "default_unit": "%", "value_type": "numeric", "aliases": ["гликированный гемоглобин", "hba1c", "hb a1c"] },
-    { "id": "tsh", "label": "ТТГ", "category": "thyroid", "default_unit": "mIU/L", "value_type": "numeric", "aliases": ["ттг", "tsh"] },
-    { "id": "free_t4", "label": "Свободный Т4", "category": "thyroid", "default_unit": "pmol/L", "value_type": "numeric", "aliases": ["свободный т4", "т4 свободный", "free t4", "ft4"] },
-    { "id": "free_t3", "label": "Свободный Т3", "category": "thyroid", "default_unit": "pmol/L", "value_type": "numeric", "aliases": ["свободный т3", "т3 свободный", "free t3", "ft3"] },
-    { "id": "hemoglobin", "label": "Гемоглобин", "category": "cbc", "default_unit": "g/L", "value_type": "numeric", "aliases": ["гемоглобин", "hb", "hgb"] },
-    { "id": "hematocrit", "label": "Гематокрит", "category": "cbc", "default_unit": "%", "value_type": "numeric", "aliases": ["гематокрит", "hct"] },
-    { "id": "leukocytes", "label": "Лейкоциты", "category": "cbc", "default_unit": "10^9/L", "value_type": "numeric", "aliases": ["лейкоциты", "wbc"] },
-    { "id": "platelets", "label": "Тромбоциты", "category": "cbc", "default_unit": "10^9/L", "value_type": "numeric", "aliases": ["тромбоциты", "plt"] },
-    { "id": "eosinophils_abs", "label": "Эозинофилы абсолютные", "category": "cbc", "default_unit": "10^9/L", "value_type": "numeric", "aliases": ["эозинофилы абс", "эозинофилы абсолютные", "eosinophils abs"] },
-    { "id": "eosinophils_percent", "label": "Эозинофилы %", "category": "cbc", "default_unit": "%", "value_type": "numeric", "aliases": ["эозинофилы %", "эозинофилы, %", "eosinophils %"] },
-    { "id": "esr", "label": "СОЭ", "category": "cbc", "default_unit": "mm/h", "value_type": "numeric", "aliases": ["соэ", "esr"] },
-    { "id": "ferritin", "label": "Ферритин", "category": "iron", "default_unit": "ng/mL", "value_type": "numeric", "aliases": ["ферритин", "ferritin"] },
-    { "id": "vitamin_d", "label": "25(OH)D / витамин D", "category": "vitamins", "default_unit": "ng/mL", "value_type": "numeric", "aliases": ["витамин d", "25-oh d", "25(oh)d", "25 hydroxyvitamin d"] },
-    { "id": "alt", "label": "АЛТ", "category": "liver", "default_unit": "U/L", "value_type": "numeric", "aliases": ["алт", "alanine aminotransferase", "alt"] },
-    { "id": "ast", "label": "АСТ", "category": "liver", "default_unit": "U/L", "value_type": "numeric", "aliases": ["аст", "aspartate aminotransferase", "ast"] },
-    { "id": "bilirubin_total", "label": "Билирубин общий", "category": "liver", "default_unit": "umol/L", "value_type": "numeric", "aliases": ["билирубин общий", "общий билирубин", "total bilirubin"] },
-    { "id": "bilirubin_direct", "label": "Билирубин прямой", "category": "liver", "default_unit": "umol/L", "value_type": "numeric", "aliases": ["билирубин прямой", "прямой билирубин", "direct bilirubin"] },
-    { "id": "bilirubin_indirect", "label": "Билирубин непрямой", "category": "liver", "default_unit": "umol/L", "value_type": "numeric", "aliases": ["билирубин непрямой", "непрямой билирубин", "indirect bilirubin"] },
-    { "id": "creatinine", "label": "Креатинин", "category": "kidney", "default_unit": "umol/L", "value_type": "numeric", "aliases": ["креатинин", "creatinine"] },
-    { "id": "urea", "label": "Мочевина", "category": "kidney", "default_unit": "mmol/L", "value_type": "numeric", "aliases": ["мочевина", "urea"] },
-    { "id": "uric_acid", "label": "Мочевая кислота", "category": "kidney", "default_unit": "umol/L", "value_type": "numeric", "aliases": ["мочевая кислота", "uric acid"] },
-    { "id": "crp", "label": "C-реактивный белок", "category": "inflammation", "default_unit": "mg/L", "value_type": "numeric", "aliases": ["с-реактивный белок", "с реактивный белок", "срб", "crp", "c-reactive protein"] },
-    { "id": "aslo", "label": "АСЛО", "category": "inflammation", "default_unit": "IU/mL", "value_type": "numeric", "aliases": ["асло", "антистрептолизин-о", "антистрептолизин о", "aslo"] },
-    { "id": "rheumatoid_factor", "label": "Ревматоидный фактор", "category": "inflammation", "default_unit": "IU/mL", "value_type": "numeric", "aliases": ["ревматоидный фактор", "рф", "rheumatoid factor"] },
-    { "id": "homocysteine", "label": "Гомоцистеин", "category": "cardiovascular", "default_unit": "umol/L", "value_type": "numeric", "aliases": ["гомоцистеин", "homocysteine"] },
-    { "id": "hpv_high_risk", "label": "ВПЧ высокого канцерогенного риска", "category": "hpv", "default_unit": "", "value_type": "qualitative", "aliases": ["впч высокого канцерогенного риска", "впч вкр", "hpv high risk", "high risk hpv"] },
-    { "id": "hpv_16", "label": "ВПЧ 16", "category": "hpv", "default_unit": "", "value_type": "qualitative", "aliases": ["впч 16", "hpv 16", "тип 16"] },
-    { "id": "hpv_18", "label": "ВПЧ 18", "category": "hpv", "default_unit": "", "value_type": "qualitative", "aliases": ["впч 18", "hpv 18", "тип 18"] },
-    { "id": "hpv_31", "label": "ВПЧ 31", "category": "hpv", "default_unit": "", "value_type": "qualitative", "aliases": ["впч 31", "hpv 31", "тип 31"] },
-    { "id": "hpv_33", "label": "ВПЧ 33", "category": "hpv", "default_unit": "", "value_type": "qualitative", "aliases": ["впч 33", "hpv 33", "тип 33"] },
-    { "id": "hpv_45", "label": "ВПЧ 45", "category": "hpv", "default_unit": "", "value_type": "qualitative", "aliases": ["впч 45", "hpv 45", "тип 45"] }
+    {
+      "id": "total_cholesterol",
+      "label": "Общий холестерин",
+      "category": "lipids",
+      "default_unit": "mmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "общий холестерин",
+        "холестерин общий",
+        "cholesterol total",
+        "total cholesterol"
+      ]
+    },
+    {
+      "id": "ldl_cholesterol",
+      "label": "ЛПНП",
+      "category": "lipids",
+      "default_unit": "mmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "лпнп",
+        "холестерин лпнп",
+        "ldl",
+        "ldl-c"
+      ]
+    },
+    {
+      "id": "hdl_cholesterol",
+      "label": "ЛПВП",
+      "category": "lipids",
+      "default_unit": "mmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "лпвп",
+        "холестерин лпвп",
+        "hdl",
+        "hdl-c"
+      ]
+    },
+    {
+      "id": "triglycerides",
+      "label": "Триглицериды",
+      "category": "lipids",
+      "default_unit": "mmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "триглицериды",
+        "tg",
+        "triglycerides"
+      ]
+    },
+    {
+      "id": "glucose",
+      "label": "Глюкоза",
+      "category": "carbohydrate_metabolism",
+      "default_unit": "mmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "глюкоза",
+        "glucose"
+      ]
+    },
+    {
+      "id": "hba1c",
+      "label": "HbA1c",
+      "category": "carbohydrate_metabolism",
+      "default_unit": "%",
+      "value_type": "numeric",
+      "aliases": [
+        "гликированный гемоглобин",
+        "hba1c",
+        "hb a1c"
+      ]
+    },
+    {
+      "id": "tsh",
+      "label": "ТТГ",
+      "category": "thyroid",
+      "default_unit": "mIU/L",
+      "value_type": "numeric",
+      "aliases": [
+        "ттг",
+        "tsh"
+      ]
+    },
+    {
+      "id": "free_t4",
+      "label": "Свободный Т4",
+      "category": "thyroid",
+      "default_unit": "pmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "свободный т4",
+        "т4 свободный",
+        "free t4",
+        "ft4"
+      ]
+    },
+    {
+      "id": "free_t3",
+      "label": "Свободный Т3",
+      "category": "thyroid",
+      "default_unit": "pmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "свободный т3",
+        "т3 свободный",
+        "free t3",
+        "ft3"
+      ]
+    },
+    {
+      "id": "hemoglobin",
+      "label": "Гемоглобин",
+      "category": "cbc",
+      "default_unit": "g/L",
+      "value_type": "numeric",
+      "aliases": [
+        "гемоглобин",
+        "hb",
+        "hgb"
+      ]
+    },
+    {
+      "id": "hematocrit",
+      "label": "Гематокрит",
+      "category": "cbc",
+      "default_unit": "%",
+      "value_type": "numeric",
+      "aliases": [
+        "гематокрит",
+        "hct"
+      ]
+    },
+    {
+      "id": "leukocytes_blood",
+      "label": "Лейкоциты крови",
+      "category": "cbc",
+      "default_unit": "10^9/L",
+      "value_type": "numeric",
+      "aliases": [
+        "лейкоциты крови",
+        "лейкоциты в крови",
+        "wbc"
+      ]
+    },
+    {
+      "id": "leukocytes_urine",
+      "label": "Лейкоциты в моче",
+      "category": "urinalysis",
+      "default_unit": "в п/зр",
+      "value_type": "semi_quantitative",
+      "aliases": [
+        "лейкоциты в моче",
+        "лейкоциты мочи",
+        "лейкоциты полуколичественно"
+      ]
+    },
+    {
+      "id": "leukocytes_smear",
+      "label": "Лейкоциты в мазке",
+      "category": "smear",
+      "default_unit": "в п/зр",
+      "value_type": "semi_quantitative",
+      "aliases": [
+        "лейкоциты в мазке",
+        "лейкоциты цервикальное отделяемое",
+        "лейкоциты вагинальное отделяемое",
+        "лейкоциты в цервикальном канале",
+        "лейкоциты во влагалище"
+      ]
+    },
+    {
+      "id": "platelets",
+      "label": "Тромбоциты",
+      "category": "cbc",
+      "default_unit": "10^9/L",
+      "value_type": "numeric",
+      "aliases": [
+        "тромбоциты",
+        "plt"
+      ]
+    },
+    {
+      "id": "eosinophils_abs",
+      "label": "Эозинофилы абсолютные",
+      "category": "cbc",
+      "default_unit": "10^9/L",
+      "value_type": "numeric",
+      "aliases": [
+        "эозинофилы абс",
+        "эозинофилы абсолютные",
+        "eosinophils abs"
+      ]
+    },
+    {
+      "id": "eosinophils_percent",
+      "label": "Эозинофилы %",
+      "category": "cbc",
+      "default_unit": "%",
+      "value_type": "numeric",
+      "aliases": [
+        "эозинофилы %",
+        "эозинофилы, %",
+        "eosinophils %"
+      ]
+    },
+    {
+      "id": "esr",
+      "label": "СОЭ",
+      "category": "cbc",
+      "default_unit": "mm/h",
+      "value_type": "numeric",
+      "aliases": [
+        "соэ",
+        "esr"
+      ]
+    },
+    {
+      "id": "ferritin",
+      "label": "Ферритин",
+      "category": "iron",
+      "default_unit": "ng/mL",
+      "value_type": "numeric",
+      "aliases": [
+        "ферритин",
+        "ferritin"
+      ]
+    },
+    {
+      "id": "vitamin_d",
+      "label": "25(OH)D / витамин D",
+      "category": "vitamins",
+      "default_unit": "ng/mL",
+      "value_type": "numeric",
+      "aliases": [
+        "витамин d",
+        "25-oh d",
+        "25(oh)d",
+        "25 hydroxyvitamin d"
+      ]
+    },
+    {
+      "id": "alt",
+      "label": "АЛТ",
+      "category": "liver",
+      "default_unit": "U/L",
+      "value_type": "numeric",
+      "aliases": [
+        "алт",
+        "alanine aminotransferase",
+        "alt"
+      ]
+    },
+    {
+      "id": "ast",
+      "label": "АСТ",
+      "category": "liver",
+      "default_unit": "U/L",
+      "value_type": "numeric",
+      "aliases": [
+        "аст",
+        "aspartate aminotransferase",
+        "ast"
+      ]
+    },
+    {
+      "id": "bilirubin_total",
+      "label": "Билирубин общий",
+      "category": "liver",
+      "default_unit": "umol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "билирубин общий",
+        "общий билирубин",
+        "total bilirubin"
+      ]
+    },
+    {
+      "id": "bilirubin_direct",
+      "label": "Билирубин прямой",
+      "category": "liver",
+      "default_unit": "umol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "билирубин прямой",
+        "прямой билирубин",
+        "direct bilirubin"
+      ]
+    },
+    {
+      "id": "bilirubin_indirect",
+      "label": "Билирубин непрямой",
+      "category": "liver",
+      "default_unit": "umol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "билирубин непрямой",
+        "непрямой билирубин",
+        "indirect bilirubin"
+      ]
+    },
+    {
+      "id": "creatinine",
+      "label": "Креатинин",
+      "category": "kidney",
+      "default_unit": "umol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "креатинин",
+        "creatinine"
+      ]
+    },
+    {
+      "id": "urea",
+      "label": "Мочевина",
+      "category": "kidney",
+      "default_unit": "mmol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "мочевина",
+        "urea"
+      ]
+    },
+    {
+      "id": "uric_acid",
+      "label": "Мочевая кислота",
+      "category": "kidney",
+      "default_unit": "umol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "мочевая кислота",
+        "uric acid"
+      ]
+    },
+    {
+      "id": "crp",
+      "label": "C-реактивный белок",
+      "category": "inflammation",
+      "default_unit": "mg/L",
+      "value_type": "numeric",
+      "aliases": [
+        "с-реактивный белок",
+        "с реактивный белок",
+        "срб",
+        "crp",
+        "c-reactive protein"
+      ]
+    },
+    {
+      "id": "aslo",
+      "label": "АСЛО",
+      "category": "inflammation",
+      "default_unit": "IU/mL",
+      "value_type": "numeric",
+      "aliases": [
+        "асло",
+        "антистрептолизин-о",
+        "антистрептолизин о",
+        "aslo"
+      ]
+    },
+    {
+      "id": "rheumatoid_factor",
+      "label": "Ревматоидный фактор",
+      "category": "inflammation",
+      "default_unit": "IU/mL",
+      "value_type": "numeric",
+      "aliases": [
+        "ревматоидный фактор",
+        "рф",
+        "rheumatoid factor"
+      ]
+    },
+    {
+      "id": "homocysteine",
+      "label": "Гомоцистеин",
+      "category": "cardiovascular",
+      "default_unit": "umol/L",
+      "value_type": "numeric",
+      "aliases": [
+        "гомоцистеин",
+        "homocysteine"
+      ]
+    },
+    {
+      "id": "hpv_high_risk",
+      "label": "ВПЧ высокого канцерогенного риска",
+      "category": "hpv",
+      "default_unit": "",
+      "value_type": "qualitative",
+      "aliases": [
+        "впч высокого канцерогенного риска",
+        "впч вкр",
+        "hpv high risk",
+        "high risk hpv"
+      ]
+    },
+    {
+      "id": "hpv_16",
+      "label": "ВПЧ 16",
+      "category": "hpv",
+      "default_unit": "",
+      "value_type": "qualitative",
+      "aliases": [
+        "впч 16",
+        "hpv 16",
+        "тип 16"
+      ]
+    },
+    {
+      "id": "hpv_18",
+      "label": "ВПЧ 18",
+      "category": "hpv",
+      "default_unit": "",
+      "value_type": "qualitative",
+      "aliases": [
+        "впч 18",
+        "hpv 18",
+        "тип 18"
+      ]
+    },
+    {
+      "id": "hpv_31",
+      "label": "ВПЧ 31",
+      "category": "hpv",
+      "default_unit": "",
+      "value_type": "qualitative",
+      "aliases": [
+        "впч 31",
+        "hpv 31",
+        "тип 31"
+      ]
+    },
+    {
+      "id": "hpv_33",
+      "label": "ВПЧ 33",
+      "category": "hpv",
+      "default_unit": "",
+      "value_type": "qualitative",
+      "aliases": [
+        "впч 33",
+        "hpv 33",
+        "тип 33"
+      ]
+    },
+    {
+      "id": "hpv_45",
+      "label": "ВПЧ 45",
+      "category": "hpv",
+      "default_unit": "",
+      "value_type": "qualitative",
+      "aliases": [
+        "впч 45",
+        "hpv 45",
+        "тип 45"
+      ]
+    }
   ]
 }

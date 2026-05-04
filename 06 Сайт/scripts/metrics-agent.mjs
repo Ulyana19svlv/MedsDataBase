@@ -194,7 +194,84 @@ function splitMetricLines(text) {
     .filter((line) => line.length >= 4);
 }
 
-function parseKnownMetricLine(line, dictionary) {
+function leukocyteMetricForLine(line, context = "") {
+  const normalized = normalizeText(line);
+  const normalizedContext = normalizeText(context);
+  const combined = `${normalized} ${normalizedContext}`;
+  if (!lineHasAlias(normalized, "лейкоциты")) return null;
+
+  if (/моч|полуколичественно/.test(combined)) {
+    return {
+      id: "leukocytes_urine",
+      label: "Лейкоциты в моче",
+      category: "urinalysis",
+      value_type: "semi_quantitative",
+      default_unit: "в п/зр",
+    };
+  }
+
+  if (/мазк|отделяем|цервик|влагали|уретр|п\/зр|пол[ея]\s+зрения/.test(combined)) {
+    return {
+      id: "leukocytes_smear",
+      label: "Лейкоциты в мазке",
+      category: "smear",
+      value_type: "semi_quantitative",
+      default_unit: "в п/зр",
+    };
+  }
+
+  if (/оак|кров|10\^?9|тыс\/мкл|wbc/.test(combined)) {
+    return {
+      id: "leukocytes_blood",
+      label: "Лейкоциты крови",
+      category: "cbc",
+      value_type: "numeric",
+      default_unit: "10^9/L",
+    };
+  }
+
+  return null;
+}
+
+function valueAfterLeukocytes(line) {
+  const normalized = normalizeText(line);
+  const index = normalized.indexOf("лейкоциты");
+  if (index < 0) return "";
+  const tail = line.slice(index + "лейкоциты".length);
+  const qualitative = tail.match(/(?:[:\-–—]|\s)+(не\s+обнаружено|обнаружено|отрицательно|положительно|negative|positive|not detected|detected)/iu);
+  if (qualitative) return qualitative[1];
+  const range = tail.match(/(?:[:\-–—]|\s)+(\d+(?:[,.]\d+)?\s*[–-]\s*\d+(?:[,.]\d+)?)/u);
+  if (range) return range[1].replace(/\s+/g, "");
+  const numeric = tail.match(/(?:[:\-–—]|\s)+(?:[<>≤≥]\s*)?\d+(?:[,.]\d+)?/u);
+  return numeric ? numeric[0].replace(/^[:\s\-–—]+/u, "") : "";
+}
+
+function parseKnownMetricLine(line, dictionary, context = "") {
+  const leukocytes = leukocyteMetricForLine(line, context);
+  if (leukocytes) {
+    const rawValue = valueAfterLeukocytes(line);
+    if (!rawValue) return null;
+    const parsedValue = parseValue(rawValue);
+    const unit =
+      leukocytes.value_type === "semi_quantitative"
+        ? parsedValue.qualitative_value
+          ? ""
+          : leukocytes.default_unit
+        : guessUnit(line, rawValue, leukocytes.default_unit);
+    return {
+      metric_id: leukocytes.id,
+      metric_label: leukocytes.label,
+      metric_category: leukocytes.category,
+      metric_value_type: leukocytes.value_type,
+      unit,
+      ...parsedValue,
+      ...parseReference(line),
+      is_abnormal: detectAbnormal(line),
+      extraction_confidence: "medium",
+      source_text: line,
+    };
+  }
+
   const known = findKnownMetric(line, dictionary);
   if (!known) return null;
 
@@ -324,6 +401,22 @@ function completeCandidate(partial, base) {
   };
 }
 
+function metricFingerprint(record) {
+  return [
+    record.source_type,
+    record.source_event_id,
+    record.source_event_path,
+    record.source_draft_path,
+    Array.isArray(record.source_files) ? record.source_files.join("|") : "",
+    record.person_id,
+    record.date,
+    record.metric_id,
+    record.metric_label,
+    record.value_text,
+    record.unit,
+  ].join("::");
+}
+
 function extractFromEvent(event, dictionary, people) {
   if (event.parsed.data?.type !== "medical_event") return [];
   if (!["done", "approved"].includes(String(event.parsed.data.status || "done"))) return [];
@@ -341,6 +434,7 @@ function extractFromEvent(event, dictionary, people) {
       event.parsed.data.specialty,
       event.parsed.data.tags?.join(" "),
       event.parsed.content.match(/^#\s+(.+)$/m)?.[1] || "",
+      repoRelative(event.filePath),
     ].join(" "),
   );
   const isLabLike = /анализ|лаборатор|lab|скрининг|впч|цитолог|мазок|посев|пцр|pcr/.test(eventText);
@@ -349,7 +443,7 @@ function extractFromEvent(event, dictionary, people) {
   const output = [];
 
   for (const line of lines.flatMap(splitMetricLines)) {
-    const known = parseKnownMetricLine(line, dictionary);
+    const known = parseKnownMetricLine(line, dictionary, eventText);
     if (known) output.push(completeCandidate(known, base));
     const custom = customMetricCandidate(line);
     if (custom && !known && isLabLike) output.push(completeCandidate(custom, base));
@@ -551,12 +645,13 @@ async function scanMetrics() {
   ]);
 
   const existingKeys = new Set((metricsJson.records || []).map((record) => record.dedupe_key).filter(Boolean));
+  const existingFingerprints = new Set((metricsJson.records || []).map(metricFingerprint));
   const rawCandidates = [
     ...events.flatMap((event) => extractFromEvent(event, dictionary, people)),
     ...drafts.flatMap((draft) => extractFromDraft(draft, dictionary, people)),
   ];
   const candidates = uniqueByDedupeKey(keepRepeatedCustomCandidates(rawCandidates)).filter(
-    (candidate) => !existingKeys.has(candidate.dedupe_key),
+    (candidate) => !existingKeys.has(candidate.dedupe_key) && !existingFingerprints.has(metricFingerprint(candidate)),
   );
   const payload = {
     schema_version: 1,
@@ -582,6 +677,7 @@ async function applyMetrics() {
 
   const existing = metricsJson.records || [];
   const existingKeys = new Set(existing.map((record) => record.dedupe_key).filter(Boolean));
+  const existingFingerprints = new Set(existing.map(metricFingerprint));
   const approved = (candidatesJson.candidates || []).filter(
     (candidate) => candidate.status === "approved" || checkedIds.has(candidate.id),
   );
@@ -589,7 +685,9 @@ async function applyMetrics() {
 
   for (const candidate of approved) {
     if (existingKeys.has(candidate.dedupe_key)) continue;
+    if (existingFingerprints.has(metricFingerprint(candidate))) continue;
     existingKeys.add(candidate.dedupe_key);
+    existingFingerprints.add(metricFingerprint(candidate));
     additions.push({
       ...candidate,
       status: "approved",

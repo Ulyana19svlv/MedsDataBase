@@ -720,6 +720,46 @@ function normalizeMetricRecord(record, eventsById) {
   };
 }
 
+function metricTrend(delta) {
+  if (delta === null || delta === undefined || Number.isNaN(delta)) {
+    return { trendLabel: "", trendTone: "flat" };
+  }
+  const rounded = Math.round(delta * 100) / 100;
+  if (rounded > 0) return { trendLabel: `выше прошлого на ${rounded}`, trendTone: "up" };
+  if (rounded < 0) return { trendLabel: `ниже прошлого на ${Math.abs(rounded)}`, trendTone: "down" };
+  return { trendLabel: "без изменений", trendTone: "flat" };
+}
+
+function doctorQuestionsForMetric(group, latest, previous) {
+  const questions = [];
+  if (latest?.is_abnormal) {
+    questions.push("Обсудить, насколько это отклонение важно именно в текущем контексте и нужен ли контроль.");
+  }
+  if (previous && group.hasTrend) {
+    questions.push("Уточнить, важна ли динамика между последними анализами и когда повторять показатель.");
+  }
+  if (latest && !latest.reference_text) {
+    questions.push("Уточнить целевой диапазон для этого показателя, потому что в записи нет референса.");
+  }
+  return questions;
+}
+
+const keyMetricIds = new Set([
+  "hemoglobin",
+  "ferritin",
+  "vitamin_d",
+  "tsh",
+  "free_t4",
+  "ldl_cholesterol",
+  "total_cholesterol",
+  "glucose",
+  "hba1c",
+  "alt",
+  "ast",
+  "creatinine",
+  "homocysteine",
+]);
+
 function buildMetricGroups(records) {
   const groups = new Map();
   for (const record of records) {
@@ -747,14 +787,21 @@ function buildMetricGroups(records) {
       const hasLatestNumber = latest?.numeric_value !== null && latest?.numeric_value !== undefined;
       const hasPreviousNumber = previous?.numeric_value !== null && previous?.numeric_value !== undefined;
       const delta = hasLatestNumber && hasPreviousNumber ? latest.numeric_value - previous.numeric_value : null;
+      const slug = slugify(`${group.personId || group.person}-${group.metricId || group.metricLabel}`, "metric");
+      const trend = metricTrend(delta);
       return {
         ...group,
+        slug,
+        routePath: `/metrics/${slug}`,
+        href: addBase(`/metrics/${slug}`),
         records: sorted,
         latest,
         previous,
         delta,
+        ...trend,
         count: sorted.length,
         hasTrend: sorted.filter((record) => record.numeric_value !== null && record.numeric_value !== undefined).length >= 2,
+        doctorQuestions: doctorQuestionsForMetric(group, latest, previous),
       };
     })
     .sort((a, b) => String(a.person).localeCompare(String(b.person), "ru") || String(a.metricLabel).localeCompare(String(b.metricLabel), "ru"));
@@ -891,6 +938,16 @@ export async function loadDashboardData({ includeInbox = false } = {}) {
       String(b.date).localeCompare(String(a.date)),
     );
   const metricGroups = buildMetricGroups(metrics);
+  for (const profile of profiles) {
+    profile.keyMetrics = metricGroups
+      .filter((group) => group.person === profile.name && keyMetricIds.has(group.metricId))
+      .sort((a, b) => {
+        const aLatest = a.latest?.date || "";
+        const bLatest = b.latest?.date || "";
+        return bLatest.localeCompare(aLatest) || String(a.metricLabel).localeCompare(String(b.metricLabel), "ru");
+      })
+      .slice(0, 12);
+  }
 
   const data = {
     generatedAt: new Date().toISOString(),

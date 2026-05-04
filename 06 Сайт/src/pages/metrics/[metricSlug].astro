@@ -1,0 +1,87 @@
+---
+import AppLayout from "../../layouts/AppLayout.astro";
+import { dashboard, formatDate, formatDateShort } from "../../lib/ui";
+
+export function getStaticPaths() {
+  return (dashboard.metricGroups || []).map((group) => ({
+    params: { metricSlug: group.slug },
+    props: { group },
+  }));
+}
+
+const { group } = Astro.props;
+const latest = group.latest;
+const previous = group.previous;
+const questions = group.doctorQuestions || [];
+---
+
+<AppLayout title={`${group.metricLabel} · Показатели`}>
+  <section class="page-header">
+    <p class="eyebrow">{group.person}</p>
+    <h1>{group.metricLabel}</h1>
+    <p>История значений из подтвержденных записей. Это не медицинская интерпретация, а удобная сводка для просмотра динамики и подготовки вопросов врачу.</p>
+  </section>
+
+  <section class="metrics-summary">
+    <article class="card">
+      <span class="muted-text">Последнее значение</span>
+      <strong>{latest?.displayValue || "Нет данных"}</strong>
+      {latest && <small>{formatDate(latest.date)}</small>}
+    </article>
+    <article class="card">
+      <span class="muted-text">Предыдущее</span>
+      <strong>{previous?.displayValue || "Нет данных"}</strong>
+      {previous && <small>{formatDate(previous.date)}</small>}
+    </article>
+    <article class="card">
+      <span class="muted-text">Динамика</span>
+      <strong>{group.trendLabel || (group.count > 1 ? "есть история" : "одно значение")}</strong>
+      <small>{group.count} записей</small>
+    </article>
+  </section>
+
+  <section class="detail-grid">
+    <article class="card">
+      <h2>История</h2>
+      <div class="metric-table-wrap compact">
+        <table class="metric-table">
+          <thead>
+            <tr>
+              <th>Дата</th>
+              <th>Значение</th>
+              <th>Референс</th>
+              <th>Источник</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[...group.records].reverse().map((record) => (
+              <tr>
+                <td>{formatDateShort(record.date)}</td>
+                <td><strong>{record.displayValue}</strong></td>
+                <td>{record.reference_text || <span class="muted-text">нет</span>}</td>
+                <td>{record.eventHref ? <a href={record.eventHref}>{record.eventTitle || "событие"}</a> : <span class="muted-text">запись</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </article>
+
+    <article class="card">
+      <h2>Вопросы врачу</h2>
+      {questions.length > 0 ? (
+        <ul class="clean-list">
+          {questions.map((question) => <li>{question}</li>)}
+        </ul>
+      ) : (
+        <p class="empty">Явных вопросов по данным нет. Можно спросить, какой целевой диапазон важен лично для вас и когда повторять анализ.</p>
+      )}
+      {latest?.source_text && (
+        <div class="note-box">
+          <span class="muted-text">Фрагмент источника</span>
+          <p>{latest.source_text}</p>
+        </div>
+      )}
+    </article>
+  </section>
+</AppLayout>

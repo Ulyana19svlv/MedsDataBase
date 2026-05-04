@@ -8,10 +8,8 @@ const people = dashboard.people;
 const categories = [...new Set(metricGroups.map((group) => group.metricCategory || "other"))].sort((a, b) =>
   a.localeCompare(b, "ru"),
 );
-const latestRecords = [...metricRecords]
-  .sort((a, b) => String(b.date).localeCompare(String(a.date)))
-  .slice(0, 10);
-const trendGroups = metricGroups.filter((group) => group.hasTrend).slice(0, 12);
+const latestRecords = [...metricRecords].sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 10);
+const trendGroups = metricGroups.filter((group) => group.hasTrend);
 
 const categoryLabels: Record<string, string> = {
   lipids: "Липиды",
@@ -25,6 +23,8 @@ const categoryLabels: Record<string, string> = {
   inflammation: "Воспаление",
   cardiovascular: "Сердечно-сосудистое",
   hpv: "ВПЧ",
+  urinalysis: "Моча",
+  smear: "Мазки",
   custom: "Другое",
 };
 
@@ -32,17 +32,10 @@ function categoryLabel(category: string) {
   return categoryLabels[category] || category || "Другое";
 }
 
-function formatDelta(delta: number | null | undefined) {
-  if (delta === null || delta === undefined || Number.isNaN(delta)) return "";
-  const rounded = Math.round(delta * 100) / 100;
-  if (rounded > 0) return `+${rounded}`;
-  return String(rounded);
-}
-
 function sparkline(records: Array<{ numeric_value?: number | null }>) {
   const points = records
-    .filter((record: { numeric_value?: number | null }) => record.numeric_value !== null && record.numeric_value !== undefined)
-    .map((record: { numeric_value?: number | null }) => Number(record.numeric_value));
+    .filter((record) => record.numeric_value !== null && record.numeric_value !== undefined)
+    .map((record) => Number(record.numeric_value));
   if (points.length < 2) return "";
   const min = Math.min(...points);
   const max = Math.max(...points);
@@ -50,8 +43,8 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
   const width = 180;
   const height = 52;
   return points
-    .map((value: number, index: number) => {
-      const x = points.length === 1 ? width : (index / (points.length - 1)) * width;
+    .map((value, index) => {
+      const x = (index / (points.length - 1)) * width;
       const y = height - ((value - min) / span) * (height - 8) - 4;
       return `${x.toFixed(1)},${y.toFixed(1)}`;
     })
@@ -63,7 +56,7 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
   <section class="page-header">
     <p class="eyebrow">Динамика</p>
     <h1>Показатели</h1>
-    <p>Последние значения и динамика по анализам. Данные берутся из подтверждённого файла `07 Показатели/metrics.json`.</p>
+    <p>Последние значения, история и динамика по анализам. Данные берутся из подтвержденного файла `07 Показатели/metrics.json`.</p>
   </section>
 
   <section class="metrics-summary">
@@ -72,7 +65,7 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
       <strong>{metricRecords.length}</strong>
     </article>
     <article class="card">
-      <span class="muted-text">Показателей в динамике</span>
+      <span class="muted-text">Показателей с динамикой</span>
       <strong>{trendGroups.length}</strong>
     </article>
     <article class="card">
@@ -104,15 +97,14 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
 
   <section>
     <div class="section-title">
-      <h2>Динамика</h2>
-      <span class="muted-text">{trendGroups.length} показателей с 2+ значениями</span>
+      <h2>Все показатели</h2>
+      <span class="muted-text">{metricGroups.length} групп</span>
     </div>
     <div class="metric-grid">
       {metricGroups.map((group) => {
         const latest = group.latest;
         const previous = group.previous;
         const points = sparkline(group.records);
-        const delta = formatDelta(group.delta);
         return (
           <article
             class="card metric-card"
@@ -124,7 +116,7 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
             <div class="metric-card-header">
               <div>
                 <span class="chip muted">{group.person}</span>
-                <h3>{group.metricLabel}</h3>
+                <h3><a href={group.href}>{group.metricLabel}</a></h3>
               </div>
               <span class="count-badge">{group.count}</span>
             </div>
@@ -135,7 +127,7 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
             {previous && (
               <p class="metric-delta">
                 Предыдущее: {previous.displayValue} от {formatDateShort(previous.date)}
-                {delta && <span class:list={["delta-pill", group.delta > 0 ? "up" : group.delta < 0 ? "down" : "flat"]}>{delta}</span>}
+                {group.trendLabel && <span class:list={["delta-pill", group.trendTone]}>{group.trendLabel}</span>}
               </p>
             )}
             {points ? (
@@ -143,19 +135,9 @@ function sparkline(records: Array<{ numeric_value?: number | null }>) {
                 <polyline points={points} fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             ) : (
-              <p class="empty">Пока одно значение, график появится после повторного анализа.</p>
+              <p class="empty">Пока одно числовое значение или показатель нечисловой.</p>
             )}
-            <details class="metric-details">
-              <summary>Все значения</summary>
-              <ol>
-                {group.records.map((record) => (
-                  <li>
-                    <span>{formatDateShort(record.date)} — <strong>{record.displayValue}</strong></span>
-                    {record.eventHref && <a href={record.eventHref}>событие</a>}
-                  </li>
-                ))}
-              </ol>
-            </details>
+            <a class="text-link" href={group.href}>Открыть историю</a>
           </article>
         );
       })}
