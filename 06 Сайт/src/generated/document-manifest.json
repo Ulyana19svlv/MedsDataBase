@@ -50,6 +50,16 @@
     "size": 646386
   },
   {
+    "id": "fe9c60f15ac75a08",
+    "slug": "2026-03-26-masha-kardiotokografiya-elektronnyy-rezultat-fe9c60f1",
+    "fileName": "2026-03-26 Маша — Кардиотокография электронный результат.pdf",
+    "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-26 Маша — Кардиотокография электронный результат.pdf",
+    "outputFileName": "fe9c60f15a-2026-03-26-masha-kardiotokografiya-elektronnyy-rezultat.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/fe9c60f15a-2026-03-26-masha-kardiotokografiya-elektronnyy-rezultat.pdf",
+    "extension": "pdf",
+    "size": 21021
+  },
+  {
     "id": "fe40e9854e288f71",
     "slug": "2026-03-26-masha-rezultat-kardiotokografii-fe40e985",
     "fileName": "2026-03-26 Маша Результат кардиотокографии.jpeg",
@@ -250,6 +260,36 @@
     "size": 1164793
   },
   {
+    "id": "667c820e5dbdf8a8",
+    "slug": "2026-03-13-masha-posev-na-streptokokk-gruppy-b-667c820e",
+    "fileName": "2026-03-13 Маша — Посев на стрептококк группы B.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-03-13 Маша — Посев на стрептококк группы B.pdf",
+    "outputFileName": "667c820e5d-2026-03-13-masha-posev-na-streptokokk-gruppy-b.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/667c820e5d-2026-03-13-masha-posev-na-streptokokk-gruppy-b.pdf",
+    "extension": "pdf",
+    "size": 24526
+  },
+  {
+    "id": "bf98be1c10a80fa1",
+    "slug": "2026-03-12-masha-vaginalnoe-otdelyaemoe-bf98be1c",
+    "fileName": "2026-03-12 Маша — Вагинальное отделяемое.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-03-12 Маша — Вагинальное отделяемое.pdf",
+    "outputFileName": "bf98be1c10-2026-03-12-masha-vaginalnoe-otdelyaemoe.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/bf98be1c10-2026-03-12-masha-vaginalnoe-otdelyaemoe.pdf",
+    "extension": "pdf",
+    "size": 24628
+  },
+  {
+    "id": "f185135ab9294fa9",
+    "slug": "2026-03-12-masha-tservikalnoe-otdelyaemoe-f185135a",
+    "fileName": "2026-03-12 Маша — Цервикальное отделяемое.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-03-12 Маша — Цервикальное отделяемое.pdf",
+    "outputFileName": "f185135ab9-2026-03-12-masha-tservikalnoe-otdelyaemoe.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/f185135ab9-2026-03-12-masha-tservikalnoe-otdelyaemoe.pdf",
+    "extension": "pdf",
+    "size": 24613
+  },
+  {
     "id": "bdb058682f70a188",
     "slug": "2026-03-11-masha-akusher-ginekolog-bdb05868",
     "fileName": "2026-03-11 Маша Акушер-гинеколог.pdf",
@@ -270,6 +310,86 @@
     "size": 31628
   },
   {
+    "id": "0118d32029457ffb",
+    "slug": "2026-02-18-masha-alt-0118d320",
+    "fileName": "2026-02-18 Маша — АЛТ.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — АЛТ.pdf",
+    "outputFileName": "0118d32029-2026-02-18-masha-alt.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/0118d32029-2026-02-18-masha-alt.pdf",
+    "extension": "pdf",
+    "size": 22791
+  },
+  {
+    "id": "1d0614094721340a",
+    "slug": "2026-02-18-masha-ast-1d061409",
+    "fileName": "2026-02-18 Маша — АСТ.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — АСТ.pdf",
+    "outputFileName": "1d06140947-2026-02-18-masha-ast.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/1d06140947-2026-02-18-masha-ast.pdf",
+    "extension": "pdf",
+    "size": 22781
+  },
+  {
+    "id": "a20bd8dcf9e72af0",
+    "slug": "2026-02-18-masha-bilirubin-obschiy-a20bd8dc",
+    "fileName": "2026-02-18 Маша — Билирубин общий.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — Билирубин общий.pdf",
+    "outputFileName": "a20bd8dcf9-2026-02-18-masha-bilirubin-obschiy.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/a20bd8dcf9-2026-02-18-masha-bilirubin-obschiy.pdf",
+    "extension": "pdf",
+    "size": 22387
+  },
+  {
+    "id": "e5a1b1ed2edf224e",
+    "slug": "2026-02-18-masha-bilirubin-pryamoy-e5a1b1ed",
+    "fileName": "2026-02-18 Маша — Билирубин прямой.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — Билирубин прямой.pdf",
+    "outputFileName": "e5a1b1ed2e-2026-02-18-masha-bilirubin-pryamoy.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/e5a1b1ed2e-2026-02-18-masha-bilirubin-pryamoy.pdf",
+    "extension": "pdf",
+    "size": 23024
+  },
+  {
+    "id": "09fd5626df06a7e6",
+    "slug": "2026-02-18-masha-glyukoza-09fd5626",
+    "fileName": "2026-02-18 Маша — Глюкоза.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — Глюкоза.pdf",
+    "outputFileName": "09fd5626df-2026-02-18-masha-glyukoza.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/09fd5626df-2026-02-18-masha-glyukoza.pdf",
+    "extension": "pdf",
+    "size": 22765
+  },
+  {
+    "id": "16d6df56e8342735",
+    "slug": "2026-02-18-masha-kreatinin-16d6df56",
+    "fileName": "2026-02-18 Маша — Креатинин.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — Креатинин.pdf",
+    "outputFileName": "16d6df56e8-2026-02-18-masha-kreatinin.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/16d6df56e8-2026-02-18-masha-kreatinin.pdf",
+    "extension": "pdf",
+    "size": 22432
+  },
+  {
+    "id": "f92ca444aab1e4ec",
+    "slug": "2026-02-18-masha-mochevaya-kislota-f92ca444",
+    "fileName": "2026-02-18 Маша — Мочевая кислота.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — Мочевая кислота.pdf",
+    "outputFileName": "f92ca444aa-2026-02-18-masha-mochevaya-kislota.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/f92ca444aa-2026-02-18-masha-mochevaya-kislota.pdf",
+    "extension": "pdf",
+    "size": 22300
+  },
+  {
+    "id": "abdbb6302966d1dd",
+    "slug": "2026-02-18-masha-obschiy-belok-abdbb630",
+    "fileName": "2026-02-18 Маша — Общий белок.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-18 Маша — Общий белок.pdf",
+    "outputFileName": "abdbb63029-2026-02-18-masha-obschiy-belok.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/abdbb63029-2026-02-18-masha-obschiy-belok.pdf",
+    "extension": "pdf",
+    "size": 23016
+  },
+  {
     "id": "bef89da6c883af27",
     "slug": "2026-02-18-masha-akusher-ginekolog-bef89da6",
     "fileName": "2026-02-18 Маша Акушер-гинеколог.pdf",
@@ -278,6 +398,26 @@
     "publicUrl": "/MedsDataBase/files/documents/bef89da6c8-2026-02-18-masha-akusher-ginekolog.pdf",
     "extension": "pdf",
     "size": 19310
+  },
+  {
+    "id": "9ed6f72874d51b2c",
+    "slug": "2026-02-12-masha-uzi-matki-i-ploda-33-nedeli-9ed6f728",
+    "fileName": "2026-02-12 Маша — УЗИ матки и плода 33 недели.pdf",
+    "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-12 Маша — УЗИ матки и плода 33 недели.pdf",
+    "outputFileName": "9ed6f72874-2026-02-12-masha-uzi-matki-i-ploda-33-nedeli.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/9ed6f72874-2026-02-12-masha-uzi-matki-i-ploda-33-nedeli.pdf",
+    "extension": "pdf",
+    "size": 22610
+  },
+  {
+    "id": "05dd513012e9508d",
+    "slug": "2026-02-07-masha-kardiotokografiya-05dd5130",
+    "fileName": "2026-02-07 Маша — Кардиотокография.pdf",
+    "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-07 Маша — Кардиотокография.pdf",
+    "outputFileName": "05dd513012-2026-02-07-masha-kardiotokografiya.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/05dd513012-2026-02-07-masha-kardiotokografiya.pdf",
+    "extension": "pdf",
+    "size": 21408
   },
   {
     "id": "1bebc276ac7497b2",
@@ -298,6 +438,56 @@
     "publicUrl": "/MedsDataBase/files/documents/a9be7ab279-2026-02-04-masha-oftalmolog.pdf",
     "extension": "pdf",
     "size": 159952
+  },
+  {
+    "id": "39af85d08c79c39a",
+    "slug": "2026-02-03-masha-hbsag-39af85d0",
+    "fileName": "2026-02-03 Маша — HBsAg.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-03 Маша — HBsAg.pdf",
+    "outputFileName": "39af85d08c-2026-02-03-masha-hbsag.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/39af85d08c-2026-02-03-masha-hbsag.pdf",
+    "extension": "pdf",
+    "size": 22088
+  },
+  {
+    "id": "3704087c0a9a9464",
+    "slug": "2026-02-03-masha-hepatitis-c-antitela-ifa-3704087c",
+    "fileName": "2026-02-03 Маша — Hepatitis C антитела ИФА.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-03 Маша — Hepatitis C антитела ИФА.pdf",
+    "outputFileName": "3704087c0a-2026-02-03-masha-hepatitis-c-antitela-ifa.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/3704087c0a-2026-02-03-masha-hepatitis-c-antitela-ifa.pdf",
+    "extension": "pdf",
+    "size": 23446
+  },
+  {
+    "id": "3e31c2738f790f27",
+    "slug": "2026-02-03-masha-hiv-antitela-antigen-3e31c273",
+    "fileName": "2026-02-03 Маша — HIV антитела-антиген.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-03 Маша — HIV антитела-антиген.pdf",
+    "outputFileName": "3e31c2738f-2026-02-03-masha-hiv-antitela-antigen.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/3e31c2738f-2026-02-03-masha-hiv-antitela-antigen.pdf",
+    "extension": "pdf",
+    "size": 22175
+  },
+  {
+    "id": "0a56cfc5f95aef59",
+    "slug": "2026-02-03-masha-treponema-pallidum-igm-igg-0a56cfc5",
+    "fileName": "2026-02-03 Маша — Treponema pallidum IgM IgG.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-03 Маша — Treponema pallidum IgM IgG.pdf",
+    "outputFileName": "0a56cfc5f9-2026-02-03-masha-treponema-pallidum-igm-igg.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/0a56cfc5f9-2026-02-03-masha-treponema-pallidum-igm-igg.pdf",
+    "extension": "pdf",
+    "size": 24560
+  },
+  {
+    "id": "4dfed1f0e70e8a46",
+    "slug": "2026-02-02-masha-klinicheskiy-analiz-mochi-4dfed1f0",
+    "fileName": "2026-02-02 Маша — Клинический анализ мочи.pdf",
+    "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2026/ГКБ №67/2026-02-02 Маша — Клинический анализ мочи.pdf",
+    "outputFileName": "4dfed1f0e7-2026-02-02-masha-klinicheskiy-analiz-mochi.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/4dfed1f0e7-2026-02-02-masha-klinicheskiy-analiz-mochi.pdf",
+    "extension": "pdf",
+    "size": 30082
   },
   {
     "id": "b4ff682b10f3d281",
@@ -350,6 +540,26 @@
     "size": 182566
   },
   {
+    "id": "f79516b69c18ff61",
+    "slug": "2025-09-18-masha-prenatalnyy-skrining-1-trimestr-f79516b6",
+    "fileName": "2025-09-18 Маша — Пренатальный скрининг 1 триместр.pdf",
+    "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/ГКБ №67 им. Л.А. Ворохобова/2025-09-18 Маша — Пренатальный скрининг 1 триместр.pdf",
+    "outputFileName": "f79516b69c-2025-09-18-masha-prenatalnyy-skrining-1-trimestr.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/f79516b69c-2025-09-18-masha-prenatalnyy-skrining-1-trimestr.pdf",
+    "extension": "pdf",
+    "size": 49984
+  },
+  {
+    "id": "0870e2b43a56927e",
+    "slug": "2025-09-18-masha-skriningovoe-uzi-1-trimestr-0870e2b4",
+    "fileName": "2025-09-18 Маша — Скрининговое УЗИ 1 триместр.pdf",
+    "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/ГКБ №67 им. Л.А. Ворохобова/2025-09-18 Маша — Скрининговое УЗИ 1 триместр.pdf",
+    "outputFileName": "0870e2b43a-2025-09-18-masha-skriningovoe-uzi-1-trimestr.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/0870e2b43a-2025-09-18-masha-skriningovoe-uzi-1-trimestr.pdf",
+    "extension": "pdf",
+    "size": 32642
+  },
+  {
     "id": "38450d9cee63d3ec",
     "slug": "2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
     "fileName": "2025-08-27 Маша Угрожающий аборт.pdf",
@@ -358,6 +568,16 @@
     "publicUrl": "/MedsDataBase/files/documents/38450d9cee-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
     "extension": "pdf",
     "size": 70827
+  },
+  {
+    "id": "c0ce40f3b28d716c",
+    "slug": "2025-08-26-masha-ekg-c0ce40f3",
+    "fileName": "2025-08-26 Маша — ЭКГ.pdf",
+    "originalPath": "01 Члены семьи/Маша/10 Исследования/10 Исследования 2025/НИИ Склифосовского/2025-08-26 Маша — ЭКГ.pdf",
+    "outputFileName": "c0ce40f3b2-2025-08-26-masha-ekg.pdf",
+    "publicUrl": "/MedsDataBase/files/documents/c0ce40f3b2-2025-08-26-masha-ekg.pdf",
+    "extension": "pdf",
+    "size": 19861
   },
   {
     "id": "6ddece37784dc54d",
