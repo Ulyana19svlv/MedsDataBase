@@ -1,17 +1,22 @@
 :root {
   color-scheme: light;
-  --bg: #f7f8fa;
-  --surface: #ffffff;
-  --surface-soft: #eef4f3;
-  --text: #1f2933;
-  --muted: #64748b;
-  --border: #d7dde5;
-  --accent: #0f766e;
-  --accent-dark: #115e59;
-  --blue: #2563eb;
-  --warn: #b7791f;
-  --danger: #b42318;
-  --shadow: 0 10px 28px rgba(31, 41, 51, 0.08);
+  --bg: #fff7e8;
+  --surface: #fffdf8;
+  --surface-soft: #eef8ee;
+  --text: #171b1d;
+  --muted: #657069;
+  --border: #202426;
+  --accent: #0f7d62;
+  --accent-dark: #0f5f4e;
+  --blue: #1f6dff;
+  --warn: #d78100;
+  --danger: #c9382c;
+  --pink: #ff8fc8;
+  --coral: #ff674d;
+  --lime: #d7ff46;
+  --sky: #93dfff;
+  --lilac: #d6b2ff;
+  --shadow: 8px 8px 0 rgba(23, 27, 29, 0.14);
 }
 
 * {
@@ -20,11 +25,46 @@
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(215, 255, 70, 0.86), transparent 22rem),
+    radial-gradient(circle at 84% 12%, rgba(147, 223, 255, 0.78), transparent 24rem),
+    radial-gradient(circle at 78% 92%, rgba(255, 143, 200, 0.34), transparent 22rem),
+    var(--bg);
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::before {
+  right: 2rem;
+  top: 5.5rem;
+  width: 120px;
+  height: 120px;
+  background: var(--coral);
+  clip-path: polygon(50% 0, 61% 31%, 95% 16%, 73% 47%, 100% 58%, 66% 64%, 79% 99%, 51% 76%, 22% 100%, 34% 64%, 0 59%, 29% 45%, 8% 17%, 40% 31%);
+  opacity: 0.72;
+}
+
+body::after {
+  left: 52%;
+  bottom: 1.3rem;
+  width: 210px;
+  height: 30px;
+  border: 11px solid var(--blue);
+  border-left: 0;
+  border-right: 0;
+  border-radius: 999px;
+  transform: rotate(-7deg);
+  opacity: 0.34;
 }
 
 [hidden] {
@@ -56,10 +96,12 @@ p {
 }
 
 h1 {
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1.04;
+  line-height: 0.98;
   margin-bottom: 0.75rem;
   overflow-wrap: anywhere;
+  text-shadow: 4px 0 0 rgba(215, 255, 70, 0.58);
 }
 
 h2 {
@@ -72,6 +114,8 @@ h3 {
 }
 
 .app-shell {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 260px 1fr;
@@ -82,8 +126,11 @@ h3 {
   top: 0;
   height: 100vh;
   padding: 1.1rem;
-  border-right: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.82);
+  border-right: 2px solid var(--border);
+  background:
+    radial-gradient(circle at 88% 12%, rgba(255, 143, 200, 0.36) 0 42px, transparent 43px),
+    radial-gradient(circle at 6% 86%, rgba(215, 255, 70, 0.72) 0 56px, transparent 58px),
+    rgba(255, 253, 248, 0.9);
   backdrop-filter: blur(16px);
 }
 
@@ -100,10 +147,12 @@ h3 {
   place-items: center;
   width: 42px;
   height: 42px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--text);
   font-weight: 800;
+  box-shadow: 4px 4px 0 rgba(23, 27, 29, 0.14);
 }
 
 .brand small,
@@ -137,13 +186,14 @@ h3 {
   align-items: center;
   min-height: 42px;
   padding: 0.6rem 0.75rem;
-  border-radius: 8px;
+  border-radius: 999px;
+  font-weight: 700;
 }
 
 .nav-link.active,
 .nav-link:hover,
 .person-pill:hover {
-  background: var(--surface-soft);
+  background: var(--lime);
   color: var(--accent-dark);
 }
 
@@ -162,8 +212,8 @@ h3 {
   align-items: center;
   min-height: 72px;
   padding: 0 2rem;
-  border-bottom: 1px solid var(--border);
-  background: rgba(247, 248, 250, 0.9);
+  border-bottom: 2px solid var(--border);
+  background: rgba(255, 253, 248, 0.9);
   backdrop-filter: blur(16px);
 }
 
@@ -176,7 +226,7 @@ input,
 select {
   width: 100%;
   min-height: 44px;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 8px;
   padding: 0.7rem 0.9rem;
   background: #fff;
@@ -211,9 +261,44 @@ select {
   align-items: end;
   min-height: 300px;
   padding: 2rem;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #ffffff 0%, #e8f3f0 100%);
-  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 88% 18%, rgba(255, 143, 200, 0.64) 0 64px, transparent 66px),
+    radial-gradient(circle at 10% 18%, rgba(147, 223, 255, 0.54) 0 82px, transparent 84px),
+    linear-gradient(135deg, #fffdf8 0%, #f1ffe4 100%);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hero-panel::before,
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-panel::before {
+  right: 28px;
+  bottom: 26px;
+  width: 118px;
+  height: 118px;
+  background:
+    radial-gradient(circle, var(--blue) 0 5px, transparent 6px) 0 0 / 18px 18px,
+    rgba(255, 255, 255, 0.42);
+  border-radius: 24px;
+  transform: rotate(9deg);
+}
+
+.hero-panel::after {
+  left: 38%;
+  top: 30px;
+  width: 78px;
+  height: 78px;
+  background: var(--coral);
+  clip-path: polygon(50% 0, 60% 32%, 94% 18%, 72% 48%, 100% 60%, 66% 64%, 78% 100%, 50% 74%, 22% 100%, 34% 64%, 0 60%, 29% 47%, 7% 18%, 40% 32%);
+  opacity: 0.84;
 }
 
 .page-header {
@@ -239,7 +324,7 @@ select {
 .card,
 .notice,
 .filter-panel {
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   background: var(--surface);
   border-radius: 8px;
   box-shadow: var(--shadow);
@@ -271,9 +356,11 @@ select {
   display: block;
   padding: 0.9rem 1rem;
   margin-bottom: 1.5rem;
-  border-color: rgba(183, 121, 31, 0.35);
-  color: #7a4f12;
-  background: #fff7e8;
+  border-color: var(--border);
+  color: #5e3700;
+  background:
+    radial-gradient(circle at 98% 10%, rgba(255, 143, 200, 0.5) 0 32px, transparent 33px),
+    #fff3ca;
 }
 
 .section-grid {
@@ -493,8 +580,32 @@ select {
 }
 
 .card {
+  position: relative;
+  overflow: hidden;
   padding: 1rem;
   min-width: 0;
+}
+
+.card::before {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 10px;
+  margin-bottom: 0.8rem;
+  border-radius: 999px;
+  background: var(--lime);
+}
+
+.card:nth-child(3n + 1)::before {
+  background: var(--coral);
+}
+
+.card:nth-child(3n + 2)::before {
+  background: var(--sky);
+}
+
+.card:nth-child(3n + 3)::before {
+  background: var(--pink);
 }
 
 .card-header,
@@ -513,8 +624,9 @@ select {
   align-items: center;
   min-height: 28px;
   padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(32, 36, 38, 0.2);
   border-radius: 999px;
-  background: var(--surface-soft);
+  background: #fff1c9;
   color: var(--accent-dark);
   font-size: 0.82rem;
   font-weight: 700;
@@ -523,7 +635,7 @@ select {
 .chip.muted,
 .doc-badge.muted {
   color: var(--muted);
-  background: #f1f5f9;
+  background: #fff;
 }
 
 .chip-row {
@@ -557,7 +669,8 @@ select {
   margin-top: 0.75rem;
   padding: 0.75rem;
   border-radius: 8px;
-  background: #f8fafc;
+  border: 1px solid rgba(32, 36, 38, 0.12);
+  background: #fff;
 }
 
 .soft-row span,
@@ -571,7 +684,7 @@ select {
 .soft-row.accent,
 .task-column.week .task-card,
 .task-column.overdue .task-card {
-  background: #eaf7f4;
+  background: #edfff0;
 }
 
 .task-board {
@@ -594,8 +707,9 @@ select {
 }
 
 .task-card {
-  border: 1px solid transparent;
-  border-left: 5px solid var(--accent);
+  border: 1px solid rgba(32, 36, 38, 0.16);
+  border-left: 7px solid var(--accent);
+  box-shadow: 4px 4px 0 rgba(23, 27, 29, 0.08);
 }
 
 .task-column.overdue .task-card {
@@ -632,12 +746,18 @@ select {
 
 .event-card {
   align-items: start;
+  position: relative;
+  background:
+    radial-gradient(circle at 98% 10%, rgba(215, 255, 70, 0.55) 0 24px, transparent 25px),
+    var(--surface);
 }
 
 .event-date {
   min-width: 96px;
   color: var(--accent-dark);
   font-weight: 800;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
 }
 
 .event-main {
@@ -653,10 +773,13 @@ select {
 .document-row {
   align-items: center;
   padding: 1rem;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 8px;
-  background: #fff;
+  background:
+    radial-gradient(circle at 100% 0, rgba(147, 223, 255, 0.32) 0 34px, transparent 35px),
+    #fff;
   min-width: 0;
+  box-shadow: 5px 5px 0 rgba(23, 27, 29, 0.1);
 }
 
 .document-row h3,
@@ -694,14 +817,16 @@ select {
   justify-content: center;
   min-height: 44px;
   padding: 0.65rem 0.9rem;
+  border: 2px solid var(--border);
   border-radius: 8px;
   background: var(--accent);
   color: #fff;
   font-weight: 750;
+  box-shadow: 4px 4px 0 rgba(23, 27, 29, 0.12);
 }
 
 .button.secondary {
-  background: #eef2f7;
+  background: #fff;
   color: var(--text);
 }
 
@@ -738,9 +863,9 @@ select {
 .note-box {
   margin-top: 1rem;
   padding: 0.85rem;
-  border: 1px solid var(--border);
+  border: 2px solid var(--border);
   border-radius: 8px;
-  background: #f8fafc;
+  background: #fff7d6;
 }
 
 .note-box p {
@@ -759,7 +884,7 @@ select {
   height: 72vh;
   border: 0;
   object-fit: contain;
-  background: #f1f5f9;
+  background: #fffdf8;
 }
 
 .filter-panel {
