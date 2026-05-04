@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T07:56:30.632Z",
+  "generatedAt": "2026-05-04T08:02:29.183Z",
   "basePath": "/MedsDataBase",
   "people": [
     {
@@ -182,8 +182,8 @@
       "profilePath": "01 Члены семьи/Маша/Профиль — Маша.md",
       "birthDate": "1996-12-01",
       "birthDateText": "01.12.1996",
-      "bloodType": "?",
-      "rhFactor": "?",
+      "bloodType": "B (III)",
+      "rhFactor": "положительный",
       "allergies": [],
       "chronicConditions": [],
       "currentMedications": [],
@@ -352,9 +352,10 @@
       "routePath": "/people/nika",
       "href": "/MedsDataBase/people/nika",
       "profilePath": "01 Члены семьи/Ника/Профиль — Ника.md",
-      "birthDateText": "",
-      "bloodType": "",
-      "rhFactor": "",
+      "birthDate": "2026-03-27",
+      "birthDateText": "27.03.2026",
+      "bloodType": "B (III)",
+      "rhFactor": "положительный",
       "allergies": [],
       "chronicConditions": [],
       "currentMedications": [],
@@ -9364,7 +9365,7 @@
       "routePath": "/people/nika",
       "href": "/MedsDataBase/people/nika",
       "subtitle": "Профиль",
-      "text": "Ника"
+      "text": "Ника 27.03.2026"
     },
     {
       "type": "event",
