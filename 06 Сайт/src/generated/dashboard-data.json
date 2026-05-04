@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T07:52:08.194Z",
+  "generatedAt": "2026-05-04T07:56:30.632Z",
   "basePath": "/MedsDataBase",
   "people": [
     {
@@ -4828,7 +4828,8 @@
       "status": "done",
       "importance": "normal",
       "sourceFileNames": [
-        "2024-10-24 Маша — Иммунологические исследования.pdf"
+        "2024-10-24 Маша — Иммунологические исследования.pdf",
+        "2024-10-24 Маша — иммунологические исследования скрин.jpg"
       ],
       "sourceFiles": [
         {
@@ -4852,6 +4853,29 @@
           "linkStatusLabel": "Привязан к записи",
           "isInboxItem": false,
           "size": 604159,
+          "eventHref": "/MedsDataBase/events/2024-10-24-masha-immunologicheskie-issledovaniya"
+        },
+        {
+          "id": "624615472d29ad1b",
+          "slug": "2024-10-24-masha-immunologicheskie-issledovaniya-skrin-62461547",
+          "fileName": "2024-10-24 Маша — иммунологические исследования скрин.jpg",
+          "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2024/ДНКОМ Хорошая практика/2024-10-24 Маша — иммунологические исследования скрин.jpg",
+          "routePath": "/documents/2024-10-24-masha-immunologicheskie-issledovaniya-skrin-62461547",
+          "href": "/MedsDataBase/documents/2024-10-24-masha-immunologicheskie-issledovaniya-skrin-62461547",
+          "outputFileName": "624615472d-2024-10-24-masha-immunologicheskie-issledovaniya-skrin.jpg",
+          "publicUrl": "/MedsDataBase/files/documents/624615472d-2024-10-24-masha-immunologicheskie-issledovaniya-skrin.jpg",
+          "extension": "jpg",
+          "person": "Маша",
+          "eventId": "2024-10-24-masha-immunologicheskie-issledovaniya",
+          "eventSlug": "2024-10-24-masha-immunologicheskie-issledovaniya",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2024-10-24",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 27389,
           "eventHref": "/MedsDataBase/events/2024-10-24-masha-immunologicheskie-issledovaniya"
         }
       ],
@@ -5120,8 +5144,11 @@
       "importance": "normal",
       "sourceFileNames": [
         "2024-10-11 Маша — Стероидный профиль слюны.pdf",
+        "2024-10-11 Маша — стероидный профиль слюны скрин.png",
         "2024-10-11 Маша — Биохимический анализ крови.pdf",
-        "2024-10-11 Маша — Витамины и микроэлементы.pdf"
+        "2024-10-11 Маша — биохимический анализ крови скрин.png",
+        "2024-10-11 Маша — Витамины и микроэлементы.pdf",
+        "2024-10-11 Маша — витамины скрин.png"
       ],
       "sourceFiles": [
         {
@@ -5148,6 +5175,29 @@
           "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
         },
         {
+          "id": "675d982ef888bbe1",
+          "slug": "2024-10-11-masha-steroidnyy-profil-slyuny-skrin-675d982e",
+          "fileName": "2024-10-11 Маша — стероидный профиль слюны скрин.png",
+          "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2024/ДНКОМ Хорошая практика/2024-10-11 Маша — стероидный профиль слюны скрин.png",
+          "routePath": "/documents/2024-10-11-masha-steroidnyy-profil-slyuny-skrin-675d982e",
+          "href": "/MedsDataBase/documents/2024-10-11-masha-steroidnyy-profil-slyuny-skrin-675d982e",
+          "outputFileName": "675d982ef8-2024-10-11-masha-steroidnyy-profil-slyuny-skrin.png",
+          "publicUrl": "/MedsDataBase/files/documents/675d982ef8-2024-10-11-masha-steroidnyy-profil-slyuny-skrin.png",
+          "extension": "png",
+          "person": "Маша",
+          "eventId": "2024-10-11-masha-laboratornye-analizy",
+          "eventSlug": "2024-10-11-masha-laboratornye-analizy",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2024-10-11",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 199615,
+          "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
+        },
+        {
           "id": "74a033c04cf6fa85",
           "slug": "2024-10-11-masha-biohimicheskiy-analiz-krovi-74a033c0",
           "fileName": "2024-10-11 Маша — Биохимический анализ крови.pdf",
@@ -5171,6 +5221,29 @@
           "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
         },
         {
+          "id": "ce2fee424a02cfae",
+          "slug": "2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin-ce2fee42",
+          "fileName": "2024-10-11 Маша — биохимический анализ крови скрин.png",
+          "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2024/ДНКОМ Хорошая практика/2024-10-11 Маша — биохимический анализ крови скрин.png",
+          "routePath": "/documents/2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin-ce2fee42",
+          "href": "/MedsDataBase/documents/2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin-ce2fee42",
+          "outputFileName": "ce2fee424a-2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin.png",
+          "publicUrl": "/MedsDataBase/files/documents/ce2fee424a-2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin.png",
+          "extension": "png",
+          "person": "Маша",
+          "eventId": "2024-10-11-masha-laboratornye-analizy",
+          "eventSlug": "2024-10-11-masha-laboratornye-analizy",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2024-10-11",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 312063,
+          "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
+        },
+        {
           "id": "d16d6b635b1b474e",
           "slug": "2024-10-11-masha-vitaminy-i-mikroelementy-d16d6b63",
           "fileName": "2024-10-11 Маша — Витамины и микроэлементы.pdf",
@@ -5191,6 +5264,29 @@
           "linkStatusLabel": "Привязан к записи",
           "isInboxItem": false,
           "size": 615038,
+          "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
+        },
+        {
+          "id": "357290e571192f18",
+          "slug": "2024-10-11-masha-vitaminy-skrin-357290e5",
+          "fileName": "2024-10-11 Маша — витамины скрин.png",
+          "originalPath": "01 Члены семьи/Маша/09 Анализы/09 Анализы 2024/ДНКОМ Хорошая практика/2024-10-11 Маша — витамины скрин.png",
+          "routePath": "/documents/2024-10-11-masha-vitaminy-skrin-357290e5",
+          "href": "/MedsDataBase/documents/2024-10-11-masha-vitaminy-skrin-357290e5",
+          "outputFileName": "357290e571-2024-10-11-masha-vitaminy-skrin.png",
+          "publicUrl": "/MedsDataBase/files/documents/357290e571-2024-10-11-masha-vitaminy-skrin.png",
+          "extension": "png",
+          "person": "Маша",
+          "eventId": "2024-10-11-masha-laboratornye-analizy",
+          "eventSlug": "2024-10-11-masha-laboratornye-analizy",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2024-10-11",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 282021,
           "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
         }
       ],
@@ -8072,14 +8168,17 @@
       "publicUrl": "/MedsDataBase/files/documents/624615472d-2024-10-24-masha-immunologicheskie-issledovaniya-skrin.jpg",
       "extension": "jpg",
       "person": "Маша",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "eventId": "2024-10-24-masha-immunologicheskie-issledovaniya",
+      "eventSlug": "2024-10-24-masha-immunologicheskie-issledovaniya",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "date": "2024-10-24",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 27389
+      "size": 27389,
+      "eventHref": "/MedsDataBase/events/2024-10-24-masha-immunologicheskie-issledovaniya"
     },
     {
       "id": "857ab2f6a0577108",
@@ -8230,14 +8329,17 @@
       "publicUrl": "/MedsDataBase/files/documents/ce2fee424a-2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin.png",
       "extension": "png",
       "person": "Маша",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "eventId": "2024-10-11-masha-laboratornye-analizy",
+      "eventSlug": "2024-10-11-masha-laboratornye-analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "date": "2024-10-11",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 312063
+      "size": 312063,
+      "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
     },
     {
       "id": "74a033c04cf6fa85",
@@ -8296,14 +8398,17 @@
       "publicUrl": "/MedsDataBase/files/documents/357290e571-2024-10-11-masha-vitaminy-skrin.png",
       "extension": "png",
       "person": "Маша",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "eventId": "2024-10-11-masha-laboratornye-analizy",
+      "eventSlug": "2024-10-11-masha-laboratornye-analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "date": "2024-10-11",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 282021
+      "size": 282021,
+      "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
     },
     {
       "id": "675d982ef888bbe1",
@@ -8316,14 +8421,17 @@
       "publicUrl": "/MedsDataBase/files/documents/675d982ef8-2024-10-11-masha-steroidnyy-profil-slyuny-skrin.png",
       "extension": "png",
       "person": "Маша",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "eventId": "2024-10-11-masha-laboratornye-analizy",
+      "eventSlug": "2024-10-11-masha-laboratornye-analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "date": "2024-10-11",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 199615
+      "size": 199615,
+      "eventHref": "/MedsDataBase/events/2024-10-11-masha-laboratornye-analizy"
     },
     {
       "id": "6c6a8fc563878f76",
@@ -11524,16 +11632,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2024-10-24",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "extension": "jpg",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2024-10-24 Маша — иммунологические исследования скрин.jpg",
       "routePath": "/documents/2024-10-24-masha-immunologicheskie-issledovaniya-skrin-62461547",
       "href": "/MedsDataBase/documents/2024-10-24-masha-immunologicheskie-issledovaniya-skrin-62461547",
-      "subtitle": "Маша · 2024-10-24 · Анализы",
-      "text": "2024-10-24 Маша — иммунологические исследования скрин.jpg Маша Анализы"
+      "subtitle": "Маша · 2024-10-24 · Лаборатория",
+      "text": "2024-10-24 Маша — иммунологические исследования скрин.jpg Маша Лаборатория"
     },
     {
       "type": "document",
@@ -11643,16 +11751,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2024-10-11",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "extension": "png",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2024-10-11 Маша — биохимический анализ крови скрин.png",
       "routePath": "/documents/2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin-ce2fee42",
       "href": "/MedsDataBase/documents/2024-10-11-masha-biohimicheskiy-analiz-krovi-skrin-ce2fee42",
-      "subtitle": "Маша · 2024-10-11 · Анализы",
-      "text": "2024-10-11 Маша — биохимический анализ крови скрин.png Маша Анализы"
+      "subtitle": "Маша · 2024-10-11 · Лаборатория",
+      "text": "2024-10-11 Маша — биохимический анализ крови скрин.png Маша Лаборатория"
     },
     {
       "type": "document",
@@ -11694,16 +11802,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2024-10-11",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "extension": "png",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2024-10-11 Маша — витамины скрин.png",
       "routePath": "/documents/2024-10-11-masha-vitaminy-skrin-357290e5",
       "href": "/MedsDataBase/documents/2024-10-11-masha-vitaminy-skrin-357290e5",
-      "subtitle": "Маша · 2024-10-11 · Анализы",
-      "text": "2024-10-11 Маша — витамины скрин.png Маша Анализы"
+      "subtitle": "Маша · 2024-10-11 · Лаборатория",
+      "text": "2024-10-11 Маша — витамины скрин.png Маша Лаборатория"
     },
     {
       "type": "document",
@@ -11711,16 +11819,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2024-10-11",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "extension": "png",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2024-10-11 Маша — стероидный профиль слюны скрин.png",
       "routePath": "/documents/2024-10-11-masha-steroidnyy-profil-slyuny-skrin-675d982e",
       "href": "/MedsDataBase/documents/2024-10-11-masha-steroidnyy-profil-slyuny-skrin-675d982e",
-      "subtitle": "Маша · 2024-10-11 · Анализы",
-      "text": "2024-10-11 Маша — стероидный профиль слюны скрин.png Маша Анализы"
+      "subtitle": "Маша · 2024-10-11 · Лаборатория",
+      "text": "2024-10-11 Маша — стероидный профиль слюны скрин.png Маша Лаборатория"
     },
     {
       "type": "document",
@@ -12400,8 +12508,8 @@
     "people": 3,
     "events": 69,
     "documents": 109,
-    "linkedDocuments": 105,
-    "unlinkedDocuments": 4,
+    "linkedDocuments": 109,
+    "unlinkedDocuments": 0,
     "tasks": 12,
     "warnings": 0,
     "fatal": 0
