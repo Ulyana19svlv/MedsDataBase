@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T05:58:01.376Z",
+  "generatedAt": "2026-05-04T07:09:35.113Z",
   "basePath": "/MedsDataBase",
   "people": [
     {
@@ -195,7 +195,7 @@
       "profileTasks": [
         "-"
       ],
-      "eventCount": 15,
+      "eventCount": 27,
       "documentCount": 43,
       "nextTasks": [
         {
@@ -233,6 +233,11 @@
       },
       "specialtySummary": [
         {
+          "label": "Гинекология",
+          "id": "ginekologiya",
+          "count": 11
+        },
+        {
           "label": "Лаборатория",
           "id": "laboratoriya",
           "count": 11
@@ -243,8 +248,13 @@
           "count": 3
         },
         {
-          "label": "Гинекология",
-          "id": "ginekologiya",
+          "label": "Психология",
+          "id": "psihologiya",
+          "count": 1
+        },
+        {
+          "label": "Терапия",
+          "id": "terapiya",
           "count": 1
         }
       ],
@@ -466,6 +476,81 @@
       "followUpAction": "Пройти контрольный чек-ап в середине мая."
     },
     {
+      "id": "2026-04-10-masha-zavershenie-beremennosti",
+      "slug": "2026-04-10-masha-zavershenie-beremennosti",
+      "routePath": "/events/2026-04-10-masha-zavershenie-beremennosti",
+      "href": "/MedsDataBase/events/2026-04-10-masha-zavershenie-beremennosti",
+      "title": "2026-04-10 Маша — завершение беременности",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-04-10",
+      "year": "2026",
+      "eventType": "Консультация",
+      "eventTypeId": "consultation",
+      "eventTypeLabel": "Консультация",
+      "sourceEventType": "Консультация",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Колосова Ирина Алексеевна",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-04-10 Маша Консультация. Завершение беременности..pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "a8216b2168cd107b",
+          "slug": "2026-04-10-masha-konsultatsiya-zavershenie-beremennosti-a8216b21",
+          "fileName": "2026-04-10 Маша Консультация. Завершение беременности..pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-04-10 Маша Консультация. Завершение беременности..pdf",
+          "routePath": "/documents/2026-04-10-masha-konsultatsiya-zavershenie-beremennosti-a8216b21",
+          "href": "/MedsDataBase/documents/2026-04-10-masha-konsultatsiya-zavershenie-beremennosti-a8216b21",
+          "outputFileName": "a8216b2168-2026-04-10-masha-konsultatsiya-zavershenie-beremennosti.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/a8216b2168-2026-04-10-masha-konsultatsiya-zavershenie-beremennosti.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-04-10-masha-zavershenie-beremennosti",
+          "eventSlug": "2026-04-10-masha-zavershenie-beremennosti",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-04-10",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 20009,
+          "eventHref": "/MedsDataBase/events/2026-04-10-masha-zavershenie-beremennosti"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Консультация состоялась 10.04.2026.",
+        "Беременность завершена 27.03.2026 своевременными родами на сроке 39 недель 3 дня.",
+        "Указан исход: один живорожденный ребёнок.",
+        "Жалоб на момент консультации нет.",
+        "Маша кормит грудью."
+      ],
+      "track": [
+        "Послеродовое самочувствие и жалобы в динамике.",
+        "Дальнейшее наблюдение у акушера-гинеколога после родов."
+      ],
+      "nextActions": [
+        "В документе указано приглашение на очный приём."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-04-10 Маша — завершение беременности.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-04-10 Маша — завершение беременности Маша Консультация Гинекология Колосова Ирина Алексеевна ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Консультация состоялась 10.04.2026. - Беременность завершена 27.03.2026 своевременными родами на сроке 39 недель 3 дня. - Указан исход: один живорожденный ребёнок. - Жалоб на момент консультации нет. - Маша кормит грудью. - Послеродовое самочувствие и жалобы в динамике. - Дальнейшее наблюдение у акушера-гинеколога после родов. - В документе указано приглашение на очный приём.",
+      "dataWarnings": [],
+      "followUpAction": "В документе указано приглашение на очный приём."
+    },
+    {
       "id": "2026-04-10-nika-pediatr",
       "slug": "2026-04-10-nika-pediatr",
       "routePath": "/events/2026-04-10-nika-pediatr",
@@ -639,6 +724,105 @@
       "followUpAction": "Контроль НСГ, УЗИ ОБП и почек, ЭхоКГ в 1 месяц."
     },
     {
+      "id": "2026-03-26-masha-kardiotokografiya",
+      "slug": "2026-03-26-masha-kardiotokografiya",
+      "routePath": "/events/2026-03-26-masha-kardiotokografiya",
+      "href": "/MedsDataBase/events/2026-03-26-masha-kardiotokografiya",
+      "title": "2026-03-26 Маша — кардиотокография",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-03-26",
+      "year": "2026",
+      "eventType": "Обследование",
+      "eventTypeId": "diagnostics",
+      "eventTypeLabel": "Обследование",
+      "sourceEventType": "Обследование",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Даева М. У.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-03-26 Маша Результат кардиотокографии.pdf",
+        "2026-03-26 Маша Результат кардиотокографии.jpeg"
+      ],
+      "sourceFiles": [
+        {
+          "id": "dba70f2d9d4b1b0b",
+          "slug": "2026-03-26-masha-rezultat-kardiotokografii-dba70f2d",
+          "fileName": "2026-03-26 Маша Результат кардиотокографии.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-26 Маша Результат кардиотокографии.pdf",
+          "routePath": "/documents/2026-03-26-masha-rezultat-kardiotokografii-dba70f2d",
+          "href": "/MedsDataBase/documents/2026-03-26-masha-rezultat-kardiotokografii-dba70f2d",
+          "outputFileName": "dba70f2d9d-2026-03-26-masha-rezultat-kardiotokografii.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/dba70f2d9d-2026-03-26-masha-rezultat-kardiotokografii.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-03-26-masha-kardiotokografiya",
+          "eventSlug": "2026-03-26-masha-kardiotokografiya",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-03-26",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 21021,
+          "eventHref": "/MedsDataBase/events/2026-03-26-masha-kardiotokografiya"
+        },
+        {
+          "id": "fe40e9854e288f71",
+          "slug": "2026-03-26-masha-rezultat-kardiotokografii-fe40e985",
+          "fileName": "2026-03-26 Маша Результат кардиотокографии.jpeg",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-26 Маша Результат кардиотокографии.jpeg",
+          "routePath": "/documents/2026-03-26-masha-rezultat-kardiotokografii-fe40e985",
+          "href": "/MedsDataBase/documents/2026-03-26-masha-rezultat-kardiotokografii-fe40e985",
+          "outputFileName": "fe40e9854e-2026-03-26-masha-rezultat-kardiotokografii.jpeg",
+          "publicUrl": "/MedsDataBase/files/documents/fe40e9854e-2026-03-26-masha-rezultat-kardiotokografii.jpeg",
+          "extension": "jpeg",
+          "person": "Маша",
+          "eventId": "2026-03-26-masha-kardiotokografiya",
+          "eventSlug": "2026-03-26-masha-kardiotokografiya",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-03-26",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 2305850,
+          "eventHref": "/MedsDataBase/events/2026-03-26-masha-kardiotokografiya"
+        }
+      ],
+      "tags": [
+        "diagnostics",
+        "ktg",
+        "pregnancy"
+      ],
+      "summary": [
+        "Исследование выполнено 26.03.2026.",
+        "Продолжительность записи КТГ: 20 минут.",
+        "Базальный ритм: 126 уд/мин, оценён как норма.",
+        "Вариабельность и децелерации оценены как норма.",
+        "Заключение: нормальный тип КТГ."
+      ],
+      "track": [
+        "Использовать результат как часть динамики наблюдения беременности.",
+        "Сопоставлять с последующими акушерскими осмотрами."
+      ],
+      "nextActions": [
+        "Дополнительных действий в заметке не выделено; подробности смотреть в исходных документах."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-26 Маша — кардиотокография.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-03-26 Маша — кардиотокография Маша Обследование Гинекология Даева М. У. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Исследование выполнено 26.03.2026. - Продолжительность записи КТГ: 20 минут. - Базальный ритм: 126 уд/мин, оценён как норма. - Вариабельность и децелерации оценены как норма. - Заключение: нормальный тип КТГ. - Использовать результат как часть динамики наблюдения беременности. - Сопоставлять с последующими акушерскими осмотрами. - Дополнительных действий в заметке не выделено; подробности смотреть в исходных документах.",
+      "dataWarnings": [],
+      "followUpAction": "Сопоставлять с последующими акушерскими осмотрами."
+    },
+    {
       "id": "2026-03-26-artem-konsultatsiya-vracha",
       "slug": "2026-03-26-artem-konsultatsiya-vracha",
       "routePath": "/events/2026-03-26-artem-konsultatsiya-vracha",
@@ -718,6 +902,81 @@
       "searchableText": "Артём — консультация спортивного врача — 26.03.2026 Артём Консультация врача Спортивная медицина Паупер Елизавета Александровна - Жалоб на момент консультации нет. - Из хронического указаны: аллергический ринит (сезонный), гиперхолестеринемия. - Подтверждены хорошие показатели нагрузочного теста: толерантность к нагрузке хорошая, VO2max 39.8 мл/мин/кг. - По ЭХО-КГ, УЗИ и обследованию вен значимой патологии не описано. - Липидограмму в динамике. - ТТГ через 2–3 месяца. - Гомоцистеин в динамике. - Реакцию на питание, витамины группы B и режим гидратации. - Продолжить приём Омега-3. - Контроль липидограммы 1 раз в 6 месяцев. - Контроль ТТГ через 2–3 месяца. - Увеличить потребление продуктов с фолатами (B9) и кобаламином (B12). - Рассмотреть курс комплекса с активными формами B9 и B12. - Пить изотоники во время нагрузок.",
       "dataWarnings": [],
       "followUpAction": "Контроль липидограммы 1 раз в 6 месяцев."
+    },
+    {
+      "id": "2026-03-25-masha-akusher-ginekolog",
+      "slug": "2026-03-25-masha-akusher-ginekolog",
+      "routePath": "/events/2026-03-25-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-03-25-masha-akusher-ginekolog",
+      "title": "2026-03-25 Маша — акушер-гинеколог",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-03-25",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Колосова И. А.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-03-25 Маша Акушер-гинеколог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "3c5a1e1d59e7ddba",
+          "slug": "2026-03-25-masha-akusher-ginekolog-3c5a1e1d",
+          "fileName": "2026-03-25 Маша Акушер-гинеколог.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-25 Маша Акушер-гинеколог.pdf",
+          "routePath": "/documents/2026-03-25-masha-akusher-ginekolog-3c5a1e1d",
+          "href": "/MedsDataBase/documents/2026-03-25-masha-akusher-ginekolog-3c5a1e1d",
+          "outputFileName": "3c5a1e1d59-2026-03-25-masha-akusher-ginekolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/3c5a1e1d59-2026-03-25-masha-akusher-ginekolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-03-25-masha-akusher-ginekolog",
+          "eventSlug": "2026-03-25-masha-akusher-ginekolog",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-03-25",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 31307,
+          "eventHref": "/MedsDataBase/events/2026-03-25-masha-akusher-ginekolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Беременность 39 недель, головное предлежание.",
+        "Самочувствие хорошее; головной боли нет, зрение ясное, шевеления ощущаются ясно.",
+        "Основной диагноз: наблюдение за течением нормальной первой беременности.",
+        "В документе отмечена миопия слабой степени.",
+        "КТГ от 25.03.2026 описана как нормальный тип КТГ."
+      ],
+      "track": [
+        "Динамику самочувствия в последние недели беременности.",
+        "Результаты КТГ и акушерского наблюдения рядом с родами."
+      ],
+      "nextActions": [
+        "Подробные рекомендации и назначения сверять с исходным заключением."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-25 Маша — акушер-гинеколог.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-03-25 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 39 недель, головное предлежание. - Самочувствие хорошее; головной боли нет, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением нормальной первой беременности. - В документе отмечена миопия слабой степени. - КТГ от 25.03.2026 описана как нормальный тип КТГ. - Динамику самочувствия в последние недели беременности. - Результаты КТГ и акушерского наблюдения рядом с родами. - Подробные рекомендации и назначения сверять с исходным заключением.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Гинекология"
     },
     {
       "id": "2026-03-20-artem-allergolog",
@@ -977,8 +1236,34 @@
       "clinic": "",
       "status": "done",
       "importance": "normal",
-      "sourceFileNames": [],
-      "sourceFiles": [],
+      "sourceFileNames": [
+        "2026-03-19 Артём — Анализ крови.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "80b99b7dfa7aa716",
+          "slug": "2026-03-19-artem-analiz-krovi-80b99b7d",
+          "fileName": "2026-03-19 Артём — Анализ крови.pdf",
+          "originalPath": "01 Члены семьи/Артём/08 Анализы/08 Анализы 2026/2026-03-19 Артём — Анализ крови.pdf",
+          "routePath": "/documents/2026-03-19-artem-analiz-krovi-80b99b7d",
+          "href": "/MedsDataBase/documents/2026-03-19-artem-analiz-krovi-80b99b7d",
+          "outputFileName": "80b99b7dfa-2026-03-19-artem-analiz-krovi.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/80b99b7dfa-2026-03-19-artem-analiz-krovi.pdf",
+          "extension": "pdf",
+          "person": "Артём",
+          "eventId": "2026-03-19-artem-analiz-krovi-1",
+          "eventSlug": "2026-03-19-artem-analiz-krovi-1",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2026-03-19",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 241420,
+          "eventHref": "/MedsDataBase/events/2026-03-19-artem-analiz-krovi-1"
+        }
+      ],
       "tags": [
         "lab",
         "laboratoriya"
@@ -1986,6 +2271,306 @@
       "followUpAction": "Повторные ЭХО-КГ по рекомендации."
     },
     {
+      "id": "2026-03-11-masha-akusher-ginekolog",
+      "slug": "2026-03-11-masha-akusher-ginekolog",
+      "routePath": "/events/2026-03-11-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-03-11-masha-akusher-ginekolog",
+      "title": "2026-03-11 Маша — акушер-гинеколог",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-03-11",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Колосова И. А.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-03-11 Маша Акушер-гинеколог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "bdb058682f70a188",
+          "slug": "2026-03-11-masha-akusher-ginekolog-bdb05868",
+          "fileName": "2026-03-11 Маша Акушер-гинеколог.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-11 Маша Акушер-гинеколог.pdf",
+          "routePath": "/documents/2026-03-11-masha-akusher-ginekolog-bdb05868",
+          "href": "/MedsDataBase/documents/2026-03-11-masha-akusher-ginekolog-bdb05868",
+          "outputFileName": "bdb058682f-2026-03-11-masha-akusher-ginekolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/bdb058682f-2026-03-11-masha-akusher-ginekolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-03-11-masha-akusher-ginekolog",
+          "eventSlug": "2026-03-11-masha-akusher-ginekolog",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-03-11",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 31772,
+          "eventHref": "/MedsDataBase/events/2026-03-11-masha-akusher-ginekolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Беременность 37 недель, головное предлежание.",
+        "Жалоб нет, самочувствие хорошее.",
+        "Голова не болит, зрение ясное, шевеления ощущаются ясно.",
+        "Основной диагноз: наблюдение за течением другой нормальной беременности.",
+        "КТГ от 11.03.2026 описана как нормальный тип КТГ."
+      ],
+      "track": [
+        "Плановое течение беременности в третьем триместре.",
+        "Динамику КТГ и акушерских осмотров."
+      ],
+      "nextActions": [
+        "Подробные рекомендации и назначения сверять с исходным заключением."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-03-11 Маша — акушер-гинеколог.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-03-11 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 37 недель, головное предлежание. - Жалоб нет, самочувствие хорошее. - Голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - КТГ от 11.03.2026 описана как нормальный тип КТГ. - Плановое течение беременности в третьем триместре. - Динамику КТГ и акушерских осмотров. - Подробные рекомендации и назначения сверять с исходным заключением.",
+      "dataWarnings": [],
+      "followUpAction": "Динамику КТГ и акушерских осмотров."
+    },
+    {
+      "id": "2026-02-25-masha-akusher-ginekolog",
+      "slug": "2026-02-25-masha-akusher-ginekolog",
+      "routePath": "/events/2026-02-25-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-02-25-masha-akusher-ginekolog",
+      "title": "2026-02-25 Маша — акушер-гинеколог",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-02-25",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Колосова И. А.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-02-25 Маша Акушер-гинеколог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "0f753e4305ec198c",
+          "slug": "2026-02-25-masha-akusher-ginekolog-0f753e43",
+          "fileName": "2026-02-25 Маша Акушер-гинеколог.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-25 Маша Акушер-гинеколог.pdf",
+          "routePath": "/documents/2026-02-25-masha-akusher-ginekolog-0f753e43",
+          "href": "/MedsDataBase/documents/2026-02-25-masha-akusher-ginekolog-0f753e43",
+          "outputFileName": "0f753e4305-2026-02-25-masha-akusher-ginekolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/0f753e4305-2026-02-25-masha-akusher-ginekolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-02-25-masha-akusher-ginekolog",
+          "eventSlug": "2026-02-25-masha-akusher-ginekolog",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-02-25",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 31628,
+          "eventHref": "/MedsDataBase/events/2026-02-25-masha-akusher-ginekolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Беременность 35 недель.",
+        "Самочувствие хорошее; голова не болит, зрение ясное, шевеления ощущаются ясно.",
+        "Основной диагноз: наблюдение за течением другой нормальной беременности.",
+        "В документе упомянуто оформление листка нетрудоспособности по беременности и родам за прошедшее время.",
+        "По данным документа, третий триместр без осложнений."
+      ],
+      "track": [
+        "Динамику самочувствия и акушерского наблюдения в третьем триместре.",
+        "Связь события с оформлением документов по беременности и родам."
+      ],
+      "nextActions": [
+        "Подробные рекомендации и назначения сверять с исходным заключением."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-25 Маша — акушер-гинеколог.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-02-25 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 35 недель. - Самочувствие хорошее; голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - В документе упомянуто оформление листка нетрудоспособности по беременности и родам за прошедшее время. - По данным документа, третий триместр без осложнений. - Динамику самочувствия и акушерского наблюдения в третьем триместре. - Связь события с оформлением документов по беременности и родам. - Подробные рекомендации и назначения сверять с исходным заключением.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Гинекология"
+    },
+    {
+      "id": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "slug": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "routePath": "/events/2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "href": "/MedsDataBase/events/2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "title": "2026-02-18 Маша — консультация акушера-гинеколога",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-02-18",
+      "year": "2026",
+      "eventType": "Консультация",
+      "eventTypeId": "consultation",
+      "eventTypeLabel": "Консультация",
+      "sourceEventType": "Консультация",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Колосова Ирина Алексеевна",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-02-18 Маша Акушер-гинеколог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "bef89da6c883af27",
+          "slug": "2026-02-18-masha-akusher-ginekolog-bef89da6",
+          "fileName": "2026-02-18 Маша Акушер-гинеколог.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-18 Маша Акушер-гинеколог.pdf",
+          "routePath": "/documents/2026-02-18-masha-akusher-ginekolog-bef89da6",
+          "href": "/MedsDataBase/documents/2026-02-18-masha-akusher-ginekolog-bef89da6",
+          "outputFileName": "bef89da6c8-2026-02-18-masha-akusher-ginekolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/bef89da6c8-2026-02-18-masha-akusher-ginekolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+          "eventSlug": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-02-18",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 19310,
+          "eventHref": "/MedsDataBase/events/2026-02-18-masha-konsultatsiya-akushera-ginekologa"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Консультация состоялась 18.02.2026.",
+        "Беременность 34 недели.",
+        "Жалоб нет, самочувствие хорошее.",
+        "Шевеления ощущаются ясно.",
+        "Голова не болит, отёков нет."
+      ],
+      "track": [
+        "Самочувствие и жалобы в динамике третьего триместра.",
+        "Плановый переход к очному приёму."
+      ],
+      "nextActions": [
+        "В документе указано приглашение на приём."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-18 Маша — консультация акушера-гинеколога.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-02-18 Маша — консультация акушера-гинеколога Маша Консультация Гинекология Колосова Ирина Алексеевна ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Консультация состоялась 18.02.2026. - Беременность 34 недели. - Жалоб нет, самочувствие хорошее. - Шевеления ощущаются ясно. - Голова не болит, отёков нет. - Самочувствие и жалобы в динамике третьего триместра. - Плановый переход к очному приёму. - В документе указано приглашение на приём.",
+      "dataWarnings": [],
+      "followUpAction": "В документе указано приглашение на приём."
+    },
+    {
+      "id": "2026-02-06-masha-akusher-ginekolog",
+      "slug": "2026-02-06-masha-akusher-ginekolog",
+      "routePath": "/events/2026-02-06-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-02-06-masha-akusher-ginekolog",
+      "title": "2026-02-06 Маша — акушер-гинеколог",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-02-06",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Колосова И. А.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-02-06 Маша Акушер-гинеколог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "1bebc276ac7497b2",
+          "slug": "2026-02-06-masha-akusher-ginekolog-1bebc276",
+          "fileName": "2026-02-06 Маша Акушер-гинеколог.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-06 Маша Акушер-гинеколог.pdf",
+          "routePath": "/documents/2026-02-06-masha-akusher-ginekolog-1bebc276",
+          "href": "/MedsDataBase/documents/2026-02-06-masha-akusher-ginekolog-1bebc276",
+          "outputFileName": "1bebc276ac-2026-02-06-masha-akusher-ginekolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/1bebc276ac-2026-02-06-masha-akusher-ginekolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-02-06-masha-akusher-ginekolog",
+          "eventSlug": "2026-02-06-masha-akusher-ginekolog",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-02-06",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 32756,
+          "eventHref": "/MedsDataBase/events/2026-02-06-masha-akusher-ginekolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Беременность 32.2 недели.",
+        "Самочувствие хорошее; голова не болит, зрение ясное, шевеления ощущаются ясно.",
+        "Основной диагноз: наблюдение за течением другой нормальной беременности.",
+        "В документе указана миопия слабой степени.",
+        "КТГ от 05.02.2026 описана как нормальный тип КТГ."
+      ],
+      "track": [
+        "Динамику акушерского наблюдения в третьем триместре.",
+        "Связь с результатами КТГ и оформлением документов по беременности и родам."
+      ],
+      "nextActions": [
+        "Подробные рекомендации и назначения сверять с исходным заключением."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-02-06 Маша — акушер-гинеколог.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-02-06 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 32.2 недели. - Самочувствие хорошее; голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - В документе указана миопия слабой степени. - КТГ от 05.02.2026 описана как нормальный тип КТГ. - Динамику акушерского наблюдения в третьем триместре. - Связь с результатами КТГ и оформлением документов по беременности и родам. - Подробные рекомендации и назначения сверять с исходным заключением.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Гинекология"
+    },
+    {
       "id": "2026-02-04-masha-oftalmolog",
       "slug": "2026-02-04-masha-oftalmolog",
       "routePath": "/events/2026-02-04-masha-oftalmolog",
@@ -2057,6 +2642,230 @@
       "searchableText": "Маша — офтальмолог — 04.02.2026 Маша Приём Офтальмология Кац Михаил Валерьевич DocMed - Жалобы: чекап, беременность. - В анамнезе отмечена миопия слабой степени. - Диагноз: H52.1 Миопия. - Офтальмологических противопоказаний к естественным родам со стороны органа зрения не указано. - После родов нужен подбор очков. - Повторный приём не требуется. - После родов подобрать очки.",
       "dataWarnings": [],
       "followUpAction": "Повторный приём не требуется."
+    },
+    {
+      "id": "2026-01-28-masha-akusher-ginekolog",
+      "slug": "2026-01-28-masha-akusher-ginekolog",
+      "routePath": "/events/2026-01-28-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-01-28-masha-akusher-ginekolog",
+      "title": "2026-01-28 Маша — акушер-гинеколог",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-01-28",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Джабраилова П. И.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-01-28 Маша Акушер-гинеколог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "b4ff682b10f3d281",
+          "slug": "2026-01-28-masha-akusher-ginekolog-b4ff682b",
+          "fileName": "2026-01-28 Маша Акушер-гинеколог.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-01-28 Маша Акушер-гинеколог.pdf",
+          "routePath": "/documents/2026-01-28-masha-akusher-ginekolog-b4ff682b",
+          "href": "/MedsDataBase/documents/2026-01-28-masha-akusher-ginekolog-b4ff682b",
+          "outputFileName": "b4ff682b10-2026-01-28-masha-akusher-ginekolog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/b4ff682b10-2026-01-28-masha-akusher-ginekolog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-01-28-masha-akusher-ginekolog",
+          "eventSlug": "2026-01-28-masha-akusher-ginekolog",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2026-01-28",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 27753,
+          "eventHref": "/MedsDataBase/events/2026-01-28-masha-akusher-ginekolog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Беременность 31 неделя.",
+        "На момент осмотра жалоб нет.",
+        "Состояние удовлетворительное, голова не болит, зрение ясное.",
+        "Шевеления ощущаются отчётливо.",
+        "Предполагаемая дата родов в документе: 01.04.2026."
+      ],
+      "track": [
+        "Динамику беременности на сроке 31 неделя.",
+        "Вес, артериальное давление и отсутствие отёков по данным осмотра."
+      ],
+      "nextActions": [
+        "Подробные рекомендации и назначения сверять с исходным заключением."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-01-28 Маша — акушер-гинеколог.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-01-28 Маша — акушер-гинеколог Маша Приём Гинекология Джабраилова П. И. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 31 неделя. - На момент осмотра жалоб нет. - Состояние удовлетворительное, голова не болит, зрение ясное. - Шевеления ощущаются отчётливо. - Предполагаемая дата родов в документе: 01.04.2026. - Динамику беременности на сроке 31 неделя. - Вес, артериальное давление и отсутствие отёков по данным осмотра. - Подробные рекомендации и назначения сверять с исходным заключением.",
+      "dataWarnings": [],
+      "followUpAction": "Вес, артериальное давление и отсутствие отёков по данным осмотра."
+    },
+    {
+      "id": "2026-01-28-masha-psiholog",
+      "slug": "2026-01-28-masha-psiholog",
+      "routePath": "/events/2026-01-28-masha-psiholog",
+      "href": "/MedsDataBase/events/2026-01-28-masha-psiholog",
+      "title": "2026-01-28 Маша — психолог",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-01-28",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Психология",
+      "specialtyId": "psihologiya",
+      "specialtyLabel": "Психология",
+      "doctor": "Мартыновская Т. С.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-01-28 Маша Психолог.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "a3efe103dc3d61ee",
+          "slug": "2026-01-28-masha-psiholog-a3efe103",
+          "fileName": "2026-01-28 Маша Психолог.pdf",
+          "originalPath": "01 Члены семьи/Маша/11 Психолог/11 Психолог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-01-28 Маша Психолог.pdf",
+          "routePath": "/documents/2026-01-28-masha-psiholog-a3efe103",
+          "href": "/MedsDataBase/documents/2026-01-28-masha-psiholog-a3efe103",
+          "outputFileName": "a3efe103dc-2026-01-28-masha-psiholog.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/a3efe103dc-2026-01-28-masha-psiholog.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-01-28-masha-psiholog",
+          "eventSlug": "2026-01-28-masha-psiholog",
+          "specialty": "Психология",
+          "specialtyId": "psihologiya",
+          "date": "2026-01-28",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 19460,
+          "eventHref": "/MedsDataBase/events/2026-01-28-masha-psiholog"
+        }
+      ],
+      "tags": [
+        "visit",
+        "psihologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Активных жалоб нет.",
+        "Эмоциональный фон описан как нейтральный, настроение хорошее.",
+        "В беседу вступает охотно и доброжелательно.",
+        "Эмоционально-личностных, когнитивных и поведенческих нарушений на момент осмотра не выявлено.",
+        "Внутренняя картина беременности описана как сформированная гармонично."
+      ],
+      "track": [
+        "Психоэмоциональное состояние в динамике беременности и послеродового периода."
+      ],
+      "nextActions": [
+        "В рекомендациях указаны психоэмоциональный покой, умеренная физическая активность, психологическое просвещение, школа матери и навыки осознанности."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/11 Психолог/11 Психолог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-01-28 Маша — психолог.md",
+      "folderPath": "01 Члены семьи/Маша/11 Психолог/11 Психолог 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-01-28 Маша — психолог Маша Приём Психология Мартыновская Т. С. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Активных жалоб нет. - Эмоциональный фон описан как нейтральный, настроение хорошее. - В беседу вступает охотно и доброжелательно. - Эмоционально-личностных, когнитивных и поведенческих нарушений на момент осмотра не выявлено. - Внутренняя картина беременности описана как сформированная гармонично. - Психоэмоциональное состояние в динамике беременности и послеродового периода. - В рекомендациях указаны психоэмоциональный покой, умеренная физическая активность, психологическое просвещение, школа матери и навыки осознанности.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Психология"
+    },
+    {
+      "id": "2026-01-28-masha-terapevt",
+      "slug": "2026-01-28-masha-terapevt",
+      "routePath": "/events/2026-01-28-masha-terapevt",
+      "href": "/MedsDataBase/events/2026-01-28-masha-terapevt",
+      "title": "2026-01-28 Маша — терапевт",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-01-28",
+      "year": "2026",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "eventTypeLabel": "Приём",
+      "sourceEventType": "Приём",
+      "specialty": "Терапия",
+      "specialtyId": "terapiya",
+      "specialtyLabel": "Терапия",
+      "doctor": "Хахулина Т. В.",
+      "clinic": "ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-01-28 Маша Терапевт.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "0b337ecd1d7e71ed",
+          "slug": "2026-01-28-masha-terapevt-0b337ecd",
+          "fileName": "2026-01-28 Маша Терапевт.pdf",
+          "originalPath": "01 Члены семьи/Маша/01 Терапевт/01 Терапевт 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-01-28 Маша Терапевт.pdf",
+          "routePath": "/documents/2026-01-28-masha-terapevt-0b337ecd",
+          "href": "/MedsDataBase/documents/2026-01-28-masha-terapevt-0b337ecd",
+          "outputFileName": "0b337ecd1d-2026-01-28-masha-terapevt.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/0b337ecd1d-2026-01-28-masha-terapevt.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2026-01-28-masha-terapevt",
+          "eventSlug": "2026-01-28-masha-terapevt",
+          "specialty": "Терапия",
+          "specialtyId": "terapiya",
+          "date": "2026-01-28",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 24338,
+          "eventHref": "/MedsDataBase/events/2026-01-28-masha-terapevt"
+        }
+      ],
+      "tags": [
+        "visit",
+        "terapiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Жалоб нет.",
+        "Беременность 31 неделя, указана миопия слабой степени.",
+        "Общее состояние удовлетворительное, сознание ясное.",
+        "Отеки отсутствуют.",
+        "При осмотре лёгких, сердца, живота и области почек значимых патологий в извлечённом тексте не выделено."
+      ],
+      "track": [
+        "Общее терапевтическое состояние в третьем триместре.",
+        "Артериальное давление, отёки и самочувствие в динамике."
+      ],
+      "nextActions": [
+        "Подробные рекомендации по питанию и режиму сверять с исходным заключением."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/01 Терапевт/01 Терапевт 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова/2026-01-28 Маша — терапевт.md",
+      "folderPath": "01 Члены семьи/Маша/01 Терапевт/01 Терапевт 2026/ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова",
+      "searchableText": "2026-01-28 Маша — терапевт Маша Приём Терапия Хахулина Т. В. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Жалоб нет. - Беременность 31 неделя, указана миопия слабой степени. - Общее состояние удовлетворительное, сознание ясное. - Отеки отсутствуют. - При осмотре лёгких, сердца, живота и области почек значимых патологий в извлечённом тексте не выделено. - Общее терапевтическое состояние в третьем триместре. - Артериальное давление, отёки и самочувствие в динамике. - Подробные рекомендации по питанию и режиму сверять с исходным заключением.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Терапия"
     },
     {
       "id": "2025-10-20-masha-oftalmolog",
@@ -2213,6 +3022,157 @@
       "searchableText": "Маша — офтальмолог — 14.10.2025 Маша Приём Офтальмология Богданов Денис Григорьевич Будь Здоров - Пациент: Мишина Мария Александровна, дата рождения 01.12.1996. - Беременность: 16 недель. - Жалоб активно не предъявляет. - Ранее получала лечение в БЗ с диагнозом OU миопия слабой степени, прогрессирование, ПИНА. - Острота зрения без коррекции: OD 0,3; OS 0,3. - Острота зрения с коррекцией: OD 1,0; OS 1,0. - Заключительный диагноз: OU миопия слабой степени, анизометропия, ПИНА. - На момент осмотра острой патологии глаз не выявлено. - Динамику миопии и необходимость очков для дали. - Сопоставить с повторным осмотром от 20.10.2025. - План обследования: не требуется. - Очки для дали по желанию. - Увлажняющие капли/гель по назначению из протокола.",
       "dataWarnings": [],
       "followUpAction": "Сопоставить с повторным осмотром от 20.10.2025."
+    },
+    {
+      "id": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "slug": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "routePath": "/events/2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "href": "/MedsDataBase/events/2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "title": "2025-08-27 Маша — выписной эпикриз, угрожающий аборт",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-08-27",
+      "year": "2025",
+      "eventType": "Стационар",
+      "eventTypeId": "statsionar",
+      "eventTypeLabel": "Стационар",
+      "sourceEventType": "Стационар",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "Саттарова З. И.",
+      "clinic": "НИИ скорой помощи им. Н.В. Склифосовского",
+      "status": "done",
+      "importance": "high",
+      "sourceFileNames": [
+        "Скорая помощь/2025-08-27 Маша Угрожающий аборт.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "38450d9cee63d3ec",
+          "slug": "2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+          "fileName": "2025-08-27 Маша Угрожающий аборт.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/Скорая помощь/2025-08-27 Маша Угрожающий аборт.pdf",
+          "routePath": "/documents/2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+          "href": "/MedsDataBase/documents/2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+          "outputFileName": "38450d9cee-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/38450d9cee-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+          "eventSlug": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2025-08-27",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 70827,
+          "eventHref": "/MedsDataBase/events/2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort"
+        }
+      ],
+      "tags": [
+        "hospitalization",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Поступление в стационар: 25.08.2025.",
+        "Выписка: 27.08.2025.",
+        "Диагноз при поступлении: O20.0 угрожающий аборт, срок около 9 недель.",
+        "Диагноз при выписке: O20.0 угрожающий аборт маточной беременности 10 недель.",
+        "При поступлении отмечались кровянистые выделения из половых путей."
+      ],
+      "track": [
+        "Связь события с последующим наблюдением беременности.",
+        "Рекомендации из выписки и их выполнение.",
+        "Любые повторные эпизоды боли или кровянистых выделений."
+      ],
+      "nextActions": [
+        "Подробные назначения, ограничения и рекомендации сверять с исходной выпиской."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/2025-08-27 Маша — выписной эпикриз угрожающий аборт.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025",
+      "searchableText": "2025-08-27 Маша — выписной эпикриз, угрожающий аборт Маша Стационар Гинекология Саттарова З. И. НИИ скорой помощи им. Н.В. Склифосовского - Поступление в стационар: 25.08.2025. - Выписка: 27.08.2025. - Диагноз при поступлении: O20.0 угрожающий аборт, срок около 9 недель. - Диагноз при выписке: O20.0 угрожающий аборт маточной беременности 10 недель. - При поступлении отмечались кровянистые выделения из половых путей. - Связь события с последующим наблюдением беременности. - Рекомендации из выписки и их выполнение. - Любые повторные эпизоды боли или кровянистых выделений. - Подробные назначения, ограничения и рекомендации сверять с исходной выпиской.",
+      "dataWarnings": [],
+      "followUpAction": "Связь события с последующим наблюдением беременности."
+    },
+    {
+      "id": "2025-08-25-masha-skoraya-pomosch",
+      "slug": "2025-08-25-masha-skoraya-pomosch",
+      "routePath": "/events/2025-08-25-masha-skoraya-pomosch",
+      "href": "/MedsDataBase/events/2025-08-25-masha-skoraya-pomosch",
+      "title": "2025-08-25 Маша — скорая помощь",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-08-25",
+      "year": "2025",
+      "eventType": "Скорая помощь",
+      "eventTypeId": "skoraya-pomosch",
+      "eventTypeLabel": "Скорая помощь",
+      "sourceEventType": "Скорая помощь",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "specialtyLabel": "Гинекология",
+      "doctor": "",
+      "clinic": "Скорая медицинская помощь",
+      "status": "done",
+      "importance": "high",
+      "sourceFileNames": [
+        "Скорая помощь/2025-08-25 Маша — Скорая помощь.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "b3aed02e96162fb3",
+          "slug": "2025-08-25-masha-skoraya-pomosch-b3aed02e",
+          "fileName": "2025-08-25 Маша — Скорая помощь.pdf",
+          "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/Скорая помощь/2025-08-25 Маша — Скорая помощь.pdf",
+          "routePath": "/documents/2025-08-25-masha-skoraya-pomosch-b3aed02e",
+          "href": "/MedsDataBase/documents/2025-08-25-masha-skoraya-pomosch-b3aed02e",
+          "outputFileName": "b3aed02e96-2025-08-25-masha-skoraya-pomosch.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/b3aed02e96-2025-08-25-masha-skoraya-pomosch.pdf",
+          "extension": "pdf",
+          "person": "Маша",
+          "eventId": "2025-08-25-masha-skoraya-pomosch",
+          "eventSlug": "2025-08-25-masha-skoraya-pomosch",
+          "specialty": "Гинекология",
+          "specialtyId": "ginekologiya",
+          "date": "2025-08-25",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 27171,
+          "eventHref": "/MedsDataBase/events/2025-08-25-masha-skoraya-pomosch"
+        }
+      ],
+      "tags": [
+        "emergency",
+        "ginekologiya",
+        "pregnancy"
+      ],
+      "summary": [
+        "Вызов скорой помощи оформлен 25.08.2025.",
+        "Результат вызова: доставлена в больницу.",
+        "Жалобы: тянущие боли внизу живота.",
+        "По анамнезу жалобы беспокоили с утра того же дня.",
+        "Накануне было обращение в поликлинику с осмотром гинеколога, УЗИ органов малого таза и лабораторными анализами ХГЧ."
+      ],
+      "track": [
+        "Связь вызова скорой с последующей госпитализацией и выписным эпикризом от 27.08.2025.",
+        "Динамику болей и выделений на раннем сроке беременности."
+      ],
+      "nextActions": [
+        "Подробности маршрутизации, осмотра и рекомендаций сверять с исходной картой вызова."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/2025-08-25 Маша — скорая помощь.md",
+      "folderPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025",
+      "searchableText": "2025-08-25 Маша — скорая помощь Маша Скорая помощь Гинекология Скорая медицинская помощь - Вызов скорой помощи оформлен 25.08.2025. - Результат вызова: доставлена в больницу. - Жалобы: тянущие боли внизу живота. - По анамнезу жалобы беспокоили с утра того же дня. - Накануне было обращение в поликлинику с осмотром гинеколога, УЗИ органов малого таза и лабораторными анализами ХГЧ. - Связь вызова скорой с последующей госпитализацией и выписным эпикризом от 27.08.2025. - Динамику болей и выделений на раннем сроке беременности. - Подробности маршрутизации, осмотра и рекомендаций сверять с исходной картой вызова.",
+      "dataWarnings": [],
+      "followUpAction": "Связь вызова скорой с последующей госпитализацией и выписным эпикризом от 27.08.2025."
     },
     {
       "id": "2025-08-25-masha-laboratornye-analizy",
@@ -3420,14 +4380,17 @@
       "publicUrl": "/MedsDataBase/files/documents/a8216b2168-2026-04-10-masha-konsultatsiya-zavershenie-beremennosti.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-04-10-masha-zavershenie-beremennosti",
+      "eventSlug": "2026-04-10-masha-zavershenie-beremennosti",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-04-10",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 20009
+      "size": 20009,
+      "eventHref": "/MedsDataBase/events/2026-04-10-masha-zavershenie-beremennosti"
     },
     {
       "id": "8b8e34aeda2683ac",
@@ -3509,14 +4472,17 @@
       "publicUrl": "/MedsDataBase/files/documents/fe40e9854e-2026-03-26-masha-rezultat-kardiotokografii.jpeg",
       "extension": "jpeg",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-03-26-masha-kardiotokografiya",
+      "eventSlug": "2026-03-26-masha-kardiotokografiya",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-03-26",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 2305850
+      "size": 2305850,
+      "eventHref": "/MedsDataBase/events/2026-03-26-masha-kardiotokografiya"
     },
     {
       "id": "dba70f2d9d4b1b0b",
@@ -3529,14 +4495,17 @@
       "publicUrl": "/MedsDataBase/files/documents/dba70f2d9d-2026-03-26-masha-rezultat-kardiotokografii.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-03-26-masha-kardiotokografiya",
+      "eventSlug": "2026-03-26-masha-kardiotokografiya",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-03-26",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 21021
+      "size": 21021,
+      "eventHref": "/MedsDataBase/events/2026-03-26-masha-kardiotokografiya"
     },
     {
       "id": "3c5a1e1d59e7ddba",
@@ -3549,14 +4518,17 @@
       "publicUrl": "/MedsDataBase/files/documents/3c5a1e1d59-2026-03-25-masha-akusher-ginekolog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-03-25-masha-akusher-ginekolog",
+      "eventSlug": "2026-03-25-masha-akusher-ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-03-25",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 31307
+      "size": 31307,
+      "eventHref": "/MedsDataBase/events/2026-03-25-masha-akusher-ginekolog"
     },
     {
       "id": "2008020eedc7ffcd",
@@ -3638,14 +4610,17 @@
       "publicUrl": "/MedsDataBase/files/documents/80b99b7dfa-2026-03-19-artem-analiz-krovi.pdf",
       "extension": "pdf",
       "person": "Артём",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "eventId": "2026-03-19-artem-analiz-krovi-1",
+      "eventSlug": "2026-03-19-artem-analiz-krovi-1",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "date": "2026-03-19",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 241420
+      "size": 241420,
+      "eventHref": "/MedsDataBase/events/2026-03-19-artem-analiz-krovi-1"
     },
     {
       "id": "44938acec9e2b92b",
@@ -3957,14 +4932,17 @@
       "publicUrl": "/MedsDataBase/files/documents/bdb058682f-2026-03-11-masha-akusher-ginekolog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-03-11-masha-akusher-ginekolog",
+      "eventSlug": "2026-03-11-masha-akusher-ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-03-11",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 31772
+      "size": 31772,
+      "eventHref": "/MedsDataBase/events/2026-03-11-masha-akusher-ginekolog"
     },
     {
       "id": "0f753e4305ec198c",
@@ -3977,14 +4955,17 @@
       "publicUrl": "/MedsDataBase/files/documents/0f753e4305-2026-02-25-masha-akusher-ginekolog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-02-25-masha-akusher-ginekolog",
+      "eventSlug": "2026-02-25-masha-akusher-ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-02-25",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 31628
+      "size": 31628,
+      "eventHref": "/MedsDataBase/events/2026-02-25-masha-akusher-ginekolog"
     },
     {
       "id": "bef89da6c883af27",
@@ -3997,14 +4978,17 @@
       "publicUrl": "/MedsDataBase/files/documents/bef89da6c8-2026-02-18-masha-akusher-ginekolog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "eventSlug": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-02-18",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 19310
+      "size": 19310,
+      "eventHref": "/MedsDataBase/events/2026-02-18-masha-konsultatsiya-akushera-ginekologa"
     },
     {
       "id": "1bebc276ac7497b2",
@@ -4017,14 +5001,17 @@
       "publicUrl": "/MedsDataBase/files/documents/1bebc276ac-2026-02-06-masha-akusher-ginekolog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-02-06-masha-akusher-ginekolog",
+      "eventSlug": "2026-02-06-masha-akusher-ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-02-06",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 32756
+      "size": 32756,
+      "eventHref": "/MedsDataBase/events/2026-02-06-masha-akusher-ginekolog"
     },
     {
       "id": "a9be7ab2791e3ce8",
@@ -4060,14 +5047,17 @@
       "publicUrl": "/MedsDataBase/files/documents/b4ff682b10-2026-01-28-masha-akusher-ginekolog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2026-01-28-masha-akusher-ginekolog",
+      "eventSlug": "2026-01-28-masha-akusher-ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2026-01-28",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 27753
+      "size": 27753,
+      "eventHref": "/MedsDataBase/events/2026-01-28-masha-akusher-ginekolog"
     },
     {
       "id": "a3efe103dc3d61ee",
@@ -4080,14 +5070,17 @@
       "publicUrl": "/MedsDataBase/files/documents/a3efe103dc-2026-01-28-masha-psiholog.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Психолог",
-      "specialtyId": "psiholog",
+      "eventId": "2026-01-28-masha-psiholog",
+      "eventSlug": "2026-01-28-masha-psiholog",
+      "specialty": "Психология",
+      "specialtyId": "psihologiya",
       "date": "2026-01-28",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 19460
+      "size": 19460,
+      "eventHref": "/MedsDataBase/events/2026-01-28-masha-psiholog"
     },
     {
       "id": "0b337ecd1d7e71ed",
@@ -4100,14 +5093,17 @@
       "publicUrl": "/MedsDataBase/files/documents/0b337ecd1d-2026-01-28-masha-terapevt.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Терапевт",
-      "specialtyId": "terapevt",
+      "eventId": "2026-01-28-masha-terapevt",
+      "eventSlug": "2026-01-28-masha-terapevt",
+      "specialty": "Терапия",
+      "specialtyId": "terapiya",
       "date": "2026-01-28",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 24338
+      "size": 24338,
+      "eventHref": "/MedsDataBase/events/2026-01-28-masha-terapevt"
     },
     {
       "id": "998225824304853b",
@@ -4156,24 +5152,27 @@
       "eventHref": "/MedsDataBase/events/2025-10-14-masha-oftalmolog"
     },
     {
-      "id": "ffaadefed8c388d6",
-      "slug": "2025-08-27-masha-ugrozhayuschiy-abort-ffaadefe",
+      "id": "38450d9cee63d3ec",
+      "slug": "2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
       "fileName": "2025-08-27 Маша Угрожающий аборт.pdf",
-      "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/2025-08-27 Маша Угрожающий аборт.pdf",
-      "routePath": "/documents/2025-08-27-masha-ugrozhayuschiy-abort-ffaadefe",
-      "href": "/MedsDataBase/documents/2025-08-27-masha-ugrozhayuschiy-abort-ffaadefe",
-      "outputFileName": "ffaadefed8-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
-      "publicUrl": "/MedsDataBase/files/documents/ffaadefed8-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
+      "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/Скорая помощь/2025-08-27 Маша Угрожающий аборт.pdf",
+      "routePath": "/documents/2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+      "href": "/MedsDataBase/documents/2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+      "outputFileName": "38450d9cee-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/38450d9cee-2025-08-27-masha-ugrozhayuschiy-abort.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "eventSlug": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2025-08-27",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 70827
+      "size": 70827,
+      "eventHref": "/MedsDataBase/events/2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort"
     },
     {
       "id": "6ddece37784dc54d",
@@ -4222,24 +5221,27 @@
       "eventHref": "/MedsDataBase/events/2025-08-25-masha-laboratornye-analizy"
     },
     {
-      "id": "9174d43a9ea90310",
-      "slug": "2025-08-25-masha-skoraya-pomosch-9174d43a",
+      "id": "b3aed02e96162fb3",
+      "slug": "2025-08-25-masha-skoraya-pomosch-b3aed02e",
       "fileName": "2025-08-25 Маша — Скорая помощь.pdf",
-      "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/2025-08-25 Маша — Скорая помощь.pdf",
-      "routePath": "/documents/2025-08-25-masha-skoraya-pomosch-9174d43a",
-      "href": "/MedsDataBase/documents/2025-08-25-masha-skoraya-pomosch-9174d43a",
-      "outputFileName": "9174d43a9e-2025-08-25-masha-skoraya-pomosch.pdf",
-      "publicUrl": "/MedsDataBase/files/documents/9174d43a9e-2025-08-25-masha-skoraya-pomosch.pdf",
+      "originalPath": "01 Члены семьи/Маша/02 Гинеколог/02 Гинеколог 2025/Скорая помощь/2025-08-25 Маша — Скорая помощь.pdf",
+      "routePath": "/documents/2025-08-25-masha-skoraya-pomosch-b3aed02e",
+      "href": "/MedsDataBase/documents/2025-08-25-masha-skoraya-pomosch-b3aed02e",
+      "outputFileName": "b3aed02e96-2025-08-25-masha-skoraya-pomosch.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/b3aed02e96-2025-08-25-masha-skoraya-pomosch.pdf",
       "extension": "pdf",
       "person": "Маша",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "eventId": "2025-08-25-masha-skoraya-pomosch",
+      "eventSlug": "2025-08-25-masha-skoraya-pomosch",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "date": "2025-08-25",
-      "isLinkedToEvent": false,
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "isInboxItem": false,
-      "size": 27171
+      "size": 27171,
+      "eventHref": "/MedsDataBase/events/2025-08-25-masha-skoraya-pomosch"
     },
     {
       "id": "e1b2eb57f1b66309",
@@ -5017,6 +6019,22 @@
     },
     {
       "type": "event",
+      "id": "2026-04-10-masha-zavershenie-beremennosti",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-04-10",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Консультация",
+      "eventTypeId": "consultation",
+      "title": "2026-04-10 Маша — завершение беременности",
+      "routePath": "/events/2026-04-10-masha-zavershenie-beremennosti",
+      "href": "/MedsDataBase/events/2026-04-10-masha-zavershenie-beremennosti",
+      "subtitle": "2026-04-10 · Маша · Гинекология",
+      "text": "2026-04-10 Маша — завершение беременности Маша Консультация Гинекология Колосова Ирина Алексеевна ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Консультация состоялась 10.04.2026. - Беременность завершена 27.03.2026 своевременными родами на сроке 39 недель 3 дня. - Указан исход: один живорожденный ребёнок. - Жалоб на момент консультации нет. - Маша кормит грудью. - Послеродовое самочувствие и жалобы в динамике. - Дальнейшее наблюдение у акушера-гинеколога после родов. - В документе указано приглашение на очный приём."
+    },
+    {
+      "type": "event",
       "id": "2026-04-10-nika-pediatr",
       "person": "Ника",
       "personSlug": "nika",
@@ -5049,6 +6067,22 @@
     },
     {
       "type": "event",
+      "id": "2026-03-26-masha-kardiotokografiya",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-03-26",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Обследование",
+      "eventTypeId": "diagnostics",
+      "title": "2026-03-26 Маша — кардиотокография",
+      "routePath": "/events/2026-03-26-masha-kardiotokografiya",
+      "href": "/MedsDataBase/events/2026-03-26-masha-kardiotokografiya",
+      "subtitle": "2026-03-26 · Маша · Гинекология",
+      "text": "2026-03-26 Маша — кардиотокография Маша Обследование Гинекология Даева М. У. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Исследование выполнено 26.03.2026. - Продолжительность записи КТГ: 20 минут. - Базальный ритм: 126 уд/мин, оценён как норма. - Вариабельность и децелерации оценены как норма. - Заключение: нормальный тип КТГ. - Использовать результат как часть динамики наблюдения беременности. - Сопоставлять с последующими акушерскими осмотрами. - Дополнительных действий в заметке не выделено; подробности смотреть в исходных документах."
+    },
+    {
+      "type": "event",
       "id": "2026-03-26-artem-konsultatsiya-vracha",
       "person": "Артём",
       "personSlug": "artem",
@@ -5062,6 +6096,22 @@
       "href": "/MedsDataBase/events/2026-03-26-artem-konsultatsiya-vracha",
       "subtitle": "2026-03-26 · Артём · Спортивная медицина",
       "text": "Артём — консультация спортивного врача — 26.03.2026 Артём Консультация врача Спортивная медицина Паупер Елизавета Александровна - Жалоб на момент консультации нет. - Из хронического указаны: аллергический ринит (сезонный), гиперхолестеринемия. - Подтверждены хорошие показатели нагрузочного теста: толерантность к нагрузке хорошая, VO2max 39.8 мл/мин/кг. - По ЭХО-КГ, УЗИ и обследованию вен значимой патологии не описано. - Липидограмму в динамике. - ТТГ через 2–3 месяца. - Гомоцистеин в динамике. - Реакцию на питание, витамины группы B и режим гидратации. - Продолжить приём Омега-3. - Контроль липидограммы 1 раз в 6 месяцев. - Контроль ТТГ через 2–3 месяца. - Увеличить потребление продуктов с фолатами (B9) и кобаламином (B12). - Рассмотреть курс комплекса с активными формами B9 и B12. - Пить изотоники во время нагрузок."
+    },
+    {
+      "type": "event",
+      "id": "2026-03-25-masha-akusher-ginekolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-03-25",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-03-25 Маша — акушер-гинеколог",
+      "routePath": "/events/2026-03-25-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-03-25-masha-akusher-ginekolog",
+      "subtitle": "2026-03-25 · Маша · Гинекология",
+      "text": "2026-03-25 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 39 недель, головное предлежание. - Самочувствие хорошее; головной боли нет, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением нормальной первой беременности. - В документе отмечена миопия слабой степени. - КТГ от 25.03.2026 описана как нормальный тип КТГ. - Динамику самочувствия в последние недели беременности. - Результаты КТГ и акушерского наблюдения рядом с родами. - Подробные рекомендации и назначения сверять с исходным заключением."
     },
     {
       "type": "event",
@@ -5337,6 +6387,70 @@
     },
     {
       "type": "event",
+      "id": "2026-03-11-masha-akusher-ginekolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-03-11",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-03-11 Маша — акушер-гинеколог",
+      "routePath": "/events/2026-03-11-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-03-11-masha-akusher-ginekolog",
+      "subtitle": "2026-03-11 · Маша · Гинекология",
+      "text": "2026-03-11 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 37 недель, головное предлежание. - Жалоб нет, самочувствие хорошее. - Голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - КТГ от 11.03.2026 описана как нормальный тип КТГ. - Плановое течение беременности в третьем триместре. - Динамику КТГ и акушерских осмотров. - Подробные рекомендации и назначения сверять с исходным заключением."
+    },
+    {
+      "type": "event",
+      "id": "2026-02-25-masha-akusher-ginekolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-02-25",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-02-25 Маша — акушер-гинеколог",
+      "routePath": "/events/2026-02-25-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-02-25-masha-akusher-ginekolog",
+      "subtitle": "2026-02-25 · Маша · Гинекология",
+      "text": "2026-02-25 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 35 недель. - Самочувствие хорошее; голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - В документе упомянуто оформление листка нетрудоспособности по беременности и родам за прошедшее время. - По данным документа, третий триместр без осложнений. - Динамику самочувствия и акушерского наблюдения в третьем триместре. - Связь события с оформлением документов по беременности и родам. - Подробные рекомендации и назначения сверять с исходным заключением."
+    },
+    {
+      "type": "event",
+      "id": "2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-02-18",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Консультация",
+      "eventTypeId": "consultation",
+      "title": "2026-02-18 Маша — консультация акушера-гинеколога",
+      "routePath": "/events/2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "href": "/MedsDataBase/events/2026-02-18-masha-konsultatsiya-akushera-ginekologa",
+      "subtitle": "2026-02-18 · Маша · Гинекология",
+      "text": "2026-02-18 Маша — консультация акушера-гинеколога Маша Консультация Гинекология Колосова Ирина Алексеевна ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Консультация состоялась 18.02.2026. - Беременность 34 недели. - Жалоб нет, самочувствие хорошее. - Шевеления ощущаются ясно. - Голова не болит, отёков нет. - Самочувствие и жалобы в динамике третьего триместра. - Плановый переход к очному приёму. - В документе указано приглашение на приём."
+    },
+    {
+      "type": "event",
+      "id": "2026-02-06-masha-akusher-ginekolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-02-06",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-02-06 Маша — акушер-гинеколог",
+      "routePath": "/events/2026-02-06-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-02-06-masha-akusher-ginekolog",
+      "subtitle": "2026-02-06 · Маша · Гинекология",
+      "text": "2026-02-06 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 32.2 недели. - Самочувствие хорошее; голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - В документе указана миопия слабой степени. - КТГ от 05.02.2026 описана как нормальный тип КТГ. - Динамику акушерского наблюдения в третьем триместре. - Связь с результатами КТГ и оформлением документов по беременности и родам. - Подробные рекомендации и назначения сверять с исходным заключением."
+    },
+    {
+      "type": "event",
       "id": "2026-02-04-masha-oftalmolog",
       "person": "Маша",
       "personSlug": "masha",
@@ -5350,6 +6464,54 @@
       "href": "/MedsDataBase/events/2026-02-04-masha-oftalmolog",
       "subtitle": "2026-02-04 · Маша · Офтальмология",
       "text": "Маша — офтальмолог — 04.02.2026 Маша Приём Офтальмология Кац Михаил Валерьевич DocMed - Жалобы: чекап, беременность. - В анамнезе отмечена миопия слабой степени. - Диагноз: H52.1 Миопия. - Офтальмологических противопоказаний к естественным родам со стороны органа зрения не указано. - После родов нужен подбор очков. - Повторный приём не требуется. - После родов подобрать очки."
+    },
+    {
+      "type": "event",
+      "id": "2026-01-28-masha-akusher-ginekolog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-01-28",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-01-28 Маша — акушер-гинеколог",
+      "routePath": "/events/2026-01-28-masha-akusher-ginekolog",
+      "href": "/MedsDataBase/events/2026-01-28-masha-akusher-ginekolog",
+      "subtitle": "2026-01-28 · Маша · Гинекология",
+      "text": "2026-01-28 Маша — акушер-гинеколог Маша Приём Гинекология Джабраилова П. И. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 31 неделя. - На момент осмотра жалоб нет. - Состояние удовлетворительное, голова не болит, зрение ясное. - Шевеления ощущаются отчётливо. - Предполагаемая дата родов в документе: 01.04.2026. - Динамику беременности на сроке 31 неделя. - Вес, артериальное давление и отсутствие отёков по данным осмотра. - Подробные рекомендации и назначения сверять с исходным заключением."
+    },
+    {
+      "type": "event",
+      "id": "2026-01-28-masha-psiholog",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-01-28",
+      "specialty": "Психология",
+      "specialtyId": "psihologiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-01-28 Маша — психолог",
+      "routePath": "/events/2026-01-28-masha-psiholog",
+      "href": "/MedsDataBase/events/2026-01-28-masha-psiholog",
+      "subtitle": "2026-01-28 · Маша · Психология",
+      "text": "2026-01-28 Маша — психолог Маша Приём Психология Мартыновская Т. С. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Активных жалоб нет. - Эмоциональный фон описан как нейтральный, настроение хорошее. - В беседу вступает охотно и доброжелательно. - Эмоционально-личностных, когнитивных и поведенческих нарушений на момент осмотра не выявлено. - Внутренняя картина беременности описана как сформированная гармонично. - Психоэмоциональное состояние в динамике беременности и послеродового периода. - В рекомендациях указаны психоэмоциональный покой, умеренная физическая активность, психологическое просвещение, школа матери и навыки осознанности."
+    },
+    {
+      "type": "event",
+      "id": "2026-01-28-masha-terapevt",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2026-01-28",
+      "specialty": "Терапия",
+      "specialtyId": "terapiya",
+      "eventType": "Приём",
+      "eventTypeId": "visit",
+      "title": "2026-01-28 Маша — терапевт",
+      "routePath": "/events/2026-01-28-masha-terapevt",
+      "href": "/MedsDataBase/events/2026-01-28-masha-terapevt",
+      "subtitle": "2026-01-28 · Маша · Терапия",
+      "text": "2026-01-28 Маша — терапевт Маша Приём Терапия Хахулина Т. В. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Жалоб нет. - Беременность 31 неделя, указана миопия слабой степени. - Общее состояние удовлетворительное, сознание ясное. - Отеки отсутствуют. - При осмотре лёгких, сердца, живота и области почек значимых патологий в извлечённом тексте не выделено. - Общее терапевтическое состояние в третьем триместре. - Артериальное давление, отёки и самочувствие в динамике. - Подробные рекомендации по питанию и режиму сверять с исходным заключением."
     },
     {
       "type": "event",
@@ -5382,6 +6544,38 @@
       "href": "/MedsDataBase/events/2025-10-14-masha-oftalmolog",
       "subtitle": "2025-10-14 · Маша · Офтальмология",
       "text": "Маша — офтальмолог — 14.10.2025 Маша Приём Офтальмология Богданов Денис Григорьевич Будь Здоров - Пациент: Мишина Мария Александровна, дата рождения 01.12.1996. - Беременность: 16 недель. - Жалоб активно не предъявляет. - Ранее получала лечение в БЗ с диагнозом OU миопия слабой степени, прогрессирование, ПИНА. - Острота зрения без коррекции: OD 0,3; OS 0,3. - Острота зрения с коррекцией: OD 1,0; OS 1,0. - Заключительный диагноз: OU миопия слабой степени, анизометропия, ПИНА. - На момент осмотра острой патологии глаз не выявлено. - Динамику миопии и необходимость очков для дали. - Сопоставить с повторным осмотром от 20.10.2025. - План обследования: не требуется. - Очки для дали по желанию. - Увлажняющие капли/гель по назначению из протокола."
+    },
+    {
+      "type": "event",
+      "id": "2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-08-27",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Стационар",
+      "eventTypeId": "statsionar",
+      "title": "2025-08-27 Маша — выписной эпикриз, угрожающий аборт",
+      "routePath": "/events/2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "href": "/MedsDataBase/events/2025-08-27-masha-vypisnoy-epikriz-ugrozhayuschiy-abort",
+      "subtitle": "2025-08-27 · Маша · Гинекология",
+      "text": "2025-08-27 Маша — выписной эпикриз, угрожающий аборт Маша Стационар Гинекология Саттарова З. И. НИИ скорой помощи им. Н.В. Склифосовского - Поступление в стационар: 25.08.2025. - Выписка: 27.08.2025. - Диагноз при поступлении: O20.0 угрожающий аборт, срок около 9 недель. - Диагноз при выписке: O20.0 угрожающий аборт маточной беременности 10 недель. - При поступлении отмечались кровянистые выделения из половых путей. - Связь события с последующим наблюдением беременности. - Рекомендации из выписки и их выполнение. - Любые повторные эпизоды боли или кровянистых выделений. - Подробные назначения, ограничения и рекомендации сверять с исходной выпиской."
+    },
+    {
+      "type": "event",
+      "id": "2025-08-25-masha-skoraya-pomosch",
+      "person": "Маша",
+      "personSlug": "masha",
+      "date": "2025-08-25",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
+      "eventType": "Скорая помощь",
+      "eventTypeId": "skoraya-pomosch",
+      "title": "2025-08-25 Маша — скорая помощь",
+      "routePath": "/events/2025-08-25-masha-skoraya-pomosch",
+      "href": "/MedsDataBase/events/2025-08-25-masha-skoraya-pomosch",
+      "subtitle": "2025-08-25 · Маша · Гинекология",
+      "text": "2025-08-25 Маша — скорая помощь Маша Скорая помощь Гинекология Скорая медицинская помощь - Вызов скорой помощи оформлен 25.08.2025. - Результат вызова: доставлена в больницу. - Жалобы: тянущие боли внизу живота. - По анамнезу жалобы беспокоили с утра того же дня. - Накануне было обращение в поликлинику с осмотром гинеколога, УЗИ органов малого таза и лабораторными анализами ХГЧ. - Связь вызова скорой с последующей госпитализацией и выписным эпикризом от 27.08.2025. - Динамику болей и выделений на раннем сроке беременности. - Подробности маршрутизации, осмотра и рекомендаций сверять с исходной картой вызова."
     },
     {
       "type": "event",
@@ -5582,16 +6776,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-04-10",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-04-10 Маша Консультация. Завершение беременности..pdf",
       "routePath": "/documents/2026-04-10-masha-konsultatsiya-zavershenie-beremennosti-a8216b21",
       "href": "/MedsDataBase/documents/2026-04-10-masha-konsultatsiya-zavershenie-beremennosti-a8216b21",
-      "subtitle": "Маша · 2026-04-10 · Гинеколог",
-      "text": "2026-04-10 Маша Консультация. Завершение беременности..pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-04-10 · Гинекология",
+      "text": "2026-04-10 Маша Консультация. Завершение беременности..pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -5650,16 +6844,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-03-26",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "jpeg",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-03-26 Маша Результат кардиотокографии.jpeg",
       "routePath": "/documents/2026-03-26-masha-rezultat-kardiotokografii-fe40e985",
       "href": "/MedsDataBase/documents/2026-03-26-masha-rezultat-kardiotokografii-fe40e985",
-      "subtitle": "Маша · 2026-03-26 · Гинеколог",
-      "text": "2026-03-26 Маша Результат кардиотокографии.jpeg Маша Гинеколог"
+      "subtitle": "Маша · 2026-03-26 · Гинекология",
+      "text": "2026-03-26 Маша Результат кардиотокографии.jpeg Маша Гинекология"
     },
     {
       "type": "document",
@@ -5667,16 +6861,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-03-26",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-03-26 Маша Результат кардиотокографии.pdf",
       "routePath": "/documents/2026-03-26-masha-rezultat-kardiotokografii-dba70f2d",
       "href": "/MedsDataBase/documents/2026-03-26-masha-rezultat-kardiotokografii-dba70f2d",
-      "subtitle": "Маша · 2026-03-26 · Гинеколог",
-      "text": "2026-03-26 Маша Результат кардиотокографии.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-03-26 · Гинекология",
+      "text": "2026-03-26 Маша Результат кардиотокографии.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -5684,16 +6878,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-03-25",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-03-25 Маша Акушер-гинеколог.pdf",
       "routePath": "/documents/2026-03-25-masha-akusher-ginekolog-3c5a1e1d",
       "href": "/MedsDataBase/documents/2026-03-25-masha-akusher-ginekolog-3c5a1e1d",
-      "subtitle": "Маша · 2026-03-25 · Гинеколог",
-      "text": "2026-03-25 Маша Акушер-гинеколог.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-03-25 · Гинекология",
+      "text": "2026-03-25 Маша Акушер-гинеколог.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -5752,16 +6946,16 @@
       "person": "Артём",
       "personSlug": "artem",
       "date": "2026-03-19",
-      "specialty": "Анализы",
-      "specialtyId": "analizy",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-03-19 Артём — Анализ крови.pdf",
       "routePath": "/documents/2026-03-19-artem-analiz-krovi-80b99b7d",
       "href": "/MedsDataBase/documents/2026-03-19-artem-analiz-krovi-80b99b7d",
-      "subtitle": "Артём · 2026-03-19 · Анализы",
-      "text": "2026-03-19 Артём — Анализ крови.pdf Артём Анализы"
+      "subtitle": "Артём · 2026-03-19 · Лаборатория",
+      "text": "2026-03-19 Артём — Анализ крови.pdf Артём Лаборатория"
     },
     {
       "type": "document",
@@ -5990,16 +7184,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-03-11",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-03-11 Маша Акушер-гинеколог.pdf",
       "routePath": "/documents/2026-03-11-masha-akusher-ginekolog-bdb05868",
       "href": "/MedsDataBase/documents/2026-03-11-masha-akusher-ginekolog-bdb05868",
-      "subtitle": "Маша · 2026-03-11 · Гинеколог",
-      "text": "2026-03-11 Маша Акушер-гинеколог.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-03-11 · Гинекология",
+      "text": "2026-03-11 Маша Акушер-гинеколог.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6007,16 +7201,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-02-25",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-02-25 Маша Акушер-гинеколог.pdf",
       "routePath": "/documents/2026-02-25-masha-akusher-ginekolog-0f753e43",
       "href": "/MedsDataBase/documents/2026-02-25-masha-akusher-ginekolog-0f753e43",
-      "subtitle": "Маша · 2026-02-25 · Гинеколог",
-      "text": "2026-02-25 Маша Акушер-гинеколог.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-02-25 · Гинекология",
+      "text": "2026-02-25 Маша Акушер-гинеколог.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6024,16 +7218,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-02-18",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-02-18 Маша Акушер-гинеколог.pdf",
       "routePath": "/documents/2026-02-18-masha-akusher-ginekolog-bef89da6",
       "href": "/MedsDataBase/documents/2026-02-18-masha-akusher-ginekolog-bef89da6",
-      "subtitle": "Маша · 2026-02-18 · Гинеколог",
-      "text": "2026-02-18 Маша Акушер-гинеколог.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-02-18 · Гинекология",
+      "text": "2026-02-18 Маша Акушер-гинеколог.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6041,16 +7235,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-02-06",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-02-06 Маша Акушер-гинеколог.pdf",
       "routePath": "/documents/2026-02-06-masha-akusher-ginekolog-1bebc276",
       "href": "/MedsDataBase/documents/2026-02-06-masha-akusher-ginekolog-1bebc276",
-      "subtitle": "Маша · 2026-02-06 · Гинеколог",
-      "text": "2026-02-06 Маша Акушер-гинеколог.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-02-06 · Гинекология",
+      "text": "2026-02-06 Маша Акушер-гинеколог.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6075,16 +7269,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-01-28",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-01-28 Маша Акушер-гинеколог.pdf",
       "routePath": "/documents/2026-01-28-masha-akusher-ginekolog-b4ff682b",
       "href": "/MedsDataBase/documents/2026-01-28-masha-akusher-ginekolog-b4ff682b",
-      "subtitle": "Маша · 2026-01-28 · Гинеколог",
-      "text": "2026-01-28 Маша Акушер-гинеколог.pdf Маша Гинеколог"
+      "subtitle": "Маша · 2026-01-28 · Гинекология",
+      "text": "2026-01-28 Маша Акушер-гинеколог.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6092,16 +7286,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-01-28",
-      "specialty": "Психолог",
-      "specialtyId": "psiholog",
+      "specialty": "Психология",
+      "specialtyId": "psihologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-01-28 Маша Психолог.pdf",
       "routePath": "/documents/2026-01-28-masha-psiholog-a3efe103",
       "href": "/MedsDataBase/documents/2026-01-28-masha-psiholog-a3efe103",
-      "subtitle": "Маша · 2026-01-28 · Психолог",
-      "text": "2026-01-28 Маша Психолог.pdf Маша Психолог"
+      "subtitle": "Маша · 2026-01-28 · Психология",
+      "text": "2026-01-28 Маша Психолог.pdf Маша Психология"
     },
     {
       "type": "document",
@@ -6109,16 +7303,16 @@
       "person": "Маша",
       "personSlug": "masha",
       "date": "2026-01-28",
-      "specialty": "Терапевт",
-      "specialtyId": "terapevt",
+      "specialty": "Терапия",
+      "specialtyId": "terapiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2026-01-28 Маша Терапевт.pdf",
       "routePath": "/documents/2026-01-28-masha-terapevt-0b337ecd",
       "href": "/MedsDataBase/documents/2026-01-28-masha-terapevt-0b337ecd",
-      "subtitle": "Маша · 2026-01-28 · Терапевт",
-      "text": "2026-01-28 Маша Терапевт.pdf Маша Терапевт"
+      "subtitle": "Маша · 2026-01-28 · Терапия",
+      "text": "2026-01-28 Маша Терапевт.pdf Маша Терапия"
     },
     {
       "type": "document",
@@ -6156,20 +7350,20 @@
     },
     {
       "type": "document",
-      "id": "ffaadefed8c388d6",
+      "id": "38450d9cee63d3ec",
       "person": "Маша",
       "personSlug": "masha",
       "date": "2025-08-27",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2025-08-27 Маша Угрожающий аборт.pdf",
-      "routePath": "/documents/2025-08-27-masha-ugrozhayuschiy-abort-ffaadefe",
-      "href": "/MedsDataBase/documents/2025-08-27-masha-ugrozhayuschiy-abort-ffaadefe",
-      "subtitle": "Маша · 2025-08-27 · Гинеколог",
-      "text": "2025-08-27 Маша Угрожающий аборт.pdf Маша Гинеколог"
+      "routePath": "/documents/2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+      "href": "/MedsDataBase/documents/2025-08-27-masha-ugrozhayuschiy-abort-38450d9c",
+      "subtitle": "Маша · 2025-08-27 · Гинекология",
+      "text": "2025-08-27 Маша Угрожающий аборт.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6207,20 +7401,20 @@
     },
     {
       "type": "document",
-      "id": "9174d43a9ea90310",
+      "id": "b3aed02e96162fb3",
       "person": "Маша",
       "personSlug": "masha",
       "date": "2025-08-25",
-      "specialty": "Гинеколог",
-      "specialtyId": "ginekolog",
+      "specialty": "Гинекология",
+      "specialtyId": "ginekologiya",
       "extension": "pdf",
-      "linkStatus": "document_only",
-      "linkStatusLabel": "Нет описания события",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
       "title": "2025-08-25 Маша — Скорая помощь.pdf",
-      "routePath": "/documents/2025-08-25-masha-skoraya-pomosch-9174d43a",
-      "href": "/MedsDataBase/documents/2025-08-25-masha-skoraya-pomosch-9174d43a",
-      "subtitle": "Маша · 2025-08-25 · Гинеколог",
-      "text": "2025-08-25 Маша — Скорая помощь.pdf Маша Гинеколог"
+      "routePath": "/documents/2025-08-25-masha-skoraya-pomosch-b3aed02e",
+      "href": "/MedsDataBase/documents/2025-08-25-masha-skoraya-pomosch-b3aed02e",
+      "subtitle": "Маша · 2025-08-25 · Гинекология",
+      "text": "2025-08-25 Маша — Скорая помощь.pdf Маша Гинекология"
     },
     {
       "type": "document",
@@ -6753,10 +7947,10 @@
   ],
   "stats": {
     "people": 3,
-    "events": 36,
+    "events": 48,
     "documents": 63,
-    "linkedDocuments": 49,
-    "unlinkedDocuments": 14,
+    "linkedDocuments": 63,
+    "unlinkedDocuments": 0,
     "tasks": 8,
     "warnings": 0,
     "fatal": 0
