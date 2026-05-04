@@ -13,13 +13,14 @@ const navItems = [
   { href: pageHref("/events"), label: "Все события" },
   { href: pageHref("/tasks"), label: "Задачи" },
   { href: pageHref("/documents"), label: "Документы" },
+  { href: pageHref("/metrics"), label: "Показатели" },
   { href: pageHref("/overview"), label: "Обзор" },
 ];
 const people = dashboard.people;
 const currentPath = Astro.url.pathname;
 
 function isActiveNav(href: string) {
-  const normalizePath = (path: string) => (path.length > 1 ? path.replace(/\/$/, "") : path);
+  const normalizePath = (value: string) => (value.length > 1 ? value.replace(/\/$/, "") : value);
   const path = normalizePath(new URL(href, Astro.url).pathname);
   const activePath = normalizePath(currentPath);
   return activePath === path || (path.endsWith("/documents") && activePath.startsWith(`${path}/`));
@@ -79,6 +80,7 @@ function isActiveNav(href: string) {
       <a href={pageHref("/events")}>События</a>
       <a href={pageHref("/tasks")}>Задачи</a>
       <a href={pageHref("/documents")}>Документы</a>
+      <a href={pageHref("/metrics")}>Показатели</a>
       <a href={pageHref("/search")}>Поиск</a>
     </nav>
   </body>

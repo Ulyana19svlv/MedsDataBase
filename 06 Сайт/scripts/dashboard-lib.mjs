@@ -9,6 +9,7 @@ export const siteDir = path.resolve(path.dirname(fileURLToPath(import.meta.url))
 export const repoRoot = path.resolve(siteDir, "..");
 export const membersDir = path.join(repoRoot, "01 Члены семьи");
 export const inboxDir = path.join(repoRoot, "04 Входящие");
+export const metricsFilePath = path.join(repoRoot, "07 Показатели", "metrics.json");
 export const generatedDir = path.join(siteDir, "src", "generated");
 export const publicDocumentsDir = path.join(siteDir, "public", "files", "documents");
 export const distDocumentsDir = path.join(siteDir, "dist", "files", "documents");
@@ -691,6 +692,74 @@ function buildSearchItems({ people, events, documents, tasks }) {
   ];
 }
 
+async function readMetricsFile() {
+  try {
+    const raw = await fsp.readFile(metricsFilePath, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed.records) ? parsed.records : [];
+  } catch {
+    return [];
+  }
+}
+
+function displayMetricValue(record) {
+  const value = record.value_text || record.value || record.qualitative_value || "";
+  return [record.comparator, value, record.unit].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
+}
+
+function normalizeMetricRecord(record, eventsById) {
+  const event = record.source_event_id ? eventsById.get(record.source_event_id) : undefined;
+  return {
+    ...record,
+    displayValue: displayMetricValue(record),
+    numeric_value: typeof record.numeric_value === "number" ? record.numeric_value : null,
+    is_abnormal: record.is_abnormal === true,
+    eventHref: event?.href,
+    eventTitle: event?.title,
+    eventSlug: event?.slug,
+  };
+}
+
+function buildMetricGroups(records) {
+  const groups = new Map();
+  for (const record of records) {
+    const key = `${record.person_id || record.person}:${record.metric_id || record.metric_label}`;
+    if (!groups.has(key)) {
+      groups.set(key, {
+        id: key,
+        person: record.person,
+        personId: record.person_id,
+        metricId: record.metric_id,
+        metricLabel: record.metric_label,
+        metricCategory: record.metric_category,
+        metricValueType: record.metric_value_type,
+        records: [],
+      });
+    }
+    groups.get(key).records.push(record);
+  }
+
+  return [...groups.values()]
+    .map((group) => {
+      const sorted = group.records.sort((a, b) => String(a.date).localeCompare(String(b.date)));
+      const latest = sorted[sorted.length - 1];
+      const previous = sorted.length > 1 ? sorted[sorted.length - 2] : undefined;
+      const hasLatestNumber = latest?.numeric_value !== null && latest?.numeric_value !== undefined;
+      const hasPreviousNumber = previous?.numeric_value !== null && previous?.numeric_value !== undefined;
+      const delta = hasLatestNumber && hasPreviousNumber ? latest.numeric_value - previous.numeric_value : null;
+      return {
+        ...group,
+        records: sorted,
+        latest,
+        previous,
+        delta,
+        count: sorted.length,
+        hasTrend: sorted.filter((record) => record.numeric_value !== null && record.numeric_value !== undefined).length >= 2,
+      };
+    })
+    .sort((a, b) => String(a.person).localeCompare(String(b.person), "ru") || String(a.metricLabel).localeCompare(String(b.metricLabel), "ru"));
+}
+
 function canonicalEventType(label) {
   const text = String(label || "").toLowerCase();
   if (/анализ|лаборатор/.test(text)) return { eventTypeId: "lab", eventTypeLabel: "Анализ" };
@@ -813,6 +882,15 @@ export async function loadDashboardData({ includeInbox = false } = {}) {
   const sortedDocuments = documents.sort((a, b) =>
     (b.date || "").localeCompare(a.date || "") || a.fileName.localeCompare(b.fileName, "ru"),
   );
+  const eventsById = new Map(sortedEvents.map((event) => [event.id, event]));
+  const metrics = (await readMetricsFile())
+    .map((record) => normalizeMetricRecord(record, eventsById))
+    .sort((a, b) =>
+      String(a.person).localeCompare(String(b.person), "ru") ||
+      String(a.metric_label).localeCompare(String(b.metric_label), "ru") ||
+      String(b.date).localeCompare(String(a.date)),
+    );
+  const metricGroups = buildMetricGroups(metrics);
 
   const data = {
     generatedAt: new Date().toISOString(),
@@ -820,6 +898,8 @@ export async function loadDashboardData({ includeInbox = false } = {}) {
     people: profiles.sort((a, b) => a.name.localeCompare(b.name, "ru")),
     events: sortedEvents,
     documents: sortedDocuments,
+    metrics,
+    metricGroups,
     tasks,
     issues,
     searchItems: [],
@@ -827,6 +907,8 @@ export async function loadDashboardData({ includeInbox = false } = {}) {
       people: profiles.length,
       events: events.length,
       documents: documents.length,
+      metrics: metrics.length,
+      metricTypes: metricGroups.length,
       linkedDocuments: documents.filter((document) => document.isLinkedToEvent).length,
       unlinkedDocuments: documents.filter((document) => !document.isLinkedToEvent).length,
       tasks: tasks.length,

@@ -1,0 +1,217 @@
+---
+import AppLayout from "../layouts/AppLayout.astro";
+import { dashboard, formatDateShort } from "../lib/ui";
+
+const metricGroups = dashboard.metricGroups || [];
+const metricRecords = dashboard.metrics || [];
+const people = dashboard.people;
+const categories = [...new Set(metricGroups.map((group) => group.metricCategory || "other"))].sort((a, b) =>
+  a.localeCompare(b, "ru"),
+);
+const latestRecords = [...metricRecords]
+  .sort((a, b) => String(b.date).localeCompare(String(a.date)))
+  .slice(0, 10);
+const trendGroups = metricGroups.filter((group) => group.hasTrend).slice(0, 12);
+
+const categoryLabels: Record<string, string> = {
+  lipids: "Липиды",
+  carbohydrate_metabolism: "Углеводный обмен",
+  thyroid: "Щитовидная железа",
+  cbc: "ОАК",
+  iron: "Железо",
+  vitamins: "Витамины",
+  liver: "Печень",
+  kidney: "Почки",
+  inflammation: "Воспаление",
+  cardiovascular: "Сердечно-сосудистое",
+  hpv: "ВПЧ",
+  custom: "Другое",
+};
+
+function categoryLabel(category: string) {
+  return categoryLabels[category] || category || "Другое";
+}
+
+function formatDelta(delta: number | null | undefined) {
+  if (delta === null || delta === undefined || Number.isNaN(delta)) return "";
+  const rounded = Math.round(delta * 100) / 100;
+  if (rounded > 0) return `+${rounded}`;
+  return String(rounded);
+}
+
+function sparkline(records: Array<{ numeric_value?: number | null }>) {
+  const points = records
+    .filter((record: { numeric_value?: number | null }) => record.numeric_value !== null && record.numeric_value !== undefined)
+    .map((record: { numeric_value?: number | null }) => Number(record.numeric_value));
+  if (points.length < 2) return "";
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const span = max - min || 1;
+  const width = 180;
+  const height = 52;
+  return points
+    .map((value: number, index: number) => {
+      const x = points.length === 1 ? width : (index / (points.length - 1)) * width;
+      const y = height - ((value - min) / span) * (height - 8) - 4;
+      return `${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(" ");
+}
+---
+
+<AppLayout title="Показатели · Медицинская база">
+  <section class="page-header">
+    <p class="eyebrow">Динамика</p>
+    <h1>Показатели</h1>
+    <p>Последние значения и динамика по анализам. Данные берутся из подтверждённого файла `07 Показатели/metrics.json`.</p>
+  </section>
+
+  <section class="metrics-summary">
+    <article class="card">
+      <span class="muted-text">Записей</span>
+      <strong>{metricRecords.length}</strong>
+    </article>
+    <article class="card">
+      <span class="muted-text">Показателей в динамике</span>
+      <strong>{trendGroups.length}</strong>
+    </article>
+    <article class="card">
+      <span class="muted-text">Последнее обновление</span>
+      <strong>{latestRecords[0] ? formatDateShort(latestRecords[0].date) : "Нет данных"}</strong>
+    </article>
+  </section>
+
+  <section class="filter-panel metrics-filter" aria-label="Фильтры показателей">
+    <label>
+      <span class="side-label">Человек</span>
+      <select id="metric-person-filter">
+        <option value="">Все</option>
+        {people.map((person) => <option value={person.name}>{person.name}</option>)}
+      </select>
+    </label>
+    <label>
+      <span class="side-label">Группа</span>
+      <select id="metric-category-filter">
+        <option value="">Все</option>
+        {categories.map((category) => <option value={category}>{categoryLabel(category)}</option>)}
+      </select>
+    </label>
+    <label>
+      <span class="side-label">Поиск</span>
+      <input id="metric-search" type="search" placeholder="Холестерин, витамин D, ТТГ" />
+    </label>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Динамика</h2>
+      <span class="muted-text">{trendGroups.length} показателей с 2+ значениями</span>
+    </div>
+    <div class="metric-grid">
+      {metricGroups.map((group) => {
+        const latest = group.latest;
+        const previous = group.previous;
+        const points = sparkline(group.records);
+        const delta = formatDelta(group.delta);
+        return (
+          <article
+            class="card metric-card"
+            data-metric-card
+            data-person={group.person}
+            data-category={group.metricCategory}
+            data-name={group.metricLabel.toLowerCase()}
+          >
+            <div class="metric-card-header">
+              <div>
+                <span class="chip muted">{group.person}</span>
+                <h3>{group.metricLabel}</h3>
+              </div>
+              <span class="count-badge">{group.count}</span>
+            </div>
+            <div class="metric-latest">
+              <strong>{latest?.displayValue || "Нет значения"}</strong>
+              <span>{latest ? formatDateShort(latest.date) : ""}</span>
+            </div>
+            {previous && (
+              <p class="metric-delta">
+                Предыдущее: {previous.displayValue} от {formatDateShort(previous.date)}
+                {delta && <span class:list={["delta-pill", group.delta > 0 ? "up" : group.delta < 0 ? "down" : "flat"]}>{delta}</span>}
+              </p>
+            )}
+            {points ? (
+              <svg class="sparkline" viewBox="0 0 180 52" role="img" aria-label={`Динамика ${group.metricLabel}`}>
+                <polyline points={points} fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            ) : (
+              <p class="empty">Пока одно значение, график появится после повторного анализа.</p>
+            )}
+            <details class="metric-details">
+              <summary>Все значения</summary>
+              <ol>
+                {group.records.map((record) => (
+                  <li>
+                    <span>{formatDateShort(record.date)} — <strong>{record.displayValue}</strong></span>
+                    {record.eventHref && <a href={record.eventHref}>событие</a>}
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <h2>Последние значения</h2>
+    </div>
+    <div class="metric-table-wrap">
+      <table class="metric-table">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Человек</th>
+            <th>Показатель</th>
+            <th>Значение</th>
+            <th>Источник</th>
+          </tr>
+        </thead>
+        <tbody>
+          {latestRecords.map((record) => (
+            <tr>
+              <td>{formatDateShort(record.date)}</td>
+              <td>{record.person}</td>
+              <td>{record.metric_label}</td>
+              <td><strong>{record.displayValue}</strong></td>
+              <td>{record.eventHref ? <a href={record.eventHref}>событие</a> : <span class="muted-text">запись</span>}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    const personFilter = document.getElementById("metric-person-filter") as HTMLSelectElement | null;
+    const categoryFilter = document.getElementById("metric-category-filter") as HTMLSelectElement | null;
+    const searchInput = document.getElementById("metric-search") as HTMLInputElement | null;
+    const cards = Array.from(document.querySelectorAll("[data-metric-card]")) as HTMLElement[];
+
+    function applyMetricFilters() {
+      const person = personFilter?.value || "";
+      const category = categoryFilter?.value || "";
+      const query = (searchInput?.value || "").trim().toLowerCase();
+      for (const card of cards) {
+        const matchesPerson = !person || card.dataset.person === person;
+        const matchesCategory = !category || card.dataset.category === category;
+        const matchesQuery = !query || (card.dataset.name || "").includes(query);
+        card.hidden = !(matchesPerson && matchesCategory && matchesQuery);
+      }
+    }
+
+    personFilter?.addEventListener("change", applyMetricFilters);
+    categoryFilter?.addEventListener("change", applyMetricFilters);
+    searchInput?.addEventListener("input", applyMetricFilters);
+  </script>
+</AppLayout>
