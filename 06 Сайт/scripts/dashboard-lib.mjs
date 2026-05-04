@@ -10,6 +10,7 @@ export const repoRoot = path.resolve(siteDir, "..");
 export const membersDir = path.join(repoRoot, "01 Члены семьи");
 export const inboxDir = path.join(repoRoot, "04 Входящие");
 export const metricsFilePath = path.join(repoRoot, "07 Показатели", "metrics.json");
+export const tasksFilePath = path.join(repoRoot, "08 Задачи", "tasks.json");
 export const generatedDir = path.join(siteDir, "src", "generated");
 export const publicDocumentsDir = path.join(siteDir, "public", "files", "documents");
 export const distDocumentsDir = path.join(siteDir, "dist", "files", "documents");
@@ -702,6 +703,57 @@ async function readMetricsFile() {
   }
 }
 
+async function readTasksFile() {
+  try {
+    const raw = await fsp.readFile(tasksFilePath, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed.records) ? parsed.records : [];
+  } catch {
+    return [];
+  }
+}
+
+function normalizeTaskRecord(record, eventsById, profilesByPerson, issues) {
+  if (record.status && ["done", "cancelled", "rejected"].includes(String(record.status))) return undefined;
+
+  const event = record.source_event_id ? eventsById.get(record.source_event_id) : undefined;
+  const person = record.person || event?.person || "";
+  const profile = person ? profilesByPerson.get(person) : undefined;
+  const dueDate = isoDateFromText(record.due_date || record.dueDate);
+  const actionText = cleanTaskText(record.action_text || record.title || record.source_text);
+
+  if (!actionText) {
+    issues.push(
+      createIssue("warn", "task", "Задача без action_text/title пропущена.", {
+        entityPath: "08 Задачи/tasks.json",
+      }),
+    );
+    return undefined;
+  }
+
+  return {
+    id: String(record.id || `task-${hashText(actionText, 12)}`),
+    person,
+    personSlug: profile?.slug || slugify(person || record.person_id || "unknown"),
+    href: event?.href || profile?.href,
+    dueDate,
+    specialty: record.specialty || event?.specialty || "Контроль",
+    specialtyId: record.specialty_id || event?.specialtyId || slugify(record.specialty || "control"),
+    sourceType: record.source_type || (event ? "event" : "manual"),
+    sourceEventId: event?.id || record.source_event_id || "",
+    sourceEventSlug: event?.slug,
+    sourcePath: event?.routePath || record.source_path || profile?.routePath || "/tasks",
+    sourceHref: event?.href || profile?.href || addBase("/tasks"),
+    sourceTitle: event?.title || record.source_title || "Задача контроля",
+    title: actionText,
+    priority: record.priority || "medium",
+    status: record.status || "open",
+    stateBucket: "computed_on_client",
+    statusLabel: "Рассчитывается по текущей дате",
+    actionText,
+  };
+}
+
 function displayMetricValue(record) {
   const value = record.value_text || record.value || record.qualitative_value || "";
   return [record.comparator, value, record.unit].filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
@@ -876,9 +928,22 @@ export async function loadDashboardData({ includeInbox = false } = {}) {
     event.followUpAction = deriveFollowUpAction(event);
   }
 
-  const tasks = [
+  const sortedEvents = events.sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title, "ru"));
+  const eventsById = new Map(sortedEvents.map((event) => [event.id, event]));
+  const computedTasks = [
     ...events.map(buildTaskFromEvent).filter(Boolean),
     ...profiles.flatMap(buildProfileTasks),
+  ];
+  const profilesByPerson = new Map(profiles.map((profile) => [profile.name, profile]));
+  const explicitTasks = (await readTasksFile())
+    .map((record) => normalizeTaskRecord(record, eventsById, profilesByPerson, issues))
+    .filter(Boolean);
+  const explicitTaskKeys = new Set(
+    explicitTasks.map((task) => [task.sourceEventId || task.sourcePath, task.dueDate || "", task.actionText].join("::")),
+  );
+  const tasks = [
+    ...explicitTasks,
+    ...computedTasks.filter((task) => !explicitTaskKeys.has([task.sourceEventId || task.sourcePath, task.dueDate || "", task.actionText].join("::"))),
   ];
 
   for (const profile of profiles) {
@@ -925,11 +990,9 @@ export async function loadDashboardData({ includeInbox = false } = {}) {
     };
   }
 
-  const sortedEvents = events.sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title, "ru"));
   const sortedDocuments = documents.sort((a, b) =>
     (b.date || "").localeCompare(a.date || "") || a.fileName.localeCompare(b.fileName, "ru"),
   );
-  const eventsById = new Map(sortedEvents.map((event) => [event.id, event]));
   const metrics = (await readMetricsFile())
     .map((record) => normalizeMetricRecord(record, eventsById))
     .sort((a, b) =>
