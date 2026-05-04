@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T07:36:02.085Z",
+  "generatedAt": "2026-05-04T07:52:08.194Z",
   "basePath": "/MedsDataBase",
   "people": [
     {
@@ -23,8 +23,8 @@
       "profileTasks": [
         "-"
       ],
-      "eventCount": 19,
-      "documentCount": 18,
+      "eventCount": 21,
+      "documentCount": 20,
       "nextTasks": [
         {
           "id": "task-2026-04-18-artem-endokrinolog-2026-07-01",
@@ -147,6 +147,11 @@
           "count": 3
         },
         {
+          "label": "Лаборатория",
+          "id": "laboratoriya",
+          "count": 2
+        },
+        {
           "label": "УЗИ",
           "id": "uzi",
           "count": 2
@@ -159,11 +164,6 @@
         {
           "label": "Аллергология",
           "id": "allergologiya",
-          "count": 1
-        },
-        {
-          "label": "Лаборатория",
-          "id": "laboratoriya",
           "count": 1
         }
       ],
@@ -2670,6 +2670,157 @@
       "searchableText": "2026-03-11 Маша — акушер-гинеколог Маша Приём Гинекология Колосова И. А. ЦЖЗ на Борисоглебском ГКБ №67 им. Л.А. Ворохобова - Беременность 37 недель, головное предлежание. - Жалоб нет, самочувствие хорошее. - Голова не болит, зрение ясное, шевеления ощущаются ясно. - Основной диагноз: наблюдение за течением другой нормальной беременности. - КТГ от 11.03.2026 описана как нормальный тип КТГ. - Плановое течение беременности в третьем триместре. - Динамику КТГ и акушерских осмотров. - Подробные рекомендации и назначения сверять с исходным заключением.",
       "dataWarnings": [],
       "followUpAction": "Динамику КТГ и акушерских осмотров."
+    },
+    {
+      "id": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "slug": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "routePath": "/events/2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "href": "/MedsDataBase/events/2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "title": "Артём — антитела к вирусу кори IgG — 10.03.2026",
+      "person": "Артём",
+      "personSlug": "artem",
+      "date": "2026-03-10",
+      "year": "2026",
+      "eventType": "Анализ",
+      "eventTypeId": "lab",
+      "eventTypeLabel": "Анализ",
+      "sourceEventType": "Анализ",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "specialtyLabel": "Лаборатория",
+      "doctor": "",
+      "clinic": "Мобил.Мед / Мобил Медикал Лаб",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-03-10 Артём — антитела к вирусу кори IgG.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "3203a79a1b777954",
+          "slug": "2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+          "fileName": "2026-03-10 Артём — антитела к вирусу кори IgG.pdf",
+          "originalPath": "01 Члены семьи/Артём/08 Анализы/08 Анализы 2026/Мобил.Мед/2026-03-10 Артём — антитела к вирусу кори IgG.pdf",
+          "routePath": "/documents/2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+          "href": "/MedsDataBase/documents/2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+          "outputFileName": "3203a79a1b-2026-03-10-artem-antitela-k-virusu-kori-igg.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/3203a79a1b-2026-03-10-artem-antitela-k-virusu-kori-igg.pdf",
+          "extension": "pdf",
+          "person": "Артём",
+          "eventId": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+          "eventSlug": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+          "specialty": "Лаборатория",
+          "specialtyId": "laboratoriya",
+          "date": "2026-03-10",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 467764,
+          "eventHref": "/MedsDataBase/events/2026-03-10-artem-antitela-k-virusu-kori-igg"
+        }
+      ],
+      "tags": [
+        "lab",
+        "infektsii"
+      ],
+      "summary": [
+        "Пациент: Бабинов Артём Михайлович, дата рождения 20.02.1989.",
+        "Номер заявки / пробы: 3780791994 / 3780791994.",
+        "Дата взятия биоматериала: 10.03.2026 16:39.",
+        "Биоматериал: сыворотка.",
+        "Результат антител IgG к вирусу кори: 2,77 МЕ/мл.",
+        "По комментарию лаборатории: 0,18 — антитела обнаружены.",
+        "Дата выполнения: 11.03.2026."
+      ],
+      "track": [
+        "Хранить как подтверждение наличия антител к вирусу кори."
+      ],
+      "nextActions": [
+        "Специальных действий по документу не указано; интерпретировать вместе с врачом при необходимости вакцинации/медицинских справок."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Артём/08 Анализы/08 Анализы 2026/Мобил.Мед/2026-03-10 Артём — антитела к вирусу кори IgG.md",
+      "folderPath": "01 Члены семьи/Артём/08 Анализы/08 Анализы 2026/Мобил.Мед",
+      "searchableText": "Артём — антитела к вирусу кори IgG — 10.03.2026 Артём Анализ Лаборатория Мобил.Мед / Мобил Медикал Лаб - Пациент: Бабинов Артём Михайлович, дата рождения 20.02.1989. - Номер заявки / пробы: 3780791994 / 3780791994. - Дата взятия биоматериала: 10.03.2026 16:39. - Биоматериал: сыворотка. - Результат антител IgG к вирусу кори: 2,77 МЕ/мл. - По комментарию лаборатории: 0,18 — антитела обнаружены. - Дата выполнения: 11.03.2026. - Хранить как подтверждение наличия антител к вирусу кори. - Специальных действий по документу не указано; интерпретировать вместе с врачом при необходимости вакцинации/медицинских справок.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Лаборатория"
+    },
+    {
+      "id": "2026-03-10-artem-flyuorografiya",
+      "slug": "2026-03-10-artem-flyuorografiya",
+      "routePath": "/events/2026-03-10-artem-flyuorografiya",
+      "href": "/MedsDataBase/events/2026-03-10-artem-flyuorografiya",
+      "title": "Артём — флюорография — 10.03.2026",
+      "person": "Артём",
+      "personSlug": "artem",
+      "date": "2026-03-10",
+      "year": "2026",
+      "eventType": "Обследование",
+      "eventTypeId": "diagnostics",
+      "eventTypeLabel": "Обследование",
+      "sourceEventType": "Обследование",
+      "specialty": "Рентгенология",
+      "specialtyId": "rentgenologiya",
+      "specialtyLabel": "Рентгенология",
+      "doctor": "Морозова О.Н.",
+      "clinic": "Мобил.Мед",
+      "status": "done",
+      "importance": "normal",
+      "sourceFileNames": [
+        "2026-03-10 Артём — флюорография.pdf"
+      ],
+      "sourceFiles": [
+        {
+          "id": "3eb2797ecb83c16f",
+          "slug": "2026-03-10-artem-flyuorografiya-3eb2797e",
+          "fileName": "2026-03-10 Артём — флюорография.pdf",
+          "originalPath": "01 Члены семьи/Артём/09 Исследования/09 Исследования 2026/Мобил.Мед/2026-03-10 Артём — флюорография.pdf",
+          "routePath": "/documents/2026-03-10-artem-flyuorografiya-3eb2797e",
+          "href": "/MedsDataBase/documents/2026-03-10-artem-flyuorografiya-3eb2797e",
+          "outputFileName": "3eb2797ecb-2026-03-10-artem-flyuorografiya.pdf",
+          "publicUrl": "/MedsDataBase/files/documents/3eb2797ecb-2026-03-10-artem-flyuorografiya.pdf",
+          "extension": "pdf",
+          "person": "Артём",
+          "eventId": "2026-03-10-artem-flyuorografiya",
+          "eventSlug": "2026-03-10-artem-flyuorografiya",
+          "specialty": "Рентгенология",
+          "specialtyId": "rentgenologiya",
+          "date": "2026-03-10",
+          "isLinkedToEvent": true,
+          "linkStatus": "linked",
+          "linkStatusLabel": "Привязан к записи",
+          "isInboxItem": false,
+          "size": 149717,
+          "eventHref": "/MedsDataBase/events/2026-03-10-artem-flyuorografiya"
+        }
+      ],
+      "tags": [
+        "diagnostics",
+        "rentgenologiya"
+      ],
+      "summary": [
+        "Пациент: Бабинов Артём Михайлович, дата рождения 20.02.1989.",
+        "Номер заключения: C-687010.",
+        "Дата обследования: 10 марта 2026.",
+        "Заключение: норма.",
+        "Лёгочные поля без свежих очаговых и инфильтративных теней.",
+        "Лёгочный рисунок несколько усилен; корни лёгких уплотнены, тяжисты.",
+        "Синусы прозрачны; диафрагма расположена обычно; тень средостения и крупных сосудов без особенностей.",
+        "Врач: Морозова О.Н."
+      ],
+      "track": [
+        "Хранить как актуальную флюорографию за март 2026."
+      ],
+      "nextActions": [
+        "Специальных действий по заключению не указано."
+      ],
+      "prescriptions": [],
+      "markdownPath": "01 Члены семьи/Артём/09 Исследования/09 Исследования 2026/Мобил.Мед/2026-03-10 Артём — флюорография.md",
+      "folderPath": "01 Члены семьи/Артём/09 Исследования/09 Исследования 2026/Мобил.Мед",
+      "searchableText": "Артём — флюорография — 10.03.2026 Артём Обследование Рентгенология Морозова О.Н. Мобил.Мед - Пациент: Бабинов Артём Михайлович, дата рождения 20.02.1989. - Номер заключения: C-687010. - Дата обследования: 10 марта 2026. - Заключение: норма. - Лёгочные поля без свежих очаговых и инфильтративных теней. - Лёгочный рисунок несколько усилен; корни лёгких уплотнены, тяжисты. - Синусы прозрачны; диафрагма расположена обычно; тень средостения и крупных сосудов без особенностей. - Врач: Морозова О.Н. - Хранить как актуальную флюорографию за март 2026. - Специальных действий по заключению не указано.",
+      "dataWarnings": [],
+      "followUpAction": "Контроль: Рентгенология"
     },
     {
       "id": "2026-02-25-masha-akusher-ginekolog",
@@ -7037,6 +7188,52 @@
       "eventHref": "/MedsDataBase/events/2026-03-11-masha-akusher-ginekolog"
     },
     {
+      "id": "3203a79a1b777954",
+      "slug": "2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+      "fileName": "2026-03-10 Артём — антитела к вирусу кори IgG.pdf",
+      "originalPath": "01 Члены семьи/Артём/08 Анализы/08 Анализы 2026/Мобил.Мед/2026-03-10 Артём — антитела к вирусу кори IgG.pdf",
+      "routePath": "/documents/2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+      "href": "/MedsDataBase/documents/2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+      "outputFileName": "3203a79a1b-2026-03-10-artem-antitela-k-virusu-kori-igg.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/3203a79a1b-2026-03-10-artem-antitela-k-virusu-kori-igg.pdf",
+      "extension": "pdf",
+      "person": "Артём",
+      "eventId": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "eventSlug": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "date": "2026-03-10",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "isInboxItem": false,
+      "size": 467764,
+      "eventHref": "/MedsDataBase/events/2026-03-10-artem-antitela-k-virusu-kori-igg"
+    },
+    {
+      "id": "3eb2797ecb83c16f",
+      "slug": "2026-03-10-artem-flyuorografiya-3eb2797e",
+      "fileName": "2026-03-10 Артём — флюорография.pdf",
+      "originalPath": "01 Члены семьи/Артём/09 Исследования/09 Исследования 2026/Мобил.Мед/2026-03-10 Артём — флюорография.pdf",
+      "routePath": "/documents/2026-03-10-artem-flyuorografiya-3eb2797e",
+      "href": "/MedsDataBase/documents/2026-03-10-artem-flyuorografiya-3eb2797e",
+      "outputFileName": "3eb2797ecb-2026-03-10-artem-flyuorografiya.pdf",
+      "publicUrl": "/MedsDataBase/files/documents/3eb2797ecb-2026-03-10-artem-flyuorografiya.pdf",
+      "extension": "pdf",
+      "person": "Артём",
+      "eventId": "2026-03-10-artem-flyuorografiya",
+      "eventSlug": "2026-03-10-artem-flyuorografiya",
+      "specialty": "Рентгенология",
+      "specialtyId": "rentgenologiya",
+      "date": "2026-03-10",
+      "isLinkedToEvent": true,
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "isInboxItem": false,
+      "size": 149717,
+      "eventHref": "/MedsDataBase/events/2026-03-10-artem-flyuorografiya"
+    },
+    {
       "id": "0f753e4305ec198c",
       "slug": "2026-02-25-masha-akusher-ginekolog-0f753e43",
       "fileName": "2026-02-25 Маша Акушер-гинеколог.pdf",
@@ -9527,6 +9724,38 @@
     },
     {
       "type": "event",
+      "id": "2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "person": "Артём",
+      "personSlug": "artem",
+      "date": "2026-03-10",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "eventType": "Анализ",
+      "eventTypeId": "lab",
+      "title": "Артём — антитела к вирусу кори IgG — 10.03.2026",
+      "routePath": "/events/2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "href": "/MedsDataBase/events/2026-03-10-artem-antitela-k-virusu-kori-igg",
+      "subtitle": "2026-03-10 · Артём · Лаборатория",
+      "text": "Артём — антитела к вирусу кори IgG — 10.03.2026 Артём Анализ Лаборатория Мобил.Мед / Мобил Медикал Лаб - Пациент: Бабинов Артём Михайлович, дата рождения 20.02.1989. - Номер заявки / пробы: 3780791994 / 3780791994. - Дата взятия биоматериала: 10.03.2026 16:39. - Биоматериал: сыворотка. - Результат антител IgG к вирусу кори: 2,77 МЕ/мл. - По комментарию лаборатории: 0,18 — антитела обнаружены. - Дата выполнения: 11.03.2026. - Хранить как подтверждение наличия антител к вирусу кори. - Специальных действий по документу не указано; интерпретировать вместе с врачом при необходимости вакцинации/медицинских справок."
+    },
+    {
+      "type": "event",
+      "id": "2026-03-10-artem-flyuorografiya",
+      "person": "Артём",
+      "personSlug": "artem",
+      "date": "2026-03-10",
+      "specialty": "Рентгенология",
+      "specialtyId": "rentgenologiya",
+      "eventType": "Обследование",
+      "eventTypeId": "diagnostics",
+      "title": "Артём — флюорография — 10.03.2026",
+      "routePath": "/events/2026-03-10-artem-flyuorografiya",
+      "href": "/MedsDataBase/events/2026-03-10-artem-flyuorografiya",
+      "subtitle": "2026-03-10 · Артём · Рентгенология",
+      "text": "Артём — флюорография — 10.03.2026 Артём Обследование Рентгенология Морозова О.Н. Мобил.Мед - Пациент: Бабинов Артём Михайлович, дата рождения 20.02.1989. - Номер заключения: C-687010. - Дата обследования: 10 марта 2026. - Заключение: норма. - Лёгочные поля без свежих очаговых и инфильтративных теней. - Лёгочный рисунок несколько усилен; корни лёгких уплотнены, тяжисты. - Синусы прозрачны; диафрагма расположена обычно; тень средостения и крупных сосудов без особенностей. - Врач: Морозова О.Н. - Хранить как актуальную флюорографию за март 2026. - Специальных действий по заключению не указано."
+    },
+    {
+      "type": "event",
       "id": "2026-02-25-masha-akusher-ginekolog",
       "person": "Маша",
       "personSlug": "masha",
@@ -10642,6 +10871,40 @@
       "href": "/MedsDataBase/documents/2026-03-11-masha-akusher-ginekolog-bdb05868",
       "subtitle": "Маша · 2026-03-11 · Гинекология",
       "text": "2026-03-11 Маша Акушер-гинеколог.pdf Маша Гинекология"
+    },
+    {
+      "type": "document",
+      "id": "3203a79a1b777954",
+      "person": "Артём",
+      "personSlug": "artem",
+      "date": "2026-03-10",
+      "specialty": "Лаборатория",
+      "specialtyId": "laboratoriya",
+      "extension": "pdf",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "title": "2026-03-10 Артём — антитела к вирусу кори IgG.pdf",
+      "routePath": "/documents/2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+      "href": "/MedsDataBase/documents/2026-03-10-artem-antitela-k-virusu-kori-igg-3203a79a",
+      "subtitle": "Артём · 2026-03-10 · Лаборатория",
+      "text": "2026-03-10 Артём — антитела к вирусу кори IgG.pdf Артём Лаборатория"
+    },
+    {
+      "type": "document",
+      "id": "3eb2797ecb83c16f",
+      "person": "Артём",
+      "personSlug": "artem",
+      "date": "2026-03-10",
+      "specialty": "Рентгенология",
+      "specialtyId": "rentgenologiya",
+      "extension": "pdf",
+      "linkStatus": "linked",
+      "linkStatusLabel": "Привязан к записи",
+      "title": "2026-03-10 Артём — флюорография.pdf",
+      "routePath": "/documents/2026-03-10-artem-flyuorografiya-3eb2797e",
+      "href": "/MedsDataBase/documents/2026-03-10-artem-flyuorografiya-3eb2797e",
+      "subtitle": "Артём · 2026-03-10 · Рентгенология",
+      "text": "2026-03-10 Артём — флюорография.pdf Артём Рентгенология"
     },
     {
       "type": "document",
@@ -12135,9 +12398,9 @@
   ],
   "stats": {
     "people": 3,
-    "events": 67,
-    "documents": 107,
-    "linkedDocuments": 103,
+    "events": 69,
+    "documents": 109,
+    "linkedDocuments": 105,
     "unlinkedDocuments": 4,
     "tasks": 12,
     "warnings": 0,
